@@ -1,0 +1,93 @@
+info:
+  # Blog Information
+  title:        "Anthony Damotte"
+  subtitle:     "Passionné de domotique"
+  cover_image:  cover.jpg
+  cover_image_caption:
+  about_image:  grenoble.jpg
+  about_image_caption: "Grenoble, vue de la Chartreuse"
+  contact_image:  contact.jpg
+  contact_image_caption: "Cyber-café"
+  logo:         logo.png
+
+  # Social links
+  # facebook:     sendtoinc
+  twitter:      TonyDams
+  github:       adamotte
+  # gplus:        '101183822199340201470'
+
+  # Comments
+  disqus:
+    # Eg. "exampleblog" Set to false to disable comments
+    shortname:  tonydams
+
+  # Google Analytics tracking ID. Leave blank to disable tracking
+  google-analytics-id: 'UA-47485105-1'
+
+  # Sharing settings
+  sharing:
+    twitter:    true
+    facebook:   true
+    gplus:      false
+    hn:         false
+    reddit:     true
+
+author:
+  name: Anthony Damotte
+  bio: Ingénieur Multimédia à Orange Business
+  avatar: adamotte.jpg
+  link: http://adamotte.github.io
+  email: anthony.damotte@gmail.com
+
+  # Google Fonts
+  # eg. 'Droid+Sans:400,700|Droid+Serif:400,700'
+  # google_font: 'Droid+Sans:400,700'
+
+  # Setup your fonts, colors etc at _assets/stylesheets/main.scss
+
+# Root URL where the site will be published
+url:         http://adamotte.github.io
+
+# host 0.0.0.0 allows us to access site via sapphire.local or localhost or 127.0.0.1
+host: 0.0.0.0
+
+# Show future posts
+future:      false
+show_drafts: false
+limit_posts: 0
+highlighter: pygments
+
+paginate:             10
+
+# safe mode must be disabled to use jekyll-assets.
+safe:               false
+
+markdown:           kramdown
+
+# Files/Folders to be excluded from generated _site folder
+exclude:
+  - CNAME
+  - Gemfile
+  - Rakefile
+  - README.md
+  - .gitignore
+  - .sass-cache
+  - Gemfile.lock
+
+
+#
+# jekyll-assets: see more at https://github.com/ixti/jekyll-assets
+#
+assets:
+  dirname: assets
+  baseurl: /assets/
+  sources:
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/images
+  js_compressor: uglifier
+  css_compressor: sass
+  cachebust: none
+  cache: false
+  gzip: [ text/css, application/javascript ]
+  debug: false

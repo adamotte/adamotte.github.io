@@ -1,0 +1,61 @@
+---
+layout: base
+---
+{% if page.cover_image %}
+<div class="article-cover" style="background-image:url(/images/posts/{{ page.cover_image }})"></div>
+{% endif %}
+{% if page.cover_image_caption %}
+<div class='cover-caption'>
+{% if page.cover_image_link %}<a href='{{ page.cover_image_link }}' target="_blank" alt="{{ page.cover_image_caption }}">{% endif %}
+{{ page.cover_image_caption }}
+{% if page.cover_image_link %}</a>{% endif %}</div>
+{% endif %}
+
+<article {% if page.container_class %}class='{{ page.container_class }}'{% endif %}>
+
+  <div class="container">
+    <header>
+      <div class="meta">
+        Par <address><a rel="author" href="{{ site.author.link }}" title="{{ site.author.name }}" target="_blank">{{ site.author.name }}</a></address> &mdash;
+        <time pubdate datetime="{{ page.date | date: "%Y-%d-%B" }}" title="{{ page.date | date: "%b %d, %Y" }}">{{ page.date | date: "%b %d, %Y" }}</time>
+      </div>
+      <h1 class="title">{{ page.title }}</h1>
+      {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+    </header>
+
+    <section>
+      {{ content }}
+      {% include social_sharing.html %}
+    </section>
+
+    <footer>
+      <address>
+        {% if site.author.avatar %}<img src="/images/{{ site.author.avatar }}">{% endif %}
+        <p>Ecrit par <strong><a rel="author" href="https://twitter.com/{{ site.info.twitter }}" title="{{ site.author.name }}" target="_blank">{{ site.author.name }}</a></strong><br>
+          <span class="muted">{{ site.info.subtitle }}</span>
+        </p>
+      </address>
+      {% if page.next.url %}
+      {% assign post = page.next %}
+      <section class="post_summary">
+        <h3 class="title">Billet suivant: <a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt }}</p>
+        <hr>
+      </section>
+      {% endif %}
+      {% if page.previous.url %}
+      {% assign post = page.previous %}
+      <section class="post_summary">
+        <h3 class="title">Billet précédent: <a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt }}</p>
+        <hr>
+      </section>
+      {% endif %}
+      {% if site.info.disqus.shortname %}
+      <section>
+        {% include disqus.html %}
+      </section>
+      {% endif %}
+    </footer>
+  </div>
+</article>

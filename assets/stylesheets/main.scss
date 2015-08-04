@@ -1,0 +1,19 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+/* IMPORT CSS FILES */
+@import "normalize";
+@import "core";
+@import "buttons";
+@import "icons";
+@import "article";
+@import "contact_form";
+@import "syntax";
+@import "google_map_container";
+@import "cover";
+@import "pagination";
+@import "site_header";
+@import "site_footer";
+@import "responsive";

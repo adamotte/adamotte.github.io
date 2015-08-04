@@ -9,14 +9,11 @@ cover_image: weather-station.jpg
 cover_image_caption: Station météo du Vésuve
 cover_image_link: http://www.flickr.com/photos/michalo/2437693238/
 
-categorie: maison intelligente
+categorie: domotique
 
 tags:
-- station météo
-- internet des objets
 - iot
 - diy
-- domotique
 - raspberry
 - arduino
 

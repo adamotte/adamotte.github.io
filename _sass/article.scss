@@ -193,9 +193,14 @@ article {
     margin: .4em 0;
   }
 
-  .imgcaption {
+  figcaption {
     font-size:0.7em;
-    text-align:right;
     font-style:italic;
+    color: #BAB8B3;
   }
+
+  figcaption > a {
+    color: #BAB8B3;
+  }
+
 }

@@ -22,7 +22,7 @@ Récent propriétaire d'un appartement aux dernières normes BBC en vigueur, et 
 - d'un thermostat programmable (mais non connecté)
 - d'un serveur Synology
 
-Le terrain me semblait était propice à l'exercice de ma passion, la domotique.
+Le terrain me semblait propice à l'exercice de ma passion, la domotique.
 
 En cette période estivale avec de fortes chaleurs, je voulais commander mes volets roulants afin qu'il soit ouvert le matin et le soir pour donner de la lumière à mes plantes mais qu'ils se ferment d'eux-mêmes en pleine journée, lorsque la température extérieure et surtout intérieure devient trop importante. Le top serait même que cela puisse être anticipé...
 

@@ -2,7 +2,7 @@
 <div class="social">
   {% if site.info.sharing.twitter %}
   <div class='twitter'>
-    <a href="https://twitter.com/share" class="twitter-share-button" {% if page.tags %}data-hashtags="{{ page.tags }}"{% endif %} data-text="{{ page.title }}" data-via="{{ site.info.twitter }}">Tweet</a>
+    <a href="https://twitter.com/share" class="twitter-share-button" {% if page.tags %}data-hashtags="{{ page.tags | array_to_string }}"{% endif %} data-text="{{ page.title }}" data-via="{{ site.info.twitter }}">Tweet</a>
   </div>
   {% endif %}
 

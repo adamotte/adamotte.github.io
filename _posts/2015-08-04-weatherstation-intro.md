@@ -11,11 +11,7 @@ cover_image_link: http://www.flickr.com/photos/michalo/2437693238/
 
 categorie: domotique
 
-tags:
-- iot
-- diy
-- raspberry
-- arduino
+tags: weatherstation, iot, diy, raspberry, arduino
 
 ---
 

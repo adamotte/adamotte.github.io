@@ -22,7 +22,7 @@ info:
     shortname:  adamotte
 
   # Google Analytics tracking ID. Leave blank to disable tracking
-  google-analytics-id: 'UA-47485105-2'
+  google-analytics-id: 'UA-47485105-1'
 
   # Sharing settings
   sharing:

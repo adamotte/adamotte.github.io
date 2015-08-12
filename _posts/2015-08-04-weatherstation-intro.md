@@ -1,9 +1,9 @@
 ---
 layout: post
 
-title: Créer sa station météo connectée
-subtitle: "Partie 1 : Présentation de l'idée"
-excerpt: "Partie 1 : Présentation de l'idée"
+title: "Partie 1 : Présentation de l'idée"
+subtitle: "Créer sa station météo connectée"
+excerpt: "Créer sa station météo connectée"
 
 cover_image: weather-station.jpg
 cover_image_caption: Station météo du Vésuve
@@ -30,7 +30,9 @@ Du coup, je me suis dit qu'il fallait commencer par récupérer les informations
 
 <center>
     <figure>
-        <img src="/images/posts/weather-station-3.jpg" style="max-width:100%; max-height:270px;">
+        <div class="full zoomable">
+            <img src="/images/posts/weather-station-3.jpg">
+        </div>
         <figcaption>fig 1. Station météo Netatmo®</figcaption>
     </figure>
 </center>
@@ -44,7 +46,9 @@ Sur le marché, il existe deux stations météo qui avaient attiré mon attentio
 
 <center>
     <figure>
-        <img src="/images/posts/weather-station-2.jpg" style="max-width:100%; max-height:400px;">
+        <div class="full zoomable">
+            <img src="/images/posts/weather-station-2.jpg" style="max-height:400px;">
+        </div>
         <figcaption>fig 2. Station météo Oregon Scientific</figcaption>
     </figure>
 </center>

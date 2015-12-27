@@ -87,8 +87,7 @@
 		background-color: #ffffff;
 		background-image: url("../../images/grenoble.jpg");
 		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: bottom center;
+		background-position: top center;
 		background-attachment: fixed;
 	}
 

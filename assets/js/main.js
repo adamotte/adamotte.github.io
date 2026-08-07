@@ -100,7 +100,11 @@
       setTimeout(typeLoop, 26);
     }
   }
-  setTimeout(typeLoop, 600);
+  if (typerEl && window.matchMedia('(max-width: 640px)').matches) {
+    typerEl.textContent = roles[0];
+  } else {
+    setTimeout(typeLoop, 600);
+  }
 
   /* ---------- Scroll reveal ---------- */
   var revealEls = document.querySelectorAll('.reveal');
@@ -134,17 +138,28 @@
   var burger = document.getElementById('navBurger');
   var links = document.getElementById('navLinks');
   if (burger && links) {
+    function closeMenu() {
+      links.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    }
     burger.addEventListener('click', function () {
       var open = links.classList.toggle('open');
       burger.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('nav-open', open);
     });
     links.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        links.classList.remove('open');
-        burger.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
-      });
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('click', function (e) {
+      if (links.classList.contains('open') && !links.contains(e.target) && !burger.contains(e.target)) {
+        closeMenu();
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
     });
   }
 

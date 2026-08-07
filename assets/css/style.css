@@ -495,6 +495,38 @@ img { max-width: 100%; display: block; }
 .beyond-card p { color: var(--text-dim); font-size: 14px; }
 
 /* ============================================================
+   Recommendations
+   ============================================================ */
+.recs-sub { color: var(--text-dim); font-size: 15px; margin-top: 8px; max-width: 640px; }
+.recs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; margin-top: 44px; align-items: stretch; }
+.rec-card {
+  background: var(--grad-soft); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-2);
+  border-radius: var(--radius); padding: 28px 26px;
+  backdrop-filter: blur(8px);
+  display: flex; flex-direction: column; gap: 18px;
+  transition: transform .3s, border-color .3s;
+}
+.rec-card:hover { transform: translateY(-6px); border-color: var(--accent-2); }
+.rec-text { position: relative; margin: 0; padding: 18px 0 0 30px; }
+.rec-mark {
+  position: absolute; top: -12px; left: 0;
+  font-family: var(--font-head); font-size: 54px; line-height: 1;
+  color: transparent; background: var(--grad);
+  -webkit-background-clip: text; background-clip: text;
+  opacity: .9;
+}
+.rec-text p { color: var(--text-dim); font-size: 15px; line-height: 1.65; font-style: italic; margin: 0 0 12px; }
+.rec-text p:last-child { margin-bottom: 0; }
+.rec-author {
+  margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 2px;
+}
+.rec-author strong { font-family: var(--font-head); font-size: 16px; color: var(--text); }
+.rec-author span { color: var(--accent-2); font-size: 13px; line-height: 1.45; }
+.rec-author small { color: var(--text-mute); font-size: 12px; }
+
+/* ============================================================
    Footer
    ============================================================ */
 .footer {
@@ -528,6 +560,7 @@ img { max-width: 100%; display: block; }
   .hero-actions, .hero-tags { justify-content: center; }
   .about-grid { grid-template-columns: 1fr; }
   .beyond-grid { grid-template-columns: repeat(2, 1fr); }
+  .recs-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {

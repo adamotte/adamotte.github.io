@@ -1,0 +1,38 @@
+# Anthony Damotte
+
+> Agentic Solutions Architect (CoE & Presales) chez Capgemini Engineering, Lyon.
+> Site personnel bilingue : français (/) et anglais (/en/).
+> Agentic Solutions Architect (CoE & Presales) at Capgemini Engineering, Lyon, France.
+
+Anthony Damotte conçoit des solutions agentiques : agentic factory, prompt & loop
+engineering, harness. Il organise des hackathons IA avec Mistral AI et Anthropic
+pour les clients de Capgemini Engineering, et développe Jarvis, un assistant IA
+personnel 100 % self-hosted et local-first. Parcours : ingénieur Polytech'Grenoble
+(RICM), développeur mobile puis architecte web & mobile (Orange Business Services,
+Schneider Electric EcoStruxure), Engagement Manager et Engineering Team Manager
+(60 personnes) chez Capgemini.
+
+## Pages
+
+- [Accueil (FR)](https://adamotte.github.io/) : profil, parcours, projets, écrits
+- [Home (EN)](https://adamotte.github.io/en/) : English version
+- [Écrits (FR)](https://adamotte.github.io/ecrits/) : white papers et posts LinkedIn
+- [Writing (EN)](https://adamotte.github.io/en/writing/) : English version
+
+## Données
+
+- [Index des white papers (JSON)](https://adamotte.github.io/writing/index.json)
+- [Sélection de posts LinkedIn (JSON)](https://adamotte.github.io/data/posts.json)
+
+## Liens
+
+- [LinkedIn](https://www.linkedin.com/in/anthonydamotte/)
+- [GitHub](https://github.com/adamotte)
+- [X / Twitter](https://twitter.com/TonyDams)
+
+## Projets
+
+- Jarvis : assistant IA personnel self-hosted, local-first (privé)
+- [easy·care by Waterair pour Home Assistant](https://github.com/adamotte/ha-easycare-bywaterair)
+- [SUTOM](https://github.com/adamotte/SUTOM) : jeu de lettres quotidien français
+- [Google+ SDK for iOS](https://github.com/adamotte/googleplus-ios-sdk)

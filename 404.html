@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Coup impossible</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F6F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1217" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&family=Instrument+Sans:wght@400;600&family=Fragment+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    .lost {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 24px; gap: 8px;
+    }
+    .lost .piece { font-size: 4rem; line-height: 1; }
+    .lost h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 12px 0 4px; }
+    .lost p { color: var(--muted); max-width: 30em; margin: 0 0 6px; }
+    .lost .mono { color: var(--accent); }
+    .lost .btn { margin-top: 22px; }
+  </style>
+</head>
+<body>
+  <div class="lost">
+    <span class="piece" aria-hidden="true">♞</span>
+    <span class="mono">Erreur 404 · Illegal move</span>
+    <h1>Coup impossible.</h1>
+    <p>Cette page n'est pas sur l'échiquier — elle a été déplacée, supprimée, ou n'a jamais existé.</p>
+    <p lang="en">This square doesn't exist. Let's get you back into the game.</p>
+    <a class="btn" href="/">Retour à l'accueil</a>
+  </div>
+</body>
+</html>

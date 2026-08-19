@@ -3,565 +3,302 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anthony Damotte — IA Leader, Solutionner & Technophile</title>
-  <meta name="description" content="Anthony Damotte — IA Leader (CoE & Presales) chez Capgemini Engineering. Architecte, prompt & loop engineering, agentic factory, hackathons Mistral & Anthropic. IoT, smart home et DIY. Basé à Lyon." />
-  <meta property="og:title" content="Anthony Damotte — IA Leader, Solutionner & Technophile" />
-  <meta property="og:description" content="IA Leader @ Capgemini Engineering. Agentic factory, prompt & loop engineering, IoT, smart home. Basé à Lyon." />
+  <title>Anthony Damotte — Agentic Solutions Architect</title>
+  <meta name="description" content="Anthony Damotte — Agentic Solutions Architect (CoE & Presales) chez Capgemini Engineering, Lyon. White papers et idées sur l'IA agentique : agentic factory, loop engineering, hackathons Mistral & Anthropic, Jarvis (assistant IA self-hosted)." />
+  <link rel="canonical" href="https://adamotte.github.io/" />
+  <link rel="alternate" hreflang="fr" href="https://adamotte.github.io/" />
+  <link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://adamotte.github.io/" />
+  <meta property="og:title" content="Anthony Damotte — Agentic Solutions Architect" />
+  <meta property="og:description" content="White papers et idées sur l'IA agentique. Agentic factory, hackathons Mistral & Anthropic, Jarvis. Capgemini Engineering, Lyon." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://adamotte.github.io/" />
-  <meta property="og:image" content="https://adamotte.github.io/images/avatar.jpg" />
+  <meta property="og:image" content="https://adamotte.github.io/images/og-image.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <meta name="theme-color" content="#08080f" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F6F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1217" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script>document.documentElement.className += ' js';</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anthony Damotte",
+    "url": "https://adamotte.github.io/",
+    "image": "https://adamotte.github.io/images/avatar.jpg",
+    "jobTitle": "Agentic Solutions Architect",
+    "worksFor": { "@type": "Organization", "name": "Capgemini Engineering" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Lyon", "addressCountry": "FR" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Polytech Grenoble" },
+    "sameAs": [
+      "https://www.linkedin.com/in/anthonydamotte/",
+      "https://github.com/adamotte",
+      "https://twitter.com/TonyDams"
+    ]
+  }
+  </script>
 </head>
-<body>
-
-  <!-- Background -->
-  <div class="bg" aria-hidden="true">
-    <div class="bg-grid"></div>
-    <div class="orb orb--1"></div>
-    <div class="orb orb--2"></div>
-    <div class="orb orb--3"></div>
-    <div class="bg-noise"></div>
-  </div>
+<body data-base="">
 
   <!-- Nav -->
-  <nav class="nav" id="nav">
-    <a href="#hero" class="nav-logo" aria-label="Accueil">ad<span class="accent">.</span></a>
-    <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about" class="nav-link">À propos</a></li>
-      <li><a href="#career" class="nav-link">Parcours</a></li>
-      <li><a href="#skills" class="nav-link">Compétences</a></li>
-      <li><a href="#projects" class="nav-link">Projets</a></li>
-      <li><a href="#recs" class="nav-link">Recommandations</a></li>
-      <li><a href="#beyond" class="nav-link">Hors code</a></li>
-      <li><a href="https://www.linkedin.com/in/anthonydamotte/" target="_blank" rel="noopener" class="nav-link nav-cta">Contact</a></li>
-    </ul>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo" aria-label="Accueil">ad<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#ecrits">Écrits</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#recos">Recommandations</a></li>
+        <li><a class="cta" href="#contact">Me contacter</a></li>
+      </ul>
+      <div class="nav-ctrl">
+        <a class="ctrl-btn" href="en/" hreflang="en" lang="en" aria-label="Read in English">EN</a>
+        <button class="ctrl-btn" id="themeBtn" aria-label="Changer de thème">☾</button>
+        <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
   </nav>
 
   <!-- Hero -->
-  <header class="hero" id="hero">
-    <div class="hero-inner">
-      <div class="hero-left">
-        <p class="hero-eyebrow reveal">Hello World <span class="blink">_</span></p>
-        <h1 class="hero-title reveal" data-delay="1">
-          Anthony<br /><span class="grad-text">Damotte</span>
-        </h1>
-        <p class="hero-role reveal" data-delay="2">
-          <span class="cursor"></span><span id="typer">IA Leader — CoE & Presales</span>
-        </p>
-        <p class="hero-desc reveal" data-delay="3">
-          <strong>IA Leader</strong> chez <strong>Capgemini Engineering</strong> (CoE & Presales).
-          Je pilote l'<strong>agentic factory</strong>, je construis des solutions agentiques qui
-          vont du prompt au production, j'organise des hackathons avec Mistral et Anthropic pour
-          nos clients, et je bricole une maison connectée & un assistant IA personnel. Basé à Lyon.
-        </p>
-        <div class="hero-actions reveal" data-delay="4">
-          <a href="#projects" class="btn btn-primary">Découvrir mes projets</a>
-          <a href="https://www.linkedin.com/in/anthonydamotte/" target="_blank" rel="noopener" class="btn btn-ghost">Me contacter</a>
+  <header class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-id">
+          <img src="images/avatar.jpg" alt="Portrait d'Anthony Damotte" width="52" height="52" />
+          <p class="kicker mono"><b>Anthony Damotte</b> · Agentic Solutions Architect — CoE &amp; Presales<br />Capgemini Engineering · Lyon</p>
         </div>
-        <div class="hero-tags reveal" data-delay="5">
-          <span class="chip">#AgenticAI</span>
-          <span class="chip">#promptengineering</span>
-          <span class="chip">#loopengineering</span>
-          <span class="chip">#automation</span>
-          <span class="chip">#devops</span>
-          <span class="chip">#IoT</span>
-          <span class="chip">#smarthome</span>
-          <span class="chip">#diy</span>
-          <span class="chip">#chess</span>
-          <span class="chip">#MTB</span>
-        </div>
-      </div>
-
-      <div class="hero-right reveal" data-delay="2">
-        <div class="avatar-wrap">
-          <div class="avatar-ring" aria-hidden="true"></div>
-          <img class="avatar" src="images/avatar.jpg" alt="Portrait d'Anthony Damotte" width="400" height="400" />
-          <a class="avatar-status" href="https://www.linkedin.com/in/anthonydamotte/" target="_blank" rel="noopener" aria-label="Ouvrir mon profil LinkedIn"><span class="status-dot"></span>Open to connect</a>
+        <h1>Faire passer l'IA agentique <em>de l'idée à l'industrialisation.</em></h1>
+        <p class="lede">
+          Ingénieur, architecte, manager, solutionneur — j'ai traversé toute la chaîne de valeur du numérique.
+          Aujourd'hui je conçois des <strong>solutions agentiques</strong> pour les clients de Capgemini Engineering,
+          j'organise des hackathons avec <strong>Mistral&nbsp;AI et Anthropic</strong>,
+          et j'expérimente chaque jour avec <strong>Jarvis</strong>, mon assistant IA personnel self-hosted.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#ecrits">Lire mes écrits</a>
+          <a class="btn ghost" href="#projets">Voir les projets</a>
         </div>
         <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-num" data-count="15">0</span>
-            <span class="stat-label">ans d'expérience</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num" data-count="60">0</span>
-            <span class="stat-label">personnes managées</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num" data-count="58">0</span>
-            <span class="stat-label">repos GitHub</span>
-          </div>
+          <div class="stat"><b>15+</b><span>années d'expérience</span></div>
+          <div class="stat"><b>60</b><span>personnes managées</span></div>
+          <div class="stat"><b id="githubRepos">58</b><span>dépôts GitHub</span></div>
         </div>
       </div>
-    </div>
 
-    <a href="#about" class="scroll-hint" aria-label="Défiler vers le contenu">
-      <span class="mouse"><span class="wheel"></span></span>
-    </a>
+      <aside class="feature-card" data-feature>
+        <span class="mono">Bientôt — White paper</span>
+        <h3>Agentic Factory&nbsp;: industrialiser les agents IA en entreprise</h3>
+        <div class="feature-meta"><span>À paraître</span></div>
+        <p>Du hackathon de 48&nbsp;h au pipeline de production&nbsp;: la méthode pour transformer
+          un prototype agentique en solution industrialisée.</p>
+        <a class="read" href="#ecrits" hidden>Lire le white paper →</a>
+      </aside>
+    </div>
   </header>
 
   <main>
-    <!-- About -->
-    <section class="section" id="about">
-      <div class="container">
-        <p class="section-kicker reveal">01 · À propos</p>
-        <h2 class="section-title reveal">Un pont entre <span class="grad-text">technique</span> et <span class="grad-text">business</span></h2>
-
-        <div class="about-grid">
-        <div class="about-text reveal">
-          <p>
-            <strong>Développeur, lead tech, architecte, chef de projet, manager d'équipe, PO, BA,
-            solutionner, presales</strong> — j'ai traversé toute la chaîne de valeur du numérique,
-            et dans chaque métier j'ai été <strong>reconnu rapidement</strong>. Cette
-            multi-compétence est mon vrai super-pouvoir : je parle aussi bien le langage de la
-            technique que celui du business. Aujourd'hui chez <strong>Capgemini Engineering</strong>,
-            je suis <strong>IA Leader</strong> au sein du <strong>CoE (Center of Excellence)</strong>
-            et des équipes <strong>Presales</strong> : je fais le pont entre les dernières avancées
-            en IA générative et les besoins concrets de nos clients.
-          </p>
-          <p>
-            Mon fil conducteur depuis toujours : <strong>industrialiser et automatiser</strong>.
-            Les chaînes outillées ont été très tôt mon obsession technique — je faisais du
-            <strong>DevOps avant que le terme n'existe</strong>. Cette obsession, je l'applique aussi à l'IA :
-            je construis des <strong>harness</strong>, et avec <strong>Jarvis</strong> j'ai très vite voulu
-            un <strong>assistant personnel complet</strong> qui gère aussi ma <strong>deuxième mémoire</strong> —
-            une base de connaissances qui vit, se structure et me restitue le bon contexte au bon moment.
-          </p>
-          <p>
-            Et pour décider, j'avance comme aux <strong>échecs</strong> : je calcule le maximum de
-            possibilités et de combinaisons pour trouver le meilleur coup. Stratégie, anticipation,
-            positionnement — dans le code comme dans la vie.
-          </p>
+    <!-- Écrits -->
+    <section id="ecrits">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="mono">Écrits &amp; idées</span>
+            <h2>Ce que je pense, noir sur blanc</h2>
+          </div>
+          <a class="sec-link" href="ecrits/">Tous les écrits →</a>
         </div>
-        <div class="about-card reveal" data-delay="1">
-          <h3>En quelques chiffres</h3>
-          <ul class="about-list">
-            <li><span class="about-icon">🎓</span> Ingénieur — Polytech'Grenoble (RICM)</li>
-            <li><span class="about-icon">🏢</span> Capgemini Engineering depuis 2018</li>
-            <li><span class="about-icon">🤖</span> IA Leader — CoE, Presales & Agentic Factory</li>
-            <li><span class="about-icon">⚡</span> Hackathons Mistral & Anthropic</li>
-            <li><span class="about-icon">🏠</span> Jarvis — assistant IA personnel</li>
-          </ul>
+        <div class="writing-grid">
+          <div data-writing-list data-limit="3">
+            <noscript><p>La liste des white papers est disponible sur <a href="ecrits/">la page des écrits</a>.</p></noscript>
+          </div>
+          <div>
+            <span class="mono" style="color:var(--muted)">Dernières prises de parole</span>
+            <h3 class="rail-title">Sur LinkedIn</h3>
+            <p class="rail-note">Une sélection de mes posts — le fil complet est sur
+              <a href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">mon profil</a>.</p>
+            <div data-posts data-limit="3"></div>
+          </div>
         </div>
-      </div>
-
-      <blockquote class="quote reveal" data-delay="1">
-        <span class="quote-mark">“</span>
-        <p>
-          Ingénieur avant tout, j'ai toujours voulu <strong>industrialiser et automatiser</strong> mon travail —
-          je faisais du DevOps avant que le terme n'existe. Et comme aux échecs, je calcule le maximum de
-          combinaisons pour choisir <strong>le meilleur coup</strong>.
-        </p>
-      </blockquote>
       </div>
     </section>
 
-    <!-- Career -->
-    <section class="section" id="career">
-      <div class="container">
-        <p class="section-kicker reveal">02 · Parcours</p>
-        <h2 class="section-title reveal">Une trajectoire <span class="grad-text">en évolution</span></h2>
-
+    <!-- Parcours -->
+    <section id="parcours">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="mono">Parcours</span>
+            <h2>Une trajectoire, toute la chaîne de valeur</h2>
+          </div>
+        </div>
         <div class="timeline">
-          <div class="tl-item reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-date">2024 — aujourd'hui</div>
-            <div class="tl-card">
-              <h3>IA Leader — Presales & Portfolio Manager</h3>
-              <h4>Capgemini Engineering · Lyon</h4>
-              <p>
-                Agentic Presales Solutionner et <strong>IA Leader CoE & Presales</strong>. Pilotage de la
-                stratégie de mise en avant-vente, packaging de l'offre avec le Portfolio et le CoE.
-                Organisation et participation à des <strong>hackathons IA avec Mistral et Anthropic</strong> pour
-                nos clients, et déploiement de la <strong>agentic factory</strong> au sein des équipes.
-              </p>
-              <div class="tl-tags">
-                <span>IA Leader</span><span>Agentic Factory</span><span>Hackathons Mistral</span><span>Hackathons Anthropic</span><span>Presales</span>
-              </div>
-            </div>
+          <div class="job">
+            <span class="mono">2024 — aujourd'hui</span>
+            <h3>Agentic Solutions Architect — Presales</h3>
+            <div class="org">Capgemini Engineering · Lyon</div>
+            <p>Conception de solutions agentiques en avant-vente, packaging de l'offre avec le Portfolio
+              et le CoE. Hackathons IA avec Mistral et Anthropic pour nos clients, déploiement de
+              l'agentic factory au sein des équipes.</p>
           </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-date">2020 — 2023</div>
-            <div class="tl-card">
-              <h3>Engineering Team Manager</h3>
-              <h4>Capgemini Engineering · Lyon</h4>
-              <p>
-                Management d'une équipe de 60 collaborateurs : recrutement, développement des
-                compétences, suivi des collaborateurs. Participation au business development,
-                à la prospection et au bid management.
-              </p>
-              <div class="tl-tags">
-                <span>Management</span><span>Recrutement</span><span>Bid Management</span><span>LESS</span>
-              </div>
-            </div>
+          <div class="job">
+            <span class="mono">2020 — 2023</span>
+            <h3>Engineering Team Manager</h3>
+            <div class="org">Capgemini Engineering · Lyon</div>
+            <p>Management d'une équipe de 60 collaborateurs : recrutement, développement des compétences,
+              suivi des collaborateurs. Business development, prospection et bid management.</p>
           </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-date">2018 — 2021</div>
-            <div class="tl-card">
-              <h3>Engagement Manager</h3>
-              <h4>Capgemini · Lyon</h4>
-              <p>
-                Pilotage des engagements clients : relation client, gestion de projet,
-                accompagnement des équipes techniques et de la relation fournisseurs.
-              </p>
-              <div class="tl-tags">
-                <span>Delivery</span><span>Client relationship</span><span>Agile</span>
-              </div>
-            </div>
+          <div class="job">
+            <span class="mono">2018 — 2021</span>
+            <h3>Engagement Manager</h3>
+            <div class="org">Capgemini · Lyon</div>
+            <p>Pilotage des engagements clients : relation client, gestion de projet,
+              accompagnement des équipes techniques et de la relation fournisseurs.</p>
           </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-date">2014 — 2018</div>
-            <div class="tl-card">
-              <h3>Application Architect Web & Mobile</h3>
-              <h4>Orange Business Services · mission Schneider Electric</h4>
-              <p>
-                Conception de l'architecture technique de <strong>EcoStruxure™ Facility Expert</strong>
-                (full stack, hébergé sur AWS). Lead technique iOS & Cordova, développement de
-                nombreuses fonctionnalités et partenariats entre équipes.
-              </p>
-              <div class="tl-tags">
-                <span>AWS</span><span>iOS</span><span>Cordova</span><span>Full Stack</span>
-              </div>
-            </div>
+          <div class="job">
+            <span class="mono">2014 — 2018</span>
+            <h3>Application Architect Web &amp; Mobile</h3>
+            <div class="org">Orange Business Services · mission Schneider Electric</div>
+            <p>Architecture technique d'EcoStruxure™ Facility Expert (full stack, AWS).
+              Lead technique iOS &amp; Cordova, développement et partenariats entre équipes.</p>
           </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-date">2011 — 2014</div>
-            <div class="tl-card">
-              <h3>Ingénieur Multimédia — Responsable Technique Mobile</h3>
-              <h4>Orange Business Services · Montbonnot</h4>
-              <p>
-                Développement mobile iOS et cross-platform (Cordova/Ionic), vidéo 3D et
-                temps réel, accompagnement technique des projets web & mobile.
-              </p>
-              <div class="tl-tags">
-                <span>iOS</span><span>Ionic</span><span>Cordova</span><span>Multimédia</span>
-              </div>
-            </div>
+          <div class="job">
+            <span class="mono">2011 — 2014</span>
+            <h3>Ingénieur Multimédia — Responsable Technique Mobile</h3>
+            <div class="org">Orange Business Services · Montbonnot</div>
+            <p>Développement mobile iOS et cross-platform (Cordova/Ionic), vidéo 3D et temps réel,
+              accompagnement technique des projets web &amp; mobile.</p>
           </div>
-
-          <div class="tl-item reveal">
-            <div class="tl-dot tl-dot--end"></div>
-            <div class="tl-date">2007 — 2011</div>
-            <div class="tl-card">
-              <h3>Diplôme d'ingénieur</h3>
-              <h4>Polytech'Grenoble · RICM</h4>
-              <p>
-                Spécialité Réseaux Informatiques et Communication Multimédias (RICM).
-                Projets embarqués : système d'appel NFC pour Moodle en salle de classe.
-              </p>
-              <div class="tl-tags">
-                <span>Réseaux</span><span>Multimédia</span><span>Embarqué</span>
-              </div>
-            </div>
+          <div class="job">
+            <span class="mono">2007 — 2011</span>
+            <h3>Diplôme d'ingénieur — Polytech'Grenoble (RICM)</h3>
+            <div class="org">Réseaux Informatiques et Communication Multimédias</div>
+            <p>Projets embarqués : système d'appel NFC pour Moodle en salle de classe.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section class="section" id="skills">
-      <div class="container">
-        <p class="section-kicker reveal">03 · Compétences</p>
-        <h2 class="section-title reveal">Ce que je fais <span class="grad-text">le mieux</span></h2>
-
-        <div class="expertise-grid">
-          <div class="expertise-card reveal">
-            <span class="svg-icon expertise-icon" data-icon="ai"></span>
-            <h3>Agentic Factory — IA & agents</h3>
-            <p>
-              Prompt et loop engineering, construction de harness et de solutions agentiques :
-              je conçois l'<strong>agentic factory</strong> qui amène les idées IA de l'idée,
-              en passant par les hackathons, jusqu'à l'industrialisation.
-            </p>
+    <!-- Projets -->
+    <section id="projets">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="mono">Projets</span>
+            <h2>Ce que je fabrique</h2>
           </div>
-
-          <div class="expertise-card reveal" data-delay="1">
-            <span class="svg-icon expertise-icon" data-icon="layers"></span>
-            <h3>Architecture & solutions</h3>
-            <p>
-              Conception d'architectures web, mobile, cloud et systèmes distribués —
-              de la spécification jusqu'à la mise en production.
-            </p>
-          </div>
-
-          <div class="expertise-card reveal" data-delay="2">
-            <span class="svg-icon expertise-icon" data-icon="diy"></span>
-            <h3>Industrialisation & DevOps</h3>
-            <p>
-              Automatisation en continu : chaînes outillées, CI/CD, intégration et déploiement.
-              Une obsession avant même que ça s'appelle DevOps.
-            </p>
-          </div>
-
-          <div class="expertise-card reveal" data-delay="3">
-            <span class="svg-icon expertise-icon" data-icon="mobile"></span>
-            <h3>Mobile & IoT</h3>
-            <p>
-              iOS et applications hybrides, objets connectés et domotique —
-              de l'interface utilisateur jusqu'à l'embarqué.
-            </p>
-          </div>
+          <a class="sec-link" href="https://github.com/adamotte" rel="noopener">GitHub →</a>
         </div>
-
-        <div class="certs reveal" data-delay="2">
-          <div class="certs-head">
-            <span class="svg-icon certs-shield" data-icon="shield"></span>
-            <div>
-              <h3>Certifié Capgemini</h3>
-              <p>Des niveaux validés officiellement — la preuve, plutôt que les mots-clés.</p>
-            </div>
+        <div class="projects">
+          <div class="project wide">
+            <span class="mono">Fait maison · privé</span>
+            <h3>Jarvis — assistant IA personnel</h3>
+            <p>Orchestre ma vie numérique à la maison : automatisations, conversation, deuxième mémoire.
+              100&nbsp;% self-hosted et local-first, pensé pour ne jamais exposer mes données.
+              Mon laboratoire permanent pour expérimenter mes idées agentiques.</p>
+            <div class="tags"><span class="tag">Self-hosted</span><span class="tag">Local-first</span><span class="tag">Mémoire persistante</span><span class="tag">IA</span></div>
           </div>
-          <div class="certs-grid">
-            <div class="cert-card">
-              <span class="svg-icon cert-icon" data-icon="cloud"></span>
-              <div class="cert-info"><strong>Architecte Technique</strong><span>Niveau L1</span></div>
-            </div>
-            <div class="cert-card">
-              <span class="svg-icon cert-icon" data-icon="leadership"></span>
-              <div class="cert-info"><strong>Engagement Manager</strong><span>Niveau L1</span></div>
-            </div>
-            <div class="cert-card">
-              <span class="svg-icon cert-icon" data-icon="award"></span>
-              <div class="cert-info"><strong>Connected Manager</strong><span>Certifié</span></div>
-            </div>
-            <div class="cert-card">
-              <span class="svg-icon cert-icon" data-icon="factory"></span>
-              <div class="cert-info"><strong>Industry Expert</strong><span>Niveau L2</span></div>
-            </div>
-            <div class="cert-card">
-              <span class="svg-icon cert-icon" data-icon="star"></span>
-              <div class="cert-info"><strong>AI Foundation</strong><span>Certifié</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section" id="projects">
-      <div class="container">
-        <p class="section-kicker reveal">04 · Projets</p>
-        <h2 class="section-title reveal">Ce que je <span class="grad-text">fabrique</span></h2>
-
-        <div class="projects-grid">
-          <article class="project-card project-card--featured reveal">
-            <div class="project-top">
-              <span class="svg-icon project-logo" data-icon="ai"></span>
-              <span class="featured-tag">Fait maison · privé</span>
-            </div>
-            <h3>Jarvis — mon assistant IA personnel</h3>
-            <p class="project-desc">
-              Un assistant personnel qui orchestre ma vie numérique à la maison : automatisations,
-              conversation, et la gestion de ma <strong>deuxième mémoire</strong>.
-              100% <strong>self-hosted</strong> et <strong>local-first</strong>, pensé pour ne jamais
-              exposer mes données. Mon laboratoire permanent pour expérimenter mes idées agentiques.
-            </p>
-            <div class="project-tags"><span>Self-hosted</span><span>Local-first</span><span>Mémoire persistante</span><span>Automatisation</span><span>IA</span></div>
-            <span class="project-note">Les détails d'architecture restent volontairement privés.</span>
-          </article>
-
-          <article class="project-card reveal" data-delay="1">
-            <div class="project-top">
-              <span class="svg-icon project-logo" data-icon="ai"></span>
-              <div class="project-links">
-                <a href="https://mistral.ai/" target="_blank" rel="noopener" class="svg-icon" data-icon="external" aria-label="Mistral AI"></a>
-                <a href="https://www.anthropic.com/" target="_blank" rel="noopener" class="svg-icon" data-icon="external" aria-label="Anthropic"></a>
-              </div>
-            </div>
-            <h3>Hackathons IA — Mistral & Anthropic</h3>
-            <p class="project-desc">
-              J'organise et je participe à des hackathons IA avec <strong>Mistral AI</strong> et
-              <strong>Anthropic</strong> pour nos clients Capgemini : 48h pour transformer un besoin
-              business en prototype agentique, du design du prompt au pipeline complet.
-            </p>
-            <div class="project-tags"><span>Hackathon</span><span>Agents</span><span>Prompt design</span><span>Prototypage</span></div>
-            <a class="project-link" href="https://www.linkedin.com/in/anthonydamotte/" target="_blank" rel="noopener">En discuter sur LinkedIn →</a>
-          </article>
-
-          <article class="project-card reveal" data-delay="2">
-            <div class="project-top">
-              <span class="svg-icon project-logo" data-icon="pool"></span>
-              <div class="project-links">
-                <a href="https://github.com/adamotte/ha-easycare-bywaterair" target="_blank" rel="noopener" class="svg-icon" data-icon="github" aria-label="Code source intégration Home Assistant"></a>
-              </div>
-            </div>
-            <h3>easy·care by Waterair → Home Assistant</h3>
-            <p class="project-desc">
-              Intégration custom Home Assistant (HACS) pour piloter et suivre sa piscine easy·care
-              by Waterair : filtration, chauffage, traitements. De la piscine à la smart home.
-            </p>
-            <div class="project-tags"><span>Python</span><span>Home Assistant</span><span>HACS</span><span>IoT</span></div>
-            <a class="project-link" href="https://github.com/adamotte/ha-easycare-bywaterair" target="_blank" rel="noopener">Voir le code →</a>
-          </article>
-
-          <article class="project-card reveal" data-delay="3">
-            <div class="project-top">
-              <span class="svg-icon project-logo" data-icon="sutom"></span>
-              <div class="project-links">
-                <a href="https://github.com/adamotte/SUTOM" target="_blank" rel="noopener" class="svg-icon" data-icon="github" aria-label="Code source SUTOM"></a>
-              </div>
-            </div>
+          <a class="project" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">
+            <h3>Hackathons IA</h3>
+            <p>48&nbsp;h avec Mistral AI et Anthropic pour transformer un besoin business
+              en prototype agentique, du prompt au pipeline.</p>
+            <div class="tags"><span class="tag">Agents</span><span class="tag">Prototypage</span></div>
+          </a>
+          <a class="project" href="https://github.com/adamotte/ha-easycare-bywaterair" rel="noopener">
+            <h3>easy·care → Home Assistant</h3>
+            <p>Intégration custom (HACS) pour piloter sa piscine easy·care by Waterair :
+              filtration, chauffage, traitements.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">IoT</span></div>
+          </a>
+          <a class="project" href="https://github.com/adamotte/SUTOM" rel="noopener">
             <h3>SUTOM</h3>
-            <p class="project-desc">
-              Contribution au célèbre jeu de lettres quotidien français. Des millions de joueurs,
-              un seul mot par jour. Développé en TypeScript, basé sur le dictionnaire de Grammalecte.
-            </p>
-            <div class="project-tags"><span>TypeScript</span><span>Node.js</span><span>Jeux</span></div>
-            <a class="project-link" href="https://sutom.nocle.fr" target="_blank" rel="noopener">sutom.nocle.fr →</a>
-          </article>
-
-          <article class="project-card reveal" data-delay="4">
-            <div class="project-top">
-              <span class="svg-icon project-logo" data-icon="ios"></span>
-              <div class="project-links">
-                <a href="https://github.com/adamotte/googleplus-ios-sdk" target="_blank" rel="noopener" class="svg-icon" data-icon="github" aria-label="Code source Google Plus SDK"></a>
-              </div>
-            </div>
+            <p>Contribution au célèbre jeu de lettres quotidien français.
+              Des millions de joueurs, un mot par jour.</p>
+            <div class="tags"><span class="tag">TypeScript</span><span class="tag">Node.js</span></div>
+          </a>
+          <a class="project" href="https://github.com/adamotte/googleplus-ios-sdk" rel="noopener">
             <h3>Google+ SDK for iOS</h3>
-            <p class="project-desc">
-              Mon projet open source le plus suivi : un SDK iOS pour Google+ (Objective-C),
-              l'un des plus utilisés de son époque — preuve de mon goût pour l'open source dès 2013.
-            </p>
-            <div class="project-tags"><span>Objective-C</span><span>iOS</span><span>Open Source</span></div>
-            <a class="project-link" href="https://github.com/adamotte/googleplus-ios-sdk" target="_blank" rel="noopener">Voir le code →</a>
-          </article>
+            <p>Mon projet open source le plus suivi à son époque —
+              le goût de l'open source depuis 2013.</p>
+            <div class="tags"><span class="tag">Objective-C</span><span class="tag">Open Source</span></div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Recommendations -->
-    <section class="section" id="recs">
-      <div class="container">
-        <p class="section-kicker reveal">05 · Recommandations</p>
-        <h2 class="section-title reveal">Ce qu'ils <span class="grad-text">disent de moi</span></h2>
-        <p class="recs-sub reveal">
-          Recommandations de collègues qui ont travaillé avec moi — des reconnaissances
-          rapides dans chacun de mes domaines.
-        </p>
-
-        <div class="recs-grid">
-          <figure class="rec-card reveal">
-            <blockquote class="rec-text">
-              <span class="rec-mark">“</span>
-              <p>
-                J'ai eu le plaisir de collaborer avec Anthony pendant plus d'un an, dans le cadre
-                d'une mission de recrutement d'applications SaaS pour nos clients B2B. Tout au long
-                de cette période, j'ai été très impressionné par sa capacité de travail, son esprit
-                d'analyse, et ses recommandations qui nous ont permis de toujours faire les bons choix.
-                J'ai particulièrement apprécié son implication forte et son leadership dans les
-                différentes phases de notre projet, et sa contribution nous a permis de tenir nos engagements.
-              </p>
-              <p>
-                Anthony dispose aussi d'une très grande curiosité intellectuelle qui lui permet
-                d'aborder avec aisance de nouveaux sujets sans difficultés et d'un excellent relationnel
-                qui facilite le travail et la communication transverse. Et tout ça avec sa bonne humeur
-                et le sourire !
-              </p>
-              <p>Je ne saurais mieux faire que de recommander vivement Anthony qui sera un vrai atout pour n'importe quelle entreprise.</p>
-            </blockquote>
-            <figcaption class="rec-author">
-              <strong>Serge Schertzer</strong>
-              <span>B2B Innovator · ICT Specialist</span>
-            </figcaption>
-          </figure>
-
-          <figure class="rec-card reveal" data-delay="1">
-            <blockquote class="rec-text">
-              <span class="rec-mark">“</span>
-              <p>
-                Anthony, un équipier idéal !!
-              </p>
-              <p>
-                L'attitude d'Anthony et ses réalisations dans le domaine du Programme de Sourcing
-                d'éditeurs d'applications logicielles métier chez Orange répondent totalement à
-                l'attendu. Anthony fait autorité sur son large domaine d'expertise tant sur le plan
-                technique, ergonomique et fonctionnel avec ses pairs et éditeurs en Développement Web
-                et Développement applications mobiles. Anthony entretient d'un excellent relationnel,
-                possède d'un très bon esprit de synthèse, fait preuve de rigueur et d'efficacité et a
-                le souci du détail dans tout ce qu'il entreprend.
-              </p>
-              <p>Une perle rare !</p>
-            </blockquote>
-            <figcaption class="rec-author">
-              <strong>Roger Jacob</strong>
-              <span>Worksphere Integrated Digital Innovations Senior Manager · Orange Group</span>
-            </figcaption>
-          </figure>
+    <!-- Recommandations -->
+    <section id="recos">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="mono">Recommandations</span>
+            <h2>Ce qu'ils disent de moi</h2>
+          </div>
+        </div>
+        <div class="quotes">
+          <div>
+            <blockquote>Très impressionné par sa capacité de travail, son esprit d'analyse et ses
+              recommandations qui nous ont permis de toujours faire les bons choix. Une très grande
+              curiosité intellectuelle et un excellent relationnel.</blockquote>
+            <div class="quote-who"><b>Serge Schertzer</b>B2B Innovator · ICT Specialist</div>
+          </div>
+          <div>
+            <blockquote>Anthony, un équipier idéal. Il fait autorité sur son large domaine d'expertise,
+              tant sur le plan technique qu'ergonomique et fonctionnel. Une perle rare&nbsp;!</blockquote>
+            <div class="quote-who"><b>Roger Jacob</b>Senior Manager · Orange Group</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Beyond code -->
-    <section class="section" id="beyond">
-      <div class="container">
-        <p class="section-kicker reveal">06 · Hors code</p>
-        <h2 class="section-title reveal">Aussi une vie <span class="grad-text">dans le vrai monde</span></h2>
-
-        <div class="beyond-grid">
-          <div class="beyond-card reveal">
-            <span class="svg-icon beyond-icon" data-icon="mtb"></span>
-            <h3>VTT</h3>
-            <p>Sorties dans les monts du Lyonnais et les Alpes. Le terrain de jeu parfait pour se déconnecter.</p>
+    <!-- Hors code -->
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="mono">Hors code</span>
+            <h2>Aussi une vie dans le vrai monde</h2>
           </div>
-          <div class="beyond-card reveal" data-delay="1">
-            <span class="svg-icon beyond-icon" data-icon="maker"></span>
-            <h3>DIY & Maker</h3>
-            <p>Soudure, électronique, bricolage connecté. Créer des choses de mes mains, du prototype à l'objet fini.</p>
-          </div>
-          <div class="beyond-card reveal" data-delay="2">
-            <span class="svg-icon beyond-icon" data-icon="techwatch"></span>
-            <h3>Veille & expérimentation</h3>
-            <p>Agents IA, embedded, domotique : je teste, casse et reconstruis tous les jours. Jarvis est mon laboratoire.</p>
-          </div>
-          <div class="beyond-card reveal" data-delay="3">
-            <span class="svg-icon beyond-icon" data-icon="chess"></span>
-            <h3>Échecs & stratégie</h3>
-            <p>Comme en ingénierie, je calcule les combinaisons pour choisir le meilleur coup. Anticipation et positionnement, partout.</p>
-          </div>
+        </div>
+        <div class="life">
+          <span>🚵 VTT — monts du Lyonnais &amp; Alpes</span>
+          <span>🔧 DIY &amp; maker — soudure, électronique</span>
+          <span>🔭 Veille &amp; expérimentation — Jarvis, embedded</span>
+          <span>♟️ Échecs — calculer le meilleur coup</span>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="footer" id="contact">
-    <div class="container">
-      <p class="section-kicker reveal">07 · Contact</p>
-      <h2 class="section-title reveal">Envie d'<span class="grad-text">échanger</span> ?</h2>
-      <p class="footer-text reveal">
-        Que ce soit pour un projet, une collaboration, une question tech ou une sortie VTT :
-        ma porte (et ma boîte mail) est ouverte.
-      </p>
-      <div class="footer-social reveal">
-        <a href="https://www.linkedin.com/in/anthonydamotte/" target="_blank" rel="noopener" class="social-btn svg-icon" data-icon="linkedin" aria-label="LinkedIn"></a>
-        <a href="https://github.com/adamotte" target="_blank" rel="noopener" class="social-btn svg-icon" data-icon="github" aria-label="GitHub"></a>
-        <a href="https://twitter.com/TonyDams" target="_blank" rel="noopener" class="social-btn svg-icon" data-icon="twitter" aria-label="Twitter / X"></a>
+  <footer id="contact">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <span class="mono" style="color:var(--muted)">Contact</span>
+          <h2>Envie d'échanger&nbsp;?</h2>
+          <p class="foot-note">Projets IA, collaboration, question technique
+            ou sortie VTT — la porte est ouverte.</p>
+        </div>
+        <div class="foot-links">
+          <a href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/adamotte" rel="noopener">GitHub</a>
+          <a href="https://twitter.com/TonyDams" rel="noopener">X</a>
+        </div>
       </div>
-      <p class="footer-bottom reveal">
-        © <span id="year"></span> Anthony Damotte — Fait main à Lyon avec passion, café et esprit bricoleur.
-      </p>
+      <p class="colophon">© <span id="year">2026</span> Anthony Damotte · Fait main à Lyon, avec passion, café et esprit maker ·
+        <a href="llms.txt">llms.txt</a></p>
     </div>
   </footer>
 

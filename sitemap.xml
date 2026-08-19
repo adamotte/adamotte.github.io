@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://adamotte.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/ecrits/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/" />
+  </url>
+  <!-- Ajouter ici chaque white paper publié :
+  <url><loc>https://adamotte.github.io/ecrits/SLUG/</loc></url>
+  -->
+</urlset>

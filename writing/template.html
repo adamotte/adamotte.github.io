@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+  TEMPLATE DE WHITE PAPER — ne pas publier tel quel.
+  Pour publier un paper :
+  1. Copier ce fichier vers ecrits/<slug>/index.html (FR) et/ou en/writing/<slug>/index.html (EN)
+  2. Remplacer tous les {{PLACEHOLDERS}}
+  3. Déposer le PDF à côté : ecrits/<slug>/<slug>.pdf
+  4. Mettre à jour writing/index.json (status: "published", date, links)
+  5. Ajouter les URLs dans sitemap.xml et llms.txt
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{TITRE}} — Anthony Damotte</title>
+  <meta name="description" content="{{RESUME_COURT}}" />
+  <link rel="canonical" href="https://adamotte.github.io/ecrits/{{SLUG}}/" />
+  <link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/{{SLUG}}/" />
+  <link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/{{SLUG}}/" />
+  <meta property="og:title" content="{{TITRE}}" />
+  <meta property="og:description" content="{{RESUME_COURT}}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://adamotte.github.io/ecrits/{{SLUG}}/" />
+  <meta property="og:image" content="https://adamotte.github.io/images/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F6F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1217" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <style>
+    .paper-body { max-width: 720px; margin: 0 auto; padding: 24px 24px 96px; }
+    .paper-body header { padding: 64px 0 40px; border-bottom: 1px solid var(--line); margin-bottom: 48px; }
+    .paper-body h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
+    .paper-body h2 { margin-top: 56px; }
+    .paper-body p, .paper-body li { color: var(--quote); }
+    .paper-body .lede { font-size: 1.15rem; }
+    .paper-actions { display: flex; gap: 14px; margin-top: 28px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{TITRE}}",
+    "description": "{{RESUME_COURT}}",
+    "datePublished": "{{DATE_ISO}}",
+    "inLanguage": "fr",
+    "author": {
+      "@type": "Person",
+      "name": "Anthony Damotte",
+      "url": "https://adamotte.github.io/"
+    }
+  }
+  </script>
+</head>
+<body data-base="../../">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo" aria-label="Accueil">ad<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../">Tous les écrits</a></li>
+        <li><a class="cta" href="../../#contact">Me contacter</a></li>
+      </ul>
+      <div class="nav-ctrl">
+        <a class="ctrl-btn" href="../../en/writing/{{SLUG}}/" hreflang="en" lang="en" aria-label="Read in English">EN</a>
+        <button class="ctrl-btn" id="themeBtn" aria-label="Changer de thème">☾</button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="paper-body">
+    <header>
+      <span class="mono" style="color:var(--accent)">White paper · Nº {{NUMERO}}</span>
+      <h1>{{TITRE}}</h1>
+      <p class="mono" style="color:var(--muted)">{{DATE_LISIBLE}} · {{MINUTES}} min · Anthony Damotte</p>
+      <p class="lede">{{CHAPO — deux ou trois phrases qui donnent envie de lire.}}</p>
+      <div class="paper-actions">
+        <a class="btn" href="{{SLUG}}.pdf" download>Télécharger le PDF</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">En discuter sur LinkedIn</a>
+      </div>
+    </header>
+
+    <h2>{{Première partie}}</h2>
+    <p>{{Contenu…}}</p>
+
+    <h2>{{Deuxième partie}}</h2>
+    <p>{{Contenu…}}</p>
+
+    <h2>Conclusion</h2>
+    <p>{{Contenu…}}</p>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      <p class="colophon">© <span id="year">2026</span> Anthony Damotte ·
+        <a href="../">Tous les écrits</a> · <a href="../../">Accueil</a></p>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+[
+  {
+    "_comment": "Copier ce format dans posts.json (le plus récent en premier). 'text' = l'accroche du post, sans guillemets (ajoutés au rendu). 'date' au format ISO.",
+    "date": "2026-07-10",
+    "text": "48 heures, 6 équipes, 1 client industriel : retour sur notre hackathon agentique. Ce qui a marché, ce qui a cassé.",
+    "url": "https://www.linkedin.com/posts/anthonydamotte_..."
+  }
+]

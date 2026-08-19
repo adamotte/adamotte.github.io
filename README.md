@@ -1,20 +1,36 @@
 # adamotte.github.io
 
-Site personnel d'Anthony Damotte — IA Leader, Solutionner & Technophile.
+Site personnel d'Anthony Damotte — Agentic Solutions Architect.
 
-## Contenu
+Site statique bilingue (HTML/CSS/JS, sans build) hébergé sur GitHub Pages.
+Design éditorial : Newsreader / Instrument Sans / Fragment Mono, thème clair
+par défaut avec bascule sombre.
 
-Site statique (HTML/CSS/JS) hébergé sur GitHub Pages.
+## Structure
 
-- `index.html` — page principale (à la racine, servie directement par GitHub Pages)
-- `assets/` — styles et scripts
-- `images/` — photos et illustrations
-- `favicon.*`, `apple-touch-icon.png`, `android-chrome-192.png` — icônes
-- `site.webmanifest` — manifest PWA
+- `index.html` — accueil (FR) · `en/index.html` — accueil (EN)
+- `ecrits/index.html` — archive des écrits (FR) · `en/writing/index.html` — (EN)
+- `writing/index.json` — **source unique des white papers** (alimente la home et l'archive)
+- `writing/template.html` — template pour publier un nouveau white paper
+- `data/posts.json` — sélection curée de posts LinkedIn (voir `data/posts.sample.json`)
+- `assets/` — styles et scripts · `images/` — photos, image Open Graph
+- `404.html`, `robots.txt`, `sitemap.xml`, `llms.txt` — SEO et lisibilité machine
+
+## Publier un white paper
+
+1. Copier `writing/template.html` vers `ecrits/<slug>/index.html` (et `en/writing/<slug>/index.html` pour l'anglais), remplacer les `{{PLACEHOLDERS}}`.
+2. Déposer le PDF à côté de la page.
+3. Dans `writing/index.json` : passer `status` à `"published"`, renseigner `date` et `links`.
+4. Ajouter l'URL dans `sitemap.xml` et `llms.txt`.
+
+## Ajouter un post LinkedIn
+
+Ajouter une entrée en tête de `data/posts.json` (format dans `data/posts.sample.json`).
+La home affiche les 3 plus récents, l'archive les affiche tous.
 
 ## Déploiement
 
-Pousser les modifications sur `main` : GitHub Pages sert automatiquement le contenu.
+Pousser sur la branche par défaut : GitHub Pages sert automatiquement le contenu.
 
 ## Licence
 

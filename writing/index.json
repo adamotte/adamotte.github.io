@@ -1,0 +1,50 @@
+{
+  "_readme": "Source unique des white papers. Trié du plus récent au plus ancien. status: 'draft' (affiché 'à paraître', sans lien) ou 'published' (date + links requis). Les titres ci-dessous sont des propositions : à éditer librement.",
+  "papers": [
+    {
+      "slug": "agentic-factory",
+      "status": "draft",
+      "date": null,
+      "minutes": 12,
+      "fr": {
+        "title": "Agentic Factory : industrialiser les agents IA en entreprise",
+        "summary": "Pourquoi tant de prototypes agentiques ne passent jamais en production — et le cadre pour franchir le mur de l'industrialisation, du hackathon au pipeline."
+      },
+      "en": {
+        "title": "Agentic Factory: industrializing AI agents in the enterprise",
+        "summary": "Why so many agentic prototypes never reach production — and the framework to get past the industrialization wall, from hackathon to pipeline."
+      },
+      "links": null
+    },
+    {
+      "slug": "loop-engineering",
+      "status": "draft",
+      "date": null,
+      "minutes": 10,
+      "fr": {
+        "title": "Loop engineering : au-delà du prompt",
+        "summary": "Le prompt est la partie émergée. La vraie ingénierie se joue dans la boucle : harness, contexte, mémoire, évaluation. Retour d'expérience terrain."
+      },
+      "en": {
+        "title": "Loop engineering: beyond the prompt",
+        "summary": "The prompt is the visible tip. The real engineering happens in the loop: harness, context, memory, evaluation. Lessons from the field."
+      },
+      "links": null
+    },
+    {
+      "slug": "seconde-memoire-local-first",
+      "status": "draft",
+      "date": null,
+      "minutes": 9,
+      "fr": {
+        "title": "Une deuxième mémoire local-first : ce que Jarvis m'a appris",
+        "summary": "Construire un assistant personnel 100 % self-hosted qui gère ma base de connaissances. Les choix d'architecture qui ont survécu."
+      },
+      "en": {
+        "title": "A local-first second memory: what Jarvis taught me",
+        "summary": "Building a 100% self-hosted personal assistant that manages my knowledge base. The architecture choices that survived."
+      },
+      "links": null
+    }
+  ]
+}

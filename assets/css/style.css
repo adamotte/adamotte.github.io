@@ -131,7 +131,7 @@ a { color: inherit; }
 }
 
 /* ---------- Hero ---------- */
-.hero { padding: 76px 0 64px; }
+.hero { padding-top: 76px; padding-bottom: 64px; }
 .hero-grid {
   display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
   gap: 56px; align-items: start;

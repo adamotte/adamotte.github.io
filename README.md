@@ -19,9 +19,11 @@ par défaut avec bascule sombre.
 ## Publier un white paper
 
 1. Copier `writing/template.html` vers `ecrits/<slug>/index.html` (et `en/writing/<slug>/index.html` pour l'anglais), remplacer les `{{PLACEHOLDERS}}`.
-2. Déposer le PDF à côté de la page.
-3. Dans `writing/index.json` : passer `status` à `"published"`, renseigner `date` et `links`.
-4. Ajouter l'URL dans `sitemap.xml` et `llms.txt`.
+2. Dans `writing/index.json` : passer `status` à `"published"`, renseigner `date` et `links`.
+3. Ajouter l'URL dans `sitemap.xml` et `llms.txt`.
+
+Convention des versions : `index.html` = version prose éditoriale (indexée) ;
+`technique.html` = version structurée (encadrés, chiffres, tableaux), en `noindex`.
 
 ## Ajouter un post LinkedIn
 

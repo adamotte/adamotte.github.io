@@ -4,9 +4,8 @@
   Pour publier un paper :
   1. Copier ce fichier vers ecrits/<slug>/index.html (FR) et/ou en/writing/<slug>/index.html (EN)
   2. Remplacer tous les {{PLACEHOLDERS}}
-  3. Déposer le PDF à côté : ecrits/<slug>/<slug>.pdf
-  4. Mettre à jour writing/index.json (status: "published", date, links)
-  5. Ajouter les URLs dans sitemap.xml et llms.txt
+  3. Mettre à jour writing/index.json (status: "published", date, links)
+  4. Ajouter les URLs dans sitemap.xml et llms.txt
 -->
 <html lang="fr">
 <head>
@@ -77,7 +76,6 @@
       <p class="mono" style="color:var(--muted)">{{DATE_LISIBLE}} · {{MINUTES}} min · Anthony Damotte</p>
       <p class="lede">{{CHAPO — deux ou trois phrases qui donnent envie de lire.}}</p>
       <div class="paper-actions">
-        <a class="btn" href="{{SLUG}}.pdf" download>Télécharger le PDF</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">En discuter sur LinkedIn</a>
       </div>
     </header>

@@ -317,6 +317,31 @@ footer h2 { margin-bottom: 14px; }
 .colophon { color: var(--muted); font-size: 0.8rem; margin-top: 40px; }
 .colophon a { color: inherit; }
 
+/* ---------- Page white paper ---------- */
+.paper-body { max-width: 720px; margin: 0 auto; padding: 24px 24px 96px; }
+.paper-body > header { padding: 64px 0 40px; border-bottom: 1px solid var(--line); margin-bottom: 48px; }
+/* Le kicker « White paper · Nº 0X » est un span en ligne : sans display block,
+   les ascendantes du h1 (interlignage 1.06) viennent le chevaucher. */
+.paper-body header span.mono { display: block; margin-bottom: 16px; }
+.paper-body h1 { font-size: clamp(2rem, 4.5vw, 3rem); margin-top: 0; }
+.paper-body h2 { margin-top: 56px; margin-bottom: 18px; }
+.paper-body p, .paper-body li { color: var(--quote); }
+.paper-body p { margin: 0 0 1.2em; }
+.paper-body .lede { font-size: 1.15rem; color: var(--muted); margin-top: 22px; }
+.paper-actions { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+.paper-body sup a {
+  color: var(--accent); text-decoration: none; font-weight: 600;
+  font-size: 0.72em; padding: 0 1px;
+}
+.paper-body sup a:hover { text-decoration: underline; }
+.refs { margin-top: 72px; border-top: 1px solid var(--line); padding-top: 32px; }
+.refs h2 { margin-top: 0; font-size: 1.4rem; }
+.refs ol { padding-left: 22px; margin: 18px 0 0; }
+.refs li { font-size: 0.88rem; color: var(--muted); margin-bottom: 12px; line-height: 1.55; }
+.refs li a { color: var(--accent); text-decoration: none; }
+.refs li a:hover { text-decoration: underline; }
+.refs li b { color: var(--ink); font-weight: 600; }
+
 /* ---------- Page d'archive des écrits ---------- */
 .archive-head { padding: 76px 0 20px; }
 .archive-head p { color: var(--muted); max-width: 36em; }

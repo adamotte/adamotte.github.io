@@ -15,7 +15,7 @@
     fr: {
       upcoming: 'À paraître',
       draft: 'En rédaction',
-      published: 'PDF + HTML',
+      published: 'Publié',
       read: 'Lire le white paper →',
       featured: 'À la une — White paper',
       featuredSoon: 'Bientôt — White paper',
@@ -27,7 +27,7 @@
     en: {
       upcoming: 'Upcoming',
       draft: 'In progress',
-      published: 'PDF + HTML',
+      published: 'Published',
       read: 'Read the white paper →',
       featured: 'Featured — White paper',
       featuredSoon: 'Coming soon — White paper',

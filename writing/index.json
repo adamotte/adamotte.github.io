@@ -2,6 +2,96 @@
   "_readme": "Source unique des white papers. Trié du plus récent au plus ancien. status: 'draft' (affiché 'à paraître', sans lien) ou 'published' (date + links requis). Les titres ci-dessous sont des propositions : à éditer librement.",
   "papers": [
     {
+      "slug": "derniere-generation-experts",
+      "status": "draft",
+      "date": null,
+      "minutes": 12,
+      "fr": {
+        "title": "La dernière génération d'experts",
+        "summary": "Les experts d'aujourd'hui sont les juniors d'hier, formés par des années de pratique que l'IA est en train d'automatiser. Qui saura encore vérifier — et signer — le travail des agents en 2035 ?"
+      },
+      "en": {
+        "title": "The last generation of experts",
+        "summary": "Today's experts are yesterday's juniors, forged by years of practice that AI is now automating. Who will still be able to verify — and sign off on — the agents' work in 2035?"
+      },
+      "links": null
+    },
+    {
+      "slug": "paradoxe-du-token",
+      "status": "draft",
+      "date": null,
+      "minutes": 11,
+      "fr": {
+        "title": "Le paradoxe du token",
+        "summary": "Le prix du token s'effondre et pourtant les factures explosent : bienvenue dans l'économie de Jevons de l'IA agentique, où le budget devient un paramètre d'architecture."
+      },
+      "en": {
+        "title": "The token paradox",
+        "summary": "Token prices are collapsing, yet AI bills keep growing: welcome to the Jevons economics of agentic AI, where budget becomes an architecture parameter."
+      },
+      "links": null
+    },
+    {
+      "slug": "le-modele-passe-le-harness-reste",
+      "status": "draft",
+      "date": null,
+      "minutes": 11,
+      "fr": {
+        "title": "Le modèle passe, le harness reste",
+        "summary": "Les modèles se déprécient en dix-huit mois ; vos evals, vos harness et votre mémoire d'entreprise prennent de la valeur. Où investir quand tout bouge — le manifeste de l'agentic factory."
+      },
+      "en": {
+        "title": "Models come and go, the harness remains",
+        "summary": "Models depreciate in eighteen months; your evals, harnesses and enterprise memory appreciate. Where to invest when everything moves — the agentic factory manifesto."
+      },
+      "links": null
+    },
+    {
+      "slug": "des-poids-chez-soi",
+      "status": "draft",
+      "date": null,
+      "minutes": 11,
+      "fr": {
+        "title": "Des poids chez soi",
+        "summary": "La vraie question n'est pas open source contre propriétaire, mais : quand a-t-on le devoir de garder les poids chez soi ? Un cadre de décision pour les industriels européens."
+      },
+      "en": {
+        "title": "Weights of your own",
+        "summary": "The real question isn't open source versus proprietary, but: when is keeping the weights in-house a duty? A decision framework for European industrial companies."
+      },
+      "links": null
+    },
+    {
+      "slug": "a-budget-egal",
+      "status": "draft",
+      "date": null,
+      "minutes": 9,
+      "fr": {
+        "title": "À budget égal",
+        "summary": "Pourquoi utiliser l'IA agentique pour réduire ses budgets logiciels est une erreur stratégique — et ce que font ceux qui réinvestissent le gain : plus de valeur, plus vite, mieux, au même coût."
+      },
+      "en": {
+        "title": "On an equal budget",
+        "summary": "Why using agentic AI to cut software budgets is a strategic mistake — and what winners do instead: reinvest the dividend in speed, quality and expert time, at the same cost."
+      },
+      "links": null
+    },
+    {
+      "slug": "le-fiable-et-le-plausible",
+      "status": "draft",
+      "date": null,
+      "minutes": 11,
+      "fr": {
+        "title": "Le fiable et le plausible",
+        "summary": "Un consultant, un mois, une codebase industrielle critique sans documentation ni tests : retour d'expérience d'une capitalisation menée avec l'IA agentique, et la méthode de vérification qui fait la valeur."
+      },
+      "en": {
+        "title": "The reliable and the plausible",
+        "summary": "One consultant, one month, a critical industrial codebase with no docs and no tests: a field report on agentic knowledge capture, and the verification method that makes it trustworthy."
+      },
+      "links": null
+    },
+    {
       "slug": "agentic-factory",
       "status": "draft",
       "date": null,

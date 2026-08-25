@@ -1,8 +1,70 @@
 {
-  "_readme": "Source unique des white papers. Trié du plus récent au plus ancien. status: 'draft' (affiché 'à paraître', sans lien) ou 'published' (date + links requis). Les titres ci-dessous sont des propositions : à éditer librement.",
+  "_readme": "Source unique des white papers. Trié du plus récent au plus ancien. status: 'draft' (affiché 'à paraître', sans lien) ou 'published' (date + links requis). serie: 'hs' = hors série (numérotation indépendante 'HS Nº N', affiché dans sa propre section sur /ecrits/) ; absent = série principale. Les titres ci-dessous sont des propositions : à éditer librement.",
   "papers": [
     {
+      "slug": "la-revue-est-le-nouveau-clavier",
+      "status": "draft",
+      "date": null,
+      "minutes": 12,
+      "fr": {
+        "title": "La revue est le nouveau clavier",
+        "summary": "Les agents ont fait sauter le goulot de la production logicielle ; il s'est reformé sur la vérification. +441 % de temps de revue : ce n'est pas un problème d'outillage, c'est un problème d'organigramme — le span of control appliqué aux agents."
+      },
+      "en": {
+        "title": "Review is the new keyboard",
+        "summary": "Agents removed the software production bottleneck; it re-formed at verification. Review time up 441%: not a tooling problem but an org-chart problem — span of control, applied to agents."
+      },
+      "links": null
+    },
+    {
+      "slug": "employe-sans-badge",
+      "serie": "hs",
+      "status": "draft",
+      "date": null,
+      "minutes": 11,
+      "fr": {
+        "title": "L'employé sans badge",
+        "summary": "Les identités machines dépassent les humaines de 45 contre 1, et 92 % des IAM ne savent pas gérer un agent. Le problème n'est pas la sécurité, c'est l'imputabilité — et l'entreprise l'a déjà résolu une fois, pour les humains."
+      },
+      "en": {
+        "title": "The employee without a badge",
+        "summary": "Machine identities outnumber humans 45 to 1, and 92% of IAM tools can't manage an agent. The problem isn't security, it's accountability — and the enterprise already solved it once, for humans."
+      },
+      "links": null
+    },
+    {
+      "slug": "eloge-du-workflow",
+      "status": "draft",
+      "date": null,
+      "minutes": 11,
+      "fr": {
+        "title": "Éloge du workflow honteux",
+        "summary": "On dénonce les workflows déguisés en agents. Contre-pied : dans les déploiements qui marchent, l'« agent » est très souvent un workflow contraint — et dé-agentifier est un signe de maturité, pas une régression."
+      },
+      "en": {
+        "title": "In praise of the shameful workflow",
+        "summary": "Everyone denounces workflows dressed up as agents. Counterpoint: in deployments that work, the \"agent\" is usually a constrained workflow — and de-agentifying is a sign of maturity, not a regression."
+      },
+      "links": null
+    },
+    {
+      "slug": "entreprise-salle-entrainement",
+      "status": "draft",
+      "date": null,
+      "minutes": 12,
+      "fr": {
+        "title": "Votre entreprise est une salle d'entraînement",
+        "summary": "Les labs paient des fortunes pour des copies simulées de vos outils. La donnée était le pétrole ; le processus instrumenté, avec ses critères de réussite vérifiables, devient l'actif le plus convoité de l'entreprise."
+      },
+      "en": {
+        "title": "Your company is a training gym",
+        "summary": "AI labs pay fortunes for simulated copies of your tools. Data was the oil; the instrumented process, with its verifiable success criteria, is becoming the most coveted asset in the enterprise."
+      },
+      "links": null
+    },
+    {
       "slug": "derniere-generation-experts",
+      "serie": "hs",
       "status": "draft",
       "date": null,
       "minutes": 12,
@@ -18,6 +80,7 @@
     },
     {
       "slug": "paradoxe-du-token",
+      "serie": "hs",
       "status": "draft",
       "date": null,
       "minutes": 11,
@@ -33,6 +96,7 @@
     },
     {
       "slug": "le-modele-passe-le-harness-reste",
+      "serie": "hs",
       "status": "draft",
       "date": null,
       "minutes": 11,
@@ -48,6 +112,7 @@
     },
     {
       "slug": "des-poids-chez-soi",
+      "serie": "hs",
       "status": "draft",
       "date": null,
       "minutes": 11,
@@ -108,6 +173,7 @@
     },
     {
       "slug": "loop-engineering",
+      "serie": "hs",
       "status": "draft",
       "date": null,
       "minutes": 10,
@@ -123,6 +189,7 @@
     },
     {
       "slug": "seconde-memoire-local-first",
+      "serie": "hs",
       "status": "draft",
       "date": null,
       "minutes": 9,

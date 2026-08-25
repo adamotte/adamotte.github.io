@@ -136,16 +136,29 @@
         if (!data || !data.papers || !data.papers.length) return;
         var papers = data.papers.slice(); // le JSON est trié du plus récent au plus ancien
 
-        if (writingList) {
-          var limit = parseInt(writingList.getAttribute('data-limit') || '0', 10) || papers.length;
-          papers.slice(0, limit).forEach(function (p, idx) {
+        // Numérotation par catégorie : le plus ancien de chaque série porte le Nº 1.
+        // serie: 'hs' = hors série ('HS Nº N') ; absent = série principale ('Nº N').
+        var counts = { main: 0, hs: 0 };
+        for (var i = papers.length - 1; i >= 0; i--) {
+          var serie = papers[i].serie === 'hs' ? 'hs' : 'main';
+          counts[serie] += 1;
+          papers[i]._num = (serie === 'hs' ? 'HS Nº ' : 'Nº ') + counts[serie];
+        }
+
+        document.querySelectorAll('[data-writing-list]').forEach(function (list) {
+          var filter = list.getAttribute('data-serie'); // 'main' | 'hs' | null (tout)
+          var items = filter
+            ? papers.filter(function (p) { return (p.serie === 'hs' ? 'hs' : 'main') === filter; })
+            : papers;
+          var limit = parseInt(list.getAttribute('data-limit') || '0', 10) || items.length;
+          items.slice(0, limit).forEach(function (p) {
             var t = p[LANG] || p.fr;
             var published = p.status === 'published';
             var href = published && p.links ? p.links[LANG] || p.links.fr : null;
             var row = el(href ? 'a' : 'div', 'paper');
             if (href) row.href = BASE + href;
 
-            row.appendChild(el('span', 'num', 'Nº ' + (papers.length - idx)));
+            row.appendChild(el('span', 'num', p._num));
             var body = el('div');
             body.appendChild(el('h3', null, t.title));
             body.appendChild(el('p', null, t.summary));
@@ -157,9 +170,9 @@
             meta.appendChild(el('span', published ? 'chip' : 'chip soon', published ? L.published : L.draft));
             body.appendChild(meta);
             row.appendChild(body);
-            writingList.appendChild(row);
+            list.appendChild(row);
           });
-        }
+        });
 
         if (featureCard) {
           var p = papers[0];

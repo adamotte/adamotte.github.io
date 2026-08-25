@@ -225,6 +225,9 @@ h2 {
   font-family: "Newsreader", Georgia, serif; font-style: italic;
   font-size: 1.6rem; color: var(--muted);
 }
+/* Hors série : le numéro « HS Nº N » est plus long que « Nº N » (colonne de 64px) */
+[data-serie="hs"] .paper { grid-template-columns: 100px 1fr; }
+[data-serie="hs"] .paper .num { white-space: nowrap; }
 .paper h3 {
   font-family: "Newsreader", Georgia, serif; font-size: 1.35rem;
   font-weight: 600; margin: 0 0 8px; line-height: 1.3;

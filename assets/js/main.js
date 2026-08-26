@@ -130,11 +130,29 @@
   var writingList = document.querySelector('[data-writing-list]');
   var featureCard = document.querySelector('[data-feature]');
   if ((writingList || featureCard) && window.fetch) {
-    fetch(BASE + 'writing/index.json')
+    fetch(BASE + 'writing/index.json', { cache: 'no-cache' })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         if (!data || !data.papers || !data.papers.length) return;
-        var papers = data.papers.slice(); // le JSON est trié du plus récent au plus ancien
+        // hidden: true retire l'entrée de tout le rendu (listes, numérotation, une) ;
+        // le JSON est trié du plus récent au plus ancien
+        var papers = data.papers.filter(function (p) { return !p.hidden; });
+        // Les entrées datées sont reclassées par date décroissante entre elles, au sein
+        // de leur catégorie (principale / hors série) pour ne pas perturber la
+        // numérotation de l'autre série ; les entrées sans date gardent leur position.
+        var datedByCat = {};
+        papers.forEach(function (p, i) {
+          if (!p.date) return;
+          var cat = p.serie === 'hs' ? 'hs' : 'main';
+          (datedByCat[cat] = datedByCat[cat] || []).push(i);
+        });
+        Object.keys(datedByCat).forEach(function (cat) {
+          var idx = datedByCat[cat];
+          var sorted = idx.map(function (i) { return papers[i]; }).sort(function (a, b) {
+            return a.date < b.date ? 1 : a.date > b.date ? -1 : 0;
+          });
+          idx.forEach(function (i, k) { papers[i] = sorted[k]; });
+        });
 
         // Numérotation par catégorie : le plus ancien de chaque série porte le Nº 1.
         // serie: 'hs' = hors série ('HS Nº N') ; absent = série principale ('Nº N').
@@ -154,9 +172,17 @@
           items.slice(0, limit).forEach(function (p) {
             var t = p[LANG] || p.fr;
             var published = p.status === 'published';
-            var href = published && p.links ? p.links[LANG] || p.links.fr : null;
+            // Statut custom : libellé déclaré dans data.statuses, sinon 'En rédaction'
+            var statusDef = !published && data.statuses && data.statuses[p.status];
+            var chipLabel = published ? L.published : (statusDef ? (statusDef[LANG] || statusDef.fr) : L.draft);
+            // links : objet {fr, en} ou chaîne unique ; affiché dès que renseigné, quel que soit le statut
+            var href = p.links ? (typeof p.links === 'string' ? p.links : p.links[LANG] || p.links.fr) : null;
             var row = el(href ? 'a' : 'div', 'paper');
-            if (href) row.href = BASE + href;
+            if (href) {
+              var external = /^https?:\/\//.test(href);
+              row.href = external ? href : BASE + href;
+              if (external) row.rel = 'noopener';
+            }
 
             row.appendChild(el('span', 'num', p._num));
             var body = el('div');
@@ -164,10 +190,17 @@
             body.appendChild(el('p', null, t.summary));
             var meta = el('div', 'paper-meta');
             meta.appendChild(el('span', null,
-              published && p.date
+              p.date
                 ? monthYear(p.date) + (p.minutes ? ' · ' + p.minutes + ' ' + L.minutes : '')
                 : L.upcoming));
-            meta.appendChild(el('span', published ? 'chip' : 'chip soon', published ? L.published : L.draft));
+            meta.appendChild(el('span', published ? 'chip' : 'chip soon', chipLabel));
+            if (p.tags && p.tags.length) {
+              var tagsWrap = el('span', 'tags');
+              p.tags.forEach(function (tag) {
+                tagsWrap.appendChild(el('span', 'tag mono', '#' + tag));
+              });
+              meta.appendChild(tagsWrap);
+            }
             body.appendChild(meta);
             row.appendChild(body);
             list.appendChild(row);
@@ -175,7 +208,8 @@
         });
 
         if (featureCard) {
-          var p = papers[0];
+          // featured: true désigne le paper à la une ; à défaut, le plus récent (premier du JSON)
+          var p = papers.find(function (x) { return x.featured; }) || papers[0];
           var t = p[LANG] || p.fr;
           var published = p.status === 'published';
           featureCard.querySelector('.mono').textContent = published ? L.featured : L.featuredSoon;
@@ -183,28 +217,43 @@
           featureCard.querySelector('p').textContent = t.summary;
           var metaEl = featureCard.querySelector('.feature-meta span');
           if (metaEl) {
-            metaEl.textContent = published && p.date
+            metaEl.textContent = p.date
               ? monthYear(p.date) + (p.minutes ? ' · ' + p.minutes + ' ' + L.minutes : '')
               : L.upcoming;
           }
           var readEl = featureCard.querySelector('.read');
+          var featHref = p.links ? (typeof p.links === 'string' ? p.links : p.links[LANG] || p.links.fr) : null;
+          var featExternal = featHref && /^https?:\/\//.test(featHref);
+          var featUrl = featHref ? (featExternal ? featHref : BASE + featHref) : null;
           if (readEl) {
-            if (published && p.links) {
+            if (featUrl) {
               readEl.textContent = L.read;
-              readEl.href = BASE + (p.links[LANG] || p.links.fr);
+              readEl.href = featUrl;
+              if (featExternal) readEl.rel = 'noopener';
             } else {
               readEl.remove();
             }
           }
+          if (featUrl) {
+            // Toute la carte est cliquable, pas seulement le lien « Lire »
+            featureCard.style.cursor = 'pointer';
+            featureCard.addEventListener('click', function (e) {
+              if (e.target.closest('a')) return; // laisser les vrais liens se comporter normalement
+              window.location.href = featUrl;
+            });
+          }
         }
       })
-      .catch(function () { /* section laissée telle quelle */ });
+      .catch(function (err) {
+        /* section laissée telle quelle, mais l'erreur (JSON invalide, réseau…) reste visible */
+        if (window.console) console.error('writing/index.json — chargement ou parsing en échec :', err);
+      });
   }
 
   /* ---------- Posts LinkedIn (sélection curée) ---------- */
   var postsHost = document.querySelector('[data-posts]');
   if (postsHost && window.fetch) {
-    fetch(BASE + 'data/posts.json')
+    fetch(BASE + 'data/posts.json', { cache: 'no-cache' })
       .then(function (r) { return r.ok ? r.json() : []; })
       .then(function (posts) {
         if (!Array.isArray(posts) || !posts.length) {

@@ -240,6 +240,8 @@ a.paper:hover h3 { color: var(--accent); }
   background: var(--accent-soft); color: var(--accent);
 }
 .chip.soon { background: transparent; border: 1px dashed var(--line); color: var(--muted); }
+.paper-meta .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.paper-meta .tag { font-size: 0.7rem; color: var(--accent); text-transform: none; letter-spacing: 0; }
 
 .rail-title {
   font-family: "Newsreader", Georgia, serif;

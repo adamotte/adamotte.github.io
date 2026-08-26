@@ -1,11 +1,17 @@
 {
-  "_readme": "Source unique des white papers. Trié du plus récent au plus ancien. status: 'draft' (affiché 'à paraître', sans lien) ou 'published' (date + links requis). serie: 'hs' = hors série (numérotation indépendante 'HS Nº N', affiché dans sa propre section sur /ecrits/) ; absent = série principale. Les titres ci-dessous sont des propositions : à éditer librement.",
+  "_readme": "Source unique des white papers. Trié du plus récent au plus ancien ; les entrées datées sont automatiquement reclassées par date décroissante entre elles au sein de leur catégorie (principale / hors série), celles sans date gardent leur position. status: 'draft' (affiché 'à paraître'), 'published', ou tout statut custom déclaré dans 'statuses' ci-dessous (affiché comme chip). date (YYYY-MM-DD) et links sont affichés dès qu'ils sont renseignés, quel que soit le statut ; links = objet {\"fr\": ..., \"en\": ...} ou chaîne unique, URL interne (ecrits/<slug>/) ou externe (https://...). serie: 'hs' = hors série (numérotation indépendante 'HS Nº N', affiché dans sa propre section sur /ecrits/) ; absent = série principale. featured: true = paper affiché dans la carte 'À la une' de l'accueil (le premier trouvé) ; à défaut, le plus récent (premier du tableau). hidden: true = paper retiré de tout l'affichage (listes, numérotation, une) — il reste toutefois lisible dans ce fichier public. tags: liste de tags PascalCase affichés '#Tag' sous chaque paper. Les titres et tags ci-dessous sont des propositions : à éditer librement.",
+  "statuses": {
+    "limited": { "fr": "Diffusion restreinte", "en": "Limited distribution" },
+    "soon": { "fr": "Bientôt", "en": "Soon" }
+  },
   "papers": [
     {
       "slug": "la-revue-est-le-nouveau-clavier",
       "status": "draft",
+      "hidden": true,
       "date": null,
       "minutes": 12,
+      "tags": ["AgenticAI", "CodeReview", "SpanOfControl"],
       "fr": {
         "title": "La revue est le nouveau clavier",
         "summary": "Les agents ont fait sauter le goulot de la production logicielle ; il s'est reformé sur la vérification. +441 % de temps de revue : ce n'est pas un problème d'outillage, c'est un problème d'organigramme — le span of control appliqué aux agents."
@@ -17,26 +23,11 @@
       "links": null
     },
     {
-      "slug": "employe-sans-badge",
-      "serie": "hs",
-      "status": "draft",
-      "date": null,
-      "minutes": 11,
-      "fr": {
-        "title": "L'employé sans badge",
-        "summary": "Les identités machines dépassent les humaines de 45 contre 1, et 92 % des IAM ne savent pas gérer un agent. Le problème n'est pas la sécurité, c'est l'imputabilité — et l'entreprise l'a déjà résolu une fois, pour les humains."
-      },
-      "en": {
-        "title": "The employee without a badge",
-        "summary": "Machine identities outnumber humans 45 to 1, and 92% of IAM tools can't manage an agent. The problem isn't security, it's accountability — and the enterprise already solved it once, for humans."
-      },
-      "links": null
-    },
-    {
       "slug": "eloge-du-workflow",
       "status": "draft",
       "date": null,
       "minutes": 11,
+      "tags": ["AgenticAI", "Workflows", "AgentWashing"],
       "fr": {
         "title": "Éloge du workflow honteux",
         "summary": "On dénonce les workflows déguisés en agents. Contre-pied : dans les déploiements qui marchent, l'« agent » est très souvent un workflow contraint — et dé-agentifier est un signe de maturité, pas une régression."
@@ -50,8 +41,10 @@
     {
       "slug": "entreprise-salle-entrainement",
       "status": "draft",
+      "hidden": true,
       "date": null,
       "minutes": 12,
+      "tags": ["AgenticAI", "ReinforcementLearning", "TrainingEnvironments"],
       "fr": {
         "title": "Votre entreprise est une salle d'entraînement",
         "summary": "Les labs paient des fortunes pour des copies simulées de vos outils. La donnée était le pétrole ; le processus instrumenté, avec ses critères de réussite vérifiables, devient l'actif le plus convoité de l'entreprise."
@@ -64,10 +57,10 @@
     },
     {
       "slug": "derniere-generation-experts",
-      "serie": "hs",
-      "status": "draft",
-      "date": null,
+      "status": "published",
+      "date": "2026-06-01",
       "minutes": 12,
+      "tags": ["AgenticAI", "Expertise", "FutureOfWork"],
       "fr": {
         "title": "La dernière génération d'experts",
         "summary": "Les experts d'aujourd'hui sont les juniors d'hier, formés par des années de pratique que l'IA est en train d'automatiser. Qui saura encore vérifier — et signer — le travail des agents en 2035 ?"
@@ -76,30 +69,14 @@
         "title": "The last generation of experts",
         "summary": "Today's experts are yesterday's juniors, forged by years of practice that AI is now automating. Who will still be able to verify — and sign off on — the agents' work in 2035?"
       },
-      "links": null
-    },
-    {
-      "slug": "paradoxe-du-token",
-      "serie": "hs",
-      "status": "draft",
-      "date": null,
-      "minutes": 11,
-      "fr": {
-        "title": "Le paradoxe du token",
-        "summary": "Le prix du token s'effondre et pourtant les factures explosent : bienvenue dans l'économie de Jevons de l'IA agentique, où le budget devient un paramètre d'architecture."
-      },
-      "en": {
-        "title": "The token paradox",
-        "summary": "Token prices are collapsing, yet AI bills keep growing: welcome to the Jevons economics of agentic AI, where budget becomes an architecture parameter."
-      },
-      "links": null
+      "links": { "fr": "ecrits/derniere-generation-experts/", "en": "en/writing/derniere-generation-experts/" }
     },
     {
       "slug": "le-modele-passe-le-harness-reste",
-      "serie": "hs",
-      "status": "draft",
-      "date": null,
+      "status": "published",
+      "date": "2026-05-04",
       "minutes": 11,
+      "tags": ["AgenticAI", "Harness", "Evals"],
       "fr": {
         "title": "Le modèle passe, le harness reste",
         "summary": "Les modèles se déprécient en dix-huit mois ; vos evals, vos harness et votre mémoire d'entreprise prennent de la valeur. Où investir quand tout bouge — le manifeste de l'agentic factory."
@@ -107,6 +84,89 @@
       "en": {
         "title": "Models come and go, the harness remains",
         "summary": "Models depreciate in eighteen months; your evals, harnesses and enterprise memory appreciate. Where to invest when everything moves — the agentic factory manifesto."
+      },
+      "links": { "fr": "ecrits/le-modele-passe-le-harness-reste/", "en": "en/writing/le-modele-passe-le-harness-reste/" }
+    },
+    {
+      "slug": "a-budget-egal",
+      "status": "published",
+      "date": "2026-04-06",
+      "minutes": 9,
+      "tags": ["AgenticAI", "ROI", "TTM", "SoftwareDelivery"],
+      "fr": {
+        "title": "À budget égal",
+        "summary": "Pourquoi utiliser l'IA agentique pour réduire ses budgets logiciels est une erreur stratégique — et ce que font ceux qui réinvestissent le gain : plus de valeur, plus vite, mieux, au même coût."
+      },
+      "en": {
+        "title": "On an equal budget",
+        "summary": "Why using agentic AI to cut software budgets is a strategic mistake — and what winners do instead: reinvest the dividend in speed, quality and expert time, at the same cost."
+      },
+      "links": { "fr": "ecrits/a-budget-egal/", "en": "en/writing/a-budget-egal/" }
+    },
+    {
+      "slug": "le-fiable-et-le-plausible",
+      "status": "published",
+	  "hidden": true,
+      "date": "2026-06-29",
+      "minutes": 11,
+      "tags": ["AgenticAI", "Verification", "Knowledge"],
+      "fr": {
+        "title": "Le fiable et le plausible",
+        "summary": "Un consultant, un mois, une codebase industrielle critique sans documentation ni tests : retour d'expérience d'une capitalisation menée avec l'IA agentique, et la méthode de vérification qui fait la valeur."
+      },
+      "en": {
+        "title": "The reliable and the plausible",
+        "summary": "One consultant, one month, a critical industrial codebase with no docs and no tests: a field report on agentic knowledge capture, and the verification method that makes it trustworthy."
+      },
+      "links": { "fr": "ecrits/le-fiable-et-le-plausible/", "en": "en/writing/le-fiable-et-le-plausible/" }
+    },
+    {
+      "slug": "agentic-factory",
+      "status": "published",
+      "date": "2026-03-02",
+      "minutes": 12,
+      "tags": ["AgenticAI", "AgenticFactory", "Industrialisation"],
+      "fr": {
+        "title": "Agentic Factory : industrialiser les agents IA en entreprise",
+        "summary": "Pourquoi tant de prototypes agentiques ne passent jamais en production — et le cadre pour franchir le mur de l'industrialisation, du hackathon au pipeline."
+      },
+      "en": {
+        "title": "Agentic Factory: industrializing AI agents in the enterprise",
+        "summary": "Why so many agentic prototypes never reach production — and the framework to get past the industrialization wall, from hackathon to pipeline."
+      },
+      "links": { "fr": "ecrits/agentic-factory/", "en": "en/writing/agentic-factory/" }
+    },
+    {
+      "slug": "loop-engineering",
+      "status": "published",
+      "date": "2026-02-06",
+      "minutes": 10,
+      "tags": ["AgenticAI", "LoopEngineering", "PromptEngineering"],
+      "fr": {
+        "title": "Loop engineering : au-delà du prompt",
+        "summary": "Le prompt est la partie émergée. La vraie ingénierie se joue dans la boucle : harness, contexte, mémoire, évaluation. Retour d'expérience terrain."
+      },
+      "en": {
+        "title": "Loop engineering: beyond the prompt",
+        "summary": "The prompt is the visible tip. The real engineering happens in the loop: harness, context, memory, evaluation. Lessons from the field."
+      },
+      "links": { "fr": "ecrits/loop-engineering/", "en": "en/writing/loop-engineering/" }
+    },
+    {
+      "slug": "employe-sans-badge",
+      "serie": "hs",
+      "hidden": true,
+      "status": "draft",
+      "date": null,
+      "minutes": 11,
+      "tags": ["AgenticAI", "IAM", "Accountability"],
+      "fr": {
+        "title": "L'employé sans badge",
+        "summary": "Les identités machines dépassent les humaines de 45 contre 1, et 92 % des IAM ne savent pas gérer un agent. Le problème n'est pas la sécurité, c'est l'imputabilité — et l'entreprise l'a déjà résolu une fois, pour les humains."
+      },
+      "en": {
+        "title": "The employee without a badge",
+        "summary": "Machine identities outnumber humans 45 to 1, and 92% of IAM tools can't manage an agent. The problem isn't security, it's accountability — and the enterprise already solved it once, for humans."
       },
       "links": null
     },
@@ -116,6 +176,7 @@
       "status": "draft",
       "date": null,
       "minutes": 11,
+      "tags": ["AgenticAI", "OpenWeights", "Sovereignty"],
       "fr": {
         "title": "Des poids chez soi",
         "summary": "La vraie question n'est pas open source contre propriétaire, mais : quand a-t-on le devoir de garder les poids chez soi ? Un cadre de décision pour les industriels européens."
@@ -127,72 +188,30 @@
       "links": null
     },
     {
-      "slug": "a-budget-egal",
-      "status": "draft",
-      "date": null,
-      "minutes": 9,
-      "fr": {
-        "title": "À budget égal",
-        "summary": "Pourquoi utiliser l'IA agentique pour réduire ses budgets logiciels est une erreur stratégique — et ce que font ceux qui réinvestissent le gain : plus de valeur, plus vite, mieux, au même coût."
-      },
-      "en": {
-        "title": "On an equal budget",
-        "summary": "Why using agentic AI to cut software budgets is a strategic mistake — and what winners do instead: reinvest the dividend in speed, quality and expert time, at the same cost."
-      },
-      "links": null
-    },
-    {
-      "slug": "le-fiable-et-le-plausible",
-      "status": "draft",
-      "date": null,
-      "minutes": 11,
-      "fr": {
-        "title": "Le fiable et le plausible",
-        "summary": "Un consultant, un mois, une codebase industrielle critique sans documentation ni tests : retour d'expérience d'une capitalisation menée avec l'IA agentique, et la méthode de vérification qui fait la valeur."
-      },
-      "en": {
-        "title": "The reliable and the plausible",
-        "summary": "One consultant, one month, a critical industrial codebase with no docs and no tests: a field report on agentic knowledge capture, and the verification method that makes it trustworthy."
-      },
-      "links": null
-    },
-    {
-      "slug": "agentic-factory",
-      "status": "draft",
-      "date": null,
-      "minutes": 12,
-      "fr": {
-        "title": "Agentic Factory : industrialiser les agents IA en entreprise",
-        "summary": "Pourquoi tant de prototypes agentiques ne passent jamais en production — et le cadre pour franchir le mur de l'industrialisation, du hackathon au pipeline."
-      },
-      "en": {
-        "title": "Agentic Factory: industrializing AI agents in the enterprise",
-        "summary": "Why so many agentic prototypes never reach production — and the framework to get past the industrialization wall, from hackathon to pipeline."
-      },
-      "links": null
-    },
-    {
-      "slug": "loop-engineering",
+      "slug": "paradoxe-du-token",
+      "featured": true,
       "serie": "hs",
-      "status": "draft",
-      "date": null,
-      "minutes": 10,
+      "status": "published",
+      "date": "2026-07-27",
+      "minutes": 11,
+      "tags": ["AgenticAI", "TokenEconomics", "JevonsParadox"],
       "fr": {
-        "title": "Loop engineering : au-delà du prompt",
-        "summary": "Le prompt est la partie émergée. La vraie ingénierie se joue dans la boucle : harness, contexte, mémoire, évaluation. Retour d'expérience terrain."
+        "title": "Le paradoxe du token",
+        "summary": "Le prix du token s'effondre et pourtant les factures explosent : bienvenue dans l'économie de Jevons de l'IA agentique, où le budget devient un paramètre d'architecture."
       },
       "en": {
-        "title": "Loop engineering: beyond the prompt",
-        "summary": "The prompt is the visible tip. The real engineering happens in the loop: harness, context, memory, evaluation. Lessons from the field."
+        "title": "The token paradox",
+        "summary": "Token prices are collapsing, yet AI bills keep growing: welcome to the Jevons economics of agentic AI, where budget becomes an architecture parameter."
       },
-      "links": null
+      "links": { "fr": "ecrits/paradoxe-du-token/", "en": "en/writing/paradoxe-du-token/" }
     },
     {
       "slug": "seconde-memoire-local-first",
       "serie": "hs",
-      "status": "draft",
-      "date": null,
-      "minutes": 9,
+      "status": "limited",
+      "date": "2026-06-01",
+      "minutes": 17,
+      "tags": ["AIAgent", "AIMemory", "PersonalAI"],
       "fr": {
         "title": "Une deuxième mémoire local-first : ce que Jarvis m'a appris",
         "summary": "Construire un assistant personnel 100 % self-hosted qui gère ma base de connaissances. Les choix d'architecture qui ont survécu."
@@ -201,7 +220,7 @@
         "title": "A local-first second memory: what Jarvis taught me",
         "summary": "Building a 100% self-hosted personal assistant that manages my knowledge base. The architecture choices that survived."
       },
-      "links": null
+      "links": "https://www.linkedin.com/in/anthonydamotte/"
     }
   ]
 }

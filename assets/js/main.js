@@ -189,11 +189,9 @@
             body.appendChild(el('h3', null, t.title));
             body.appendChild(el('p', null, t.summary));
             var meta = el('div', 'paper-meta');
-            meta.appendChild(el('span', null,
-              p.date
-                ? monthYear(p.date) + (p.minutes ? ' · ' + p.minutes + ' ' + L.minutes : '')
-                : L.upcoming));
             meta.appendChild(el('span', published ? 'chip' : 'chip soon', chipLabel));
+            meta.appendChild(el('span', null, p.date ? monthYear(p.date) : L.upcoming));
+            if (p.date && p.minutes) meta.appendChild(el('span', null, p.minutes + ' ' + L.minutes));
             if (p.tags && p.tags.length) {
               var tagsWrap = el('span', 'tags');
               p.tags.forEach(function (tag) {

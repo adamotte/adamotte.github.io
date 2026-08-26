@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--
+  VERSION STRUCTURÉE — contenu intégral, format « premier draft » (moins de prose continue :
+  sections courtes, encadrés, chiffres, tableaux). Stockée à côté de index.html (version prose
+  éditoriale), ne la remplace pas.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le modèle passe, le harness reste (version structurée) — Anthony Damotte</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F6F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1217" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <style>
+    .tsec { margin-top: 56px; }
+    .tsec > .mono { color: var(--accent); display: block; margin-bottom: 6px; }
+    .tsec h2 { margin-top: 0; }
+    .paper-body h3 { font-family: "Newsreader", Georgia, serif; font-size: 1.2rem; font-weight: 600; margin: 32px 0 8px; }
+    .summary { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px 28px; margin-top: 12px; }
+    .summary .mono { color: var(--accent); }
+    .summary ul { margin: 12px 0 0; padding-left: 18px; }
+    .summary li { margin-bottom: 10px; color: var(--quote); }
+    .summary li:last-child { margin-bottom: 0; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0; }
+    @media (max-width: 620px) { .stats { grid-template-columns: 1fr 1fr; } }
+    .stat { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 12px; padding: 16px 18px; }
+    .stat .n { font-family: "Newsreader", Georgia, serif; font-size: 1.9rem; font-weight: 600; color: var(--accent); line-height: 1.1; font-variant-numeric: tabular-nums; }
+    .stat .l { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+    .note { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin: 32px 0; }
+    .note .mono { color: var(--accent); display: block; margin-bottom: 10px; }
+    .note p { margin: 0; font-size: 0.95rem; }
+    .table-wrap { overflow-x: auto; margin: 36px 0; border: 1px solid var(--line); border-radius: 12px; }
+    .paper-body table { border-collapse: collapse; width: 100%; background: var(--card); font-size: 0.92rem; }
+    .paper-body th {
+      font-family: "Fragment Mono", monospace; font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.12em; font-weight: 400; color: var(--accent);
+      text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); white-space: nowrap;
+    }
+    .paper-body td { padding: 12px 18px; border-bottom: 1px solid var(--line-soft); vertical-align: top; color: var(--quote); }
+    .paper-body tr:last-child td { border-bottom: none; }
+    .paper-body td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
+    .lessons { counter-reset: lesson; display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+    .lesson { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 56px; position: relative; }
+    .lesson::before { counter-increment: lesson; content: counter(lesson, decimal-leading-zero); position: absolute; left: 18px; top: 17px; font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 1.1rem; color: var(--accent); }
+    .lesson b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 2px; }
+    .lesson p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+    .paper-body ul { margin: 0 0 1.2em; padding-left: 20px; }
+    .paper-body li { margin-bottom: 8px; color: var(--quote); }
+    .paper-body blockquote { margin: 40px 0; max-width: 32em; }
+  </style>
+</head>
+<body data-base="../../">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo" aria-label="Accueil">ad<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../">Tous les écrits</a></li>
+        <li><a class="cta" href="../../#contact">Me contacter</a></li>
+      </ul>
+      <div class="nav-ctrl">
+        <button class="ctrl-btn" id="themeBtn" aria-label="Changer de thème">☾</button>
+        <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="paper-body">
+    <header>
+      <span class="mono" style="color:var(--accent)">White paper</span>
+      <h1>Le modèle passe, <em>le harness reste</em></h1>
+      <p class="mono" style="color:var(--muted)">Août 2026 · 10 min · Anthony Damotte</p>
+      <p class="lede">Un modèle frontier vit aujourd'hui douze à dix-huit mois avant d'être retiré de
+        l'API qui le sert. Bâtir sa stratégie d'IA sur un modèle, c'est donc bâtir sur du sable — et
+        c'est pourtant ce que font la plupart des projets qui échouent. Ce qui s'accumule et s'apprécie
+        pendant que les modèles se déprécient porte d'autres noms : evals, harness, mémoire, données.
+        C'est toute la raison d'être d'une agentic factory.</p>
+      <div class="paper-actions">
+        <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">En discuter sur LinkedIn</a>
+      </div>
+      <div class="summary">
+        <span class="mono">L'essentiel</span>
+        <ul>
+          <li>La durée de vie effective d'un modèle frontier en API est de <strong>12 à 18 mois</strong>
+            (GPT-4.5 : moins de 5 mois) — la migration forcée est structurelle, documentée par les
+            fournisseurs eux-mêmes.</li>
+          <li>Les échecs massifs des pilotes IA (~95 % sans impact P&amp;L selon le MIT, &gt;40 % de projets
+            agentiques promis à l'annulation selon Gartner) sont <strong>organisationnels, pas
+            technologiques</strong> : c'est l'usine autour du modèle qui manque.</li>
+          <li>Le fossé capacité-fiabilité <strong>ne se comble pas en attendant le prochain modèle</strong> :
+            deux ans de gains de capacités n'ont produit que de faibles gains de fiabilité (Princeton).
+            Ce qui le comble : le harness.</li>
+          <li>Les actifs durables — <strong>evals, contexte/mémoire, intégration standardisée,
+            garde-fous</strong> — s'apprécient avec le temps. « Votre eval est l'actif IA le plus précieux
+            que vous possédiez. »</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="tsec">
+      <span class="mono">01 · La mauvaise question</span>
+      <h2>« Quel modèle faut-il choisir ? »</h2>
+      <p>Il y a dans toute direction technique une question qu'on me pose invariablement, souvent dès
+        les premières minutes : « quel modèle faut-il choisir ? » Je comprends la question — elle
+        ressemble aux choix structurants d'autrefois : la base de données, le langage, le cloud. Mais
+        elle repose sur une prémisse fausse. Un modèle d'IA n'est pas une fondation : c'est un
+        consommable à haute performance, dont la durée de vie se mesure en mois. La vraie question —
+        celle qui sépare les 5 % de projets qui créent de la valeur des autres — est : que
+        construisez-vous autour, qui survivra au modèle ?</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">02 · Le consommable</span>
+      <h2>Douze à dix-huit mois, donnée publique</h2>
+      <p>La rotation des modèles n'est pas une impression : c'est une donnée que chacun peut vérifier
+        dans les pages de dépréciation officielles des fournisseurs<sup><a href="#ref-1">[1]</a></sup><sup><a href="#ref-2">[2]</a></sup>.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Modèle</th><th>Lancement</th><th>Retrait API</th><th>Durée de vie</th></tr></thead>
+          <tbody>
+            <tr><td>GPT-4.5-preview</td><td>févr. 2025</td><td>juil. 2025</td><td>~5 mois</td></tr>
+            <tr><td>Claude Sonnet 3.7</td><td>févr. 2025</td><td>févr. 2026</td><td>12 mois</td></tr>
+            <tr><td>Claude Opus 4 / Sonnet 4</td><td>mai 2025</td><td>juin 2026</td><td>~13 mois</td></tr>
+            <tr><td>Claude Opus 4.1</td><td>août 2025</td><td>août 2026</td><td>12 mois</td></tr>
+            <tr><td>Claude Sonnet 3.5</td><td>juin 2024</td><td>oct. 2025</td><td>~16 mois</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Les préavis contractuels donnent la mesure du phénomène : soixante jours de garantie minimale
+        chez Anthropic, six mois pour les modèles stabilisés chez OpenAI. Anthropic a d'ailleurs publié
+        fin 2025 des engagements formels de préservation des poids, reconnaissant noir sur blanc ce que
+        toute équipe de production sait : les migrations forcées sont structurelles, coûteuses et
+        permanentes<sup><a href="#ref-3">[3]</a></sup>. Voilà le régime réel dans lequel nous
+        construisons — un composant central de nos systèmes est remplacé, de gré ou de force, à un
+        rythme annuel.</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">03 · Le malentendu</span>
+      <h2>Relire les « 95 % d'échecs »</h2>
+      <p>C'est dans ce contexte qu'il faut relire la statistique la plus commentée de 2025 : selon le
+        projet NANDA du MIT, environ 95 % des pilotes d'IA générative en entreprise n'ont produit aucun
+        impact mesurable sur le compte de résultat<sup><a href="#ref-4">[4]</a></sup>. Le chiffre a fait
+        la une de Fortune et brièvement tremblé les marchés<sup><a href="#ref-5">[5]</a></sup>.</p>
+      <div class="note">
+        <span class="mono">Lecture honnête du chiffre</span>
+        <p>Les critiques ont relevé, à raison, qu'y est compté comme échec tout pilote non déployé à
+          l'échelle, et que le rapport documente moins un échec de la technologie qu'une incapacité
+          organisationnelle à évaluer, acheter et intégrer<sup><a href="#ref-6">[6]</a></sup>. C'est
+          précisément cette lecture corrigée qui est intéressante — et corroborée de toutes parts.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n">&gt;40 %</div><div class="l">des projets agentiques annulés d'ici fin 2027 — coûts galopants, valeur floue, contrôles de risque inadéquats (Gartner)<sup><a href="#ref-7">[7]</a></sup></div></div>
+        <div class="stat"><div class="n">88 / 39 / 6</div><div class="l">% d'organisations utilisant l'IA / en tirant un impact financier / « high performers » (McKinsey)<sup><a href="#ref-8">[8]</a></sup></div></div>
+        <div class="stat"><div class="n">21 %</div><div class="l">seulement des adopteurs ont refondu leurs workflows — le facteur le plus corrélé à la valeur (McKinsey)<sup><a href="#ref-8">[8]</a></sup></div></div>
+        <div class="stat"><div class="n">67 / 33</div><div class="l">% de succès : outils construits avec un partenaire spécialisé vs développements internes improvisés (MIT)<sup><a href="#ref-4">[4]</a></sup></div></div>
+        <div class="stat"><div class="n">~130</div><div class="l">vendeurs « agentiques » réels sur des milliers recensés — l'« agent washing » (Gartner)<sup><a href="#ref-7">[7]</a></sup></div></div>
+      </div>
+      <p>Partout, la même conclusion en creux : le modèle n'a jamais été le problème. Ce qui manque,
+        c'est l'usine autour.</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">04 · Le fossé</span>
+      <h2>Capacité et fiabilité ne progressent pas ensemble</h2>
+      <p>Pourquoi l'usine importe-t-elle plus que la machine ? Parce que la capacité brute d'un modèle
+        et la fiabilité d'un système sont deux grandeurs distinctes :</p>
+      <ul>
+        <li><strong>τ-bench (Sierra)</strong>, devenu un standard pour les agents de service client : les
+          meilleurs agents réussissaient moins d'une tâche sur deux — et leur taux de succès s'effondrait
+          à ~25 % quand on exigeait huit réussites consécutives de la même tâche (pass^8)<sup><a href="#ref-9">[9]</a></sup>.
+          Un agent qui réussit une fois ne réussit pas huit fois de suite.</li>
+        <li><strong>Princeton (équipe Arvind Narayanan, ICML 2026)</strong> vient de formaliser ce
+          « capability-reliability gap » : sur douze métriques de fiabilité appliquées à quinze modèles,
+          près de deux ans de progrès spectaculaires des capacités n'ont produit que de faibles gains de
+          fiabilité<sup><a href="#ref-10">[10]</a></sup>.</li>
+      </ul>
+      <p>Attendre le prochain modèle ne comblera pas le fossé. Ce qui le comble : les règles, les
+        vérifications, les garde-fous, les reprises sur erreur — le harness, au sens propre du terme :
+        le harnais qui transforme une force imprévisible en travail utile.</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">05 · Les actifs durables</span>
+      <h2>Ce qui s'apprécie pendant que le modèle se déprécie</h2>
+      <h3>Les évaluations — l'actif numéro un</h3>
+      <blockquote>« Votre eval est l'actif IA le plus précieux que vous possédiez — pas votre modèle,
+        pas vos prompts. » — Drew Breunig<sup><a href="#ref-12">[12]</a></sup>, dans la lignée du
+        « evals are surprisingly often all you need » de Greg Brockman, président d'OpenAI<sup><a href="#ref-11">[11]</a></sup></blockquote>
+      <p>Une suite d'évaluation qui encode ce que <em>votre</em> métier considère comme un travail bien
+        fait vous rend maître du temps : chaque nouveau modèle devient un candidat qu'on auditionne en
+        quelques heures, et la migration forcée, une formalité. Hamel Husain, dont les travaux font
+        référence, constate que les produits d'IA qui échouent partagent presque tous la même cause
+        racine — l'absence de système d'évaluation robuste<sup><a href="#ref-13">[13]</a></sup>. Et la
+        recherche de Berkeley sur le « criteria drift » ajoute l'argument décisif : les critères
+        d'évaluation ne préexistent pas, ils émergent de l'usage — ce qui fait des evals un actif forgé
+        par chaque organisation, impossible à acheter sur étagère et donc durablement
+        différenciant<sup><a href="#ref-14">[14]</a></sup>.</p>
+      <h3>Le contexte et la mémoire</h3>
+      <p>Andrej Karpathy a popularisé le « context engineering » — « l'art délicat de remplir la
+        fenêtre de contexte avec exactement la bonne information pour l'étape suivante »<sup><a href="#ref-15">[15]</a></sup> —
+        et Anthropic en a fait une discipline d'ingénierie à part entière, où le contexte se traite
+        « comme une ressource finie au rendement marginal décroissant »<sup><a href="#ref-16">[16]</a></sup>.
+        Or que contient ce contexte, sinon ce que l'entreprise sait — ses règles métier, ses conventions,
+        sa documentation vivante, l'historique de ses décisions ? Cette mémoire organisationnelle,
+        structurée pour être servie aux agents au bon moment, vaut pour tous les modèles présents
+        et futurs.</p>
+      <h3>L'intégration, désormais standardisée</h3>
+      <p>Le Model Context Protocol, lancé par Anthropic fin 2024, adopté par OpenAI, Google et
+        Microsoft, a été confié à une fondation neutre sous l'égide de la Linux Foundation, avec plus
+        de dix mille serveurs publiés<sup><a href="#ref-17">[17]</a></sup> — pendant que le marché de
+        l'outillage LLMOps croît de plus de 20 % par an<sup><a href="#ref-18">[18]</a></sup>. Les
+        tuyaux, eux aussi, survivent aux modèles qui les traversent.</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">06 · Le manifeste</span>
+      <h2>Quatre règles d'agentic factory</h2>
+      <div class="lessons">
+        <div class="lesson"><b>Ne jamais se marier avec un modèle.</b>
+          <p>Exiger de toute architecture qu'elle passe le « test du remplacement » : changer de modèle
+            en jours, pas en trimestres, preuves d'évaluation à l'appui.</p></div>
+        <div class="lesson"><b>Budgéter les evals comme de l'infrastructure.</b>
+          <p>Pas comme de la dette de projet. C'est le seul investissement IA dont la valeur croît
+            mécaniquement avec le temps, puisque chaque cas d'échec rencontré en production vient
+            l'enrichir.</p></div>
+        <div class="lesson"><b>Traiter mémoire et contexte comme de la propriété intellectuelle.</b>
+          <p>Ce que vos agents savent de votre entreprise est à vous : versionné, audité, portable
+            d'un modèle à l'autre.</p></div>
+        <div class="lesson"><b>Industrialiser la boucle plutôt que le prompt.</b>
+          <p>Garde-fous, vérifications croisées et reprises sur erreur : ce qui transforme une
+            démonstration impressionnante en système dont on ose dépendre.</p></div>
+      </div>
+      <p>Ce titre est une évidence pour quiconque a vécu une migration forcée, mais il a une conséquence
+        budgétaire que peu d'organisations ont tirée : si le modèle est un consommable et le harness un
+        actif, alors la répartition de l'investissement doit s'inverser. Moins d'énergie à courir après
+        le dernier benchmark, plus d'énergie à construire ce qui rend n'importe quel benchmark
+        exploitable. Les modèles passeront — c'est leur métier, et c'est tant mieux. Votre travail
+        n'est pas de deviner lequel gagnera : c'est de posséder, le jour où il arrivera, la seule chose
+        qu'il ne pourra pas vous apporter — la machine à en tirer de la valeur.</p>
+    </div>
+
+    <section class="refs">
+      <h2>Références</h2>
+      <ol>
+        <li id="ref-1"><b>Anthropic</b>, « Model deprecations » (documentation officielle, historique daté) —
+          <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations" rel="noopener">platform.claude.com</a></li>
+        <li id="ref-2"><b>OpenAI</b>, « Deprecations » (documentation officielle) —
+          <a href="https://developers.openai.com/api/docs/deprecations" rel="noopener">developers.openai.com</a></li>
+        <li id="ref-3"><b>Anthropic</b>, « Commitments on model deprecation and preservation » (novembre 2025) —
+          <a href="https://www.anthropic.com/research/deprecation-commitments" rel="noopener">anthropic.com</a></li>
+        <li id="ref-4"><b>MIT NANDA (A. Challapally et al.)</b>, « The GenAI Divide: State of AI in Business 2025 » (juillet 2025) —
+          <a href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf" rel="noopener">rapport PDF</a></li>
+        <li id="ref-5"><b>Fortune</b>, « MIT report: 95% of generative AI pilots at companies are failing » (août 2025) —
+          <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" rel="noopener">fortune.com</a></li>
+        <li id="ref-6"><b>Arnon Shimoni</b>, « MIT's 95% AI failure rate is wrong » (août 2025) —
+          <a href="https://arnon.dk/mits-95-ai-failure-rate-is-wrong/" rel="noopener">arnon.dk</a></li>
+        <li id="ref-7"><b>Gartner</b>, « Over 40% of Agentic AI Projects Will Be Canceled by End of 2027 » (juin 2025) —
+          <a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027" rel="noopener">gartner.com</a></li>
+        <li id="ref-8"><b>McKinsey QuantumBlack</b>, « The state of AI in 2025: Agents, innovation, and transformation » (novembre 2025) —
+          <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" rel="noopener">mckinsey.com</a></li>
+        <li id="ref-9"><b>Sierra AI Research (S. Yao et al.)</b>, « τ-bench: Benchmarking AI agents for the real-world » (2024) —
+          <a href="https://sierra.ai/blog/benchmarking-ai-agents" rel="noopener">sierra.ai</a></li>
+        <li id="ref-10"><b>S. Rabanser, S. Kapoor, A. Narayanan et al. — Princeton</b>, « Towards a Science of AI Agent Reliability » (ICML 2026) —
+          <a href="https://arxiv.org/abs/2602.16666" rel="noopener">arxiv.org</a></li>
+        <li id="ref-11"><b>Greg Brockman — OpenAI</b>, « evals are surprisingly often all you need » (décembre 2023) —
+          <a href="https://x.com/gdb/status/1733553161884127435" rel="noopener">x.com</a></li>
+        <li id="ref-12"><b>Drew Breunig</b>, « Your Eval is More Important Than the Model » (janvier 2025) —
+          <a href="https://www.dbreunig.com/2025/01/08/evaluating-llms-as-knowledge-banks.html" rel="noopener">dbreunig.com</a></li>
+        <li id="ref-13"><b>Hamel Husain</b>, « Your AI Product Needs Evals » (2024) —
+          <a href="https://hamel.dev/blog/posts/evals/" rel="noopener">hamel.dev</a></li>
+        <li id="ref-14"><b>S. Shankar et al. — UC Berkeley</b>, « Who Validates the Validators? », UIST 2024 —
+          <a href="https://arxiv.org/abs/2404.12272" rel="noopener">arxiv.org</a></li>
+        <li id="ref-15"><b>Andrej Karpathy</b>, sur le « context engineering » (juin 2025), reproduit par Simon Willison —
+          <a href="https://simonwillison.net/2025/Jun/27/context-engineering/" rel="noopener">simonwillison.net</a></li>
+        <li id="ref-16"><b>Anthropic Engineering</b>, « Effective context engineering for AI agents » (septembre 2025) —
+          <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-17"><b>Linux Foundation</b>, « Formation of the Agentic AI Foundation » (décembre 2025) —
+          <a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation" rel="noopener">linuxfoundation.org</a> ;
+          <b>Anthropic</b>, « Introducing the Model Context Protocol » (novembre 2024) —
+          <a href="https://www.anthropic.com/news/model-context-protocol" rel="noopener">anthropic.com</a></li>
+        <li id="ref-18"><b>The Business Research Company</b>, « LLMOps Software Global Market Report 2026 » —
+          <a href="https://natlawreview.com/press-releases/llmops-software-market-reach-1559-billion-2030-growing-216-cagr" rel="noopener">natlawreview.com</a></li>
+      </ol>
+    </section>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      <p class="colophon">© <span id="year">2026</span> Anthony Damotte ·
+        <a href="../">Tous les écrits</a> · <a href="../../">Accueil</a></p>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

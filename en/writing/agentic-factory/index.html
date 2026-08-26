@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentic Factory: industrializing AI agents in the enterprise — Anthony Damotte</title>
+  <meta name="description" content="Fewer than 10% of AI use cases ever make it past the pilot stage. Why the agentic demonstrator dies in demo mode, and the operating model — replayable workflows, verification gates, honest measurement, compounding capitalization — that carries it into production." />
+  <link rel="canonical" href="https://adamotte.github.io/en/writing/agentic-factory/" />
+  <link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/agentic-factory/" />
+  <link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/agentic-factory/" />
+  <link rel="alternate" hreflang="x-default" href="https://adamotte.github.io/ecrits/agentic-factory/" />
+  <meta property="og:title" content="Agentic Factory: industrializing AI agents in the enterprise" />
+  <meta property="og:description" content="Why so many agentic prototypes never reach production — and the framework to get past the industrialization wall, from hackathon to pipeline." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://adamotte.github.io/en/writing/agentic-factory/" />
+  <meta property="og:image" content="https://adamotte.github.io/images/og-image.png?v=2" />
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
+  <link rel="shortcut icon" href="../../../favicon.ico" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F6F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1217" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Agentic Factory: industrializing AI agents in the enterprise",
+    "description": "Why so many agentic prototypes never reach production — and the operating model that gets organizations past the industrialization wall.",
+    "datePublished": "2026-08-21",
+    "inLanguage": "en",
+    "author": { "@type": "Person", "name": "Anthony Damotte", "url": "https://adamotte.github.io/" }
+  }
+  </script>
+</head>
+<body data-base="../../../">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo" aria-label="Home">ad<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../">All my writing</a></li>
+        <li><a class="cta" href="../../#contact">Contact me</a></li>
+      </ul>
+      <div class="nav-ctrl">
+        <a class="ctrl-btn" href="../../../ecrits/agentic-factory/" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a>
+        <button class="ctrl-btn" id="themeBtn" aria-label="Toggle theme">☾</button>
+        <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="paper-body">
+    <header>
+      <span class="mono" style="color:var(--accent)">White paper</span>
+      <h1>Agentic Factory: industrializing AI agents <em>in the enterprise</em></h1>
+      <p class="mono" style="color:var(--muted)">August 2026 · 12 min read · Anthony Damotte</p>
+      <p class="lede">By now, everyone knows how to build an impressive agentic demo. Almost no one
+        knows how to keep it alive in production: fewer than one use case in ten ever makes it past
+        the pilot stage. This paper describes the wall that separates the two — and the operating
+        model I apply to get past it: replayable workflows, verification gates, honest measurement,
+        and a capitalization discipline that makes every project accelerate the next. That is what
+        an agentic factory is.</p>
+      <div class="paper-actions">
+        <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">Discuss on LinkedIn</a>
+      </div>
+    </header>
+
+    <p>At our latest hackathons, several hundred of our consultants delivered agentic
+      demonstrators to their industrial clients: more than a hundred engineers working in
+      parallel, some 250,000 lines of code produced, under three hours of clocked delivery per
+      demonstrator, and every result scored out of one hundred against a no-AI baseline.
+      I say this without false modesty, but also without illusion: what those
+      sessions prove is a capability, not yet an industry. Between the demonstrator that draws a
+      smile from the client at five in the afternoon and the system that will run in their
+      environment a year from now, there is a wall. This paper is about that wall, and about how
+      to get past it.</p>
+
+    <h2>The paradox: never so many demos, never so little production</h2>
+
+    <p>The figures for 2025-2026 sketch a paradox McKinsey eventually put a name to: nearly eight
+      companies in ten use generative AI, and just as many see no significant impact on their
+      bottom line. More brutal still: fewer than 10% of deployed use cases ever make it past the
+      pilot stage<sup><a href="#ref-1" id="cite-1">[1]</a></sup>. Gartner predicts that over 40% of
+      agentic AI projects will be canceled by the end of 2027, driven by escalating costs, unclear
+      business value and inadequate risk controls<sup><a href="#ref-2" id="cite-2">[2]</a></sup>.
+      And the gap is widening rather than closing: BCG identifies 5% of "future-built" companies
+      capturing most of the value, 35% scaling, and 60% getting almost nothing out of it — while
+      agents, already accounting for 17% of AI's total value, are expected to reach 29% by
+      2028<sup><a href="#ref-3" id="cite-3">[3]</a></sup>.</p>
+
+    <p>What is striking across all these studies is that the gap is explained neither by access to
+      the technology — everyone has the same models — nor by the talent of the teams. McKinsey
+      points to the real dividing line: moving "from use cases to business processes, from siloed
+      AI teams to cross-functional squads, from experimentation to industrialized
+      delivery"<sup><a href="#ref-1" id="cite-1b">[1]</a></sup>.
+      Google's DORA report puts it in a sentence I quote at every executive committee: AI is an
+      amplifier — it magnifies the strengths of organizations that have them, and the dysfunctions
+      of the rest<sup><a href="#ref-4" id="cite-4">[4]</a></sup>. So the question is not "which
+      agent should we build?" but "which factory should we build around it?".</p>
+
+    <h2>Why the demonstrator dies in demo mode</h2>
+
+    <p>First, one has to understand why the wall exists, because it is not the product of lazy
+      teams. A demonstrator proves that something is <em>possible</em>; production demands that it
+      be <em>reliable</em> — and those two properties do not progress together. Agent benchmarks
+      measure it: the best systems succeed at a given task, but their success rate collapses when
+      asked to succeed at it eight times in a row<sup><a href="#ref-5" id="cite-5">[5]</a></sup>,
+      and two years of spectacular capability gains have produced only modest gains in
+      reliability<sup><a href="#ref-6" id="cite-6">[6]</a></sup>. The demonstrator lives in the
+      world of "it worked"; production lives in the world of "it works every time, including when
+      everything goes wrong". Getting past the wall means industrializing precisely what separates
+      those two worlds.</p>
+
+    <p>The second cause is organizational. The prototype is born of individual enthusiasm — a
+      gifted developer, an inspired afternoon — and everything that made it succeed stays in that
+      person's head. Microsoft, which reports a fifteen-fold growth in active agents across its
+      tools in one year, also measures the flip side: even among the most advanced professionals,
+      those orchestrating multi-step agentic workflows, only 26% have documented, replayable
+      workflows at team level<sup><a href="#ref-7" id="cite-7">[7]</a></sup>. Three quarters of
+      organizations' agentic know-how therefore lives where the knowledge of star developers used
+      to live: in people's heads. We know how that ends.</p>
+
+    <h2>The four floors of the factory</h2>
+
+    <p>An agentic factory is not a tool you buy; it is an operating model you build, and it rests
+      on four floors.</p>
+
+    <h3>1. Versioned, replayable workflows</h3>
+    <p>The first floor turns individual successes into organizational processes: every recurring
+      task — documenting a module, migrating a screen, generating tests from requirements,
+      reverse-documenting a legacy system — becomes a written workflow, versioned, replayed
+      identically from one project to the next, and improved with every iteration. This is exactly
+      what the two reference labs recommend, each in its own vocabulary: Anthropic observes that
+      "the most successful implementations weren't using complex frameworks" but "simple,
+      composable patterns", and carefully distinguishes workflows — orchestrated by predefined
+      code — from agents free to direct their own process<sup><a href="#ref-8" id="cite-8">[8]</a></sup>;
+      OpenAI advises starting with a single agent, and only evolving to a multi-agent system when
+      necessary<sup><a href="#ref-9" id="cite-9">[9]</a></sup>. Sophistication is not a goal:
+      replayability is.</p>
+
+    <h3>2. Systematic verification gates</h3>
+    <p>The second floor is the one that separates the reliable from the plausible. No deliverable
+      ships without passing its gates: a Definition of Done written as three to five objective
+      criteria before starting, an adversarial review after every high-volume production run, and
+      layered guardrails — because, as OpenAI's guide puts it, a single guardrail is rarely
+      sufficient on its own; it is the combination of multiple guardrails that creates resilient
+      agents — with two explicit triggers for human escalation: exceeding failure thresholds, and
+      high-risk or irreversible actions<sup><a href="#ref-9" id="cite-9b">[9]</a></sup>.
+      This is not a good intention: it is a tooled process, planned into the workflow just like
+      the production itself.</p>
+
+    <h3>3. Honest measurement</h3>
+    <p>The third floor steers the whole. Every deliverable is evaluated against a no-AI baseline —
+      that is the score out of one hundred from our hackathons, and it is what turns an impression
+      into data. In production, this measurement becomes an evaluation suite that grows with the
+      system; and there is no need to wait for a perfect one to get started: twenty to fifty
+      simple tasks drawn from real failures make an excellent starting point, advises Anthropic in
+      its guide to agentic evals<sup><a href="#ref-10" id="cite-10">[10]</a></sup>.
+      Honesty is part of the measurement: output volume is not a demonstrated speed gain, and
+      saying so strengthens the credibility of everything else.</p>
+
+    <h3>4. Capitalization that compounds</h3>
+    <p>The fourth floor is the one that turns the factory into a cumulative advantage: at the end
+      of every engagement, the tooling bricks, the method rules and the evaluation cases join the
+      common foundation — so that each project starts higher than the one before. It is the
+      difference between an organization that has done ten agentic projects and an organization
+      that has ten times the experience of one project. Without this floor, the gains remain
+      individual, invisible and volatile; with it, they become an asset — the very one I have
+      argued elsewhere outlives the models that come and go.</p>
+
+    <h2>The operating model: the POD, and the art of picking your battles</h2>
+
+    <p>What remains is running these four floors day to day, and that is where format matters. Our
+      unit of production is the POD: a compact team — an experienced lead, tooled-up consultants,
+      and the client themselves in the loop — dedicated to a single, bounded use case, with its
+      real material (code, specifications, data) collected before starting and its Definition of
+      Done validated in writing. The client is not a spectator: the best results come from
+      sessions where they arbitrate live. Microsoft describes the same trajectory at market scale:
+      hybrid human-agent teams, where the organizational factor weighs twice as much as individual
+      aptitude in the impact achieved<sup><a href="#ref-7" id="cite-7b">[7]</a></sup>.</p>
+
+    <p>And because a factory is only worth what you decide to produce in it, qualifying the use
+      case is a discipline in its own right. Years of hackathons have taught me to recognize what
+      works: an achievable scope — one brick, not a whole project —, real material available, a
+      result that can be demonstrated visually, a pain quantifiable in human hours, and
+      repeatability across the client's estate. Migrating a legacy module to a modern stack from
+      its specs, generating test cases from requirements, reverse-documenting a historical piece
+      of software: these are cases that get past the wall. "Migrate our entire IT landscape", a
+      vague need with no success criterion, a case dependent on an inaccessible environment: these
+      are the ones that die in demo mode. Even confidentiality gets handled upstream — a
+      well-built synthetic dataset demonstrates the same thing as real data, and unblocks a deal
+      in a week instead of a month.</p>
+
+    <h2>From demonstrator to decision</h2>
+
+    <p>One last floor, often neglected, is not technical at all: it is the path from the
+      successful demonstrator to the decision to industrialize. Two rules of honesty first, which
+      paradoxically help sell: a demonstrator is not production-ready as it stands —
+      industrialization is a project in its own right, and saying so up front avoids the
+      disappointments that kill trust; and the demonstrator does not create the need — it
+      accelerates a decision already germinating. Experience confirms it every time: follow-on
+      work materializes with clients where a modernization project already existed, and where the
+      decision meeting was put in calendars <em>before</em> the demonstration, not after. So the
+      factory does not stop at the deliverable: it includes the same-day debrief, the dated
+      readout, and the proposal that turns three hours of proof into a trajectory.</p>
+
+    <h2>Where to start</h2>
+
+    <p>If I had to compress this paper into one grid, it would have four maturity levels.
+      <em>Artisanal</em>: individual, undocumented successes — the state of three quarters of the
+      market. <em>Tooled</em>: written, replayable workflows and a prepared environment.
+      <em>Measured</em>: systematic verification gates and evaluation against a baseline.
+      <em>Capitalized</em>: a common foundation that grows richer with every project, and hybrid
+      teams that live off it. Each level takes months to climb, not years — but none can be
+      skipped. And the first step costs almost nothing: take your best agentic success of the
+      year, and write it up as a workflow someone else can replay. The day your best success no
+      longer belongs to a person but to the organization, your factory exists. The rest is
+      growth.</p>
+
+    <section class="refs">
+      <h2>References</h2>
+      <ol>
+        <li id="ref-1"><b>McKinsey QuantumBlack</b>, "Seizing the agentic AI advantage" (June 2025) —
+          <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage" rel="noopener">mckinsey.com</a>;
+          see also "The state of AI in 2025" (November 2025) —
+          <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" rel="noopener">mckinsey.com</a></li>
+        <li id="ref-2"><b>Gartner</b>, "Gartner Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027" (June 2025) —
+          <a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027" rel="noopener">gartner.com</a></li>
+        <li id="ref-3"><b>BCG</b>, "Are You Generating Value from AI? The Widening Gap" (September 2025) —
+          <a href="https://www.bcg.com/publications/2025/are-you-generating-value-from-ai-the-widening-gap" rel="noopener">bcg.com</a></li>
+        <li id="ref-4"><b>Google Cloud — DORA</b>, "2025 State of AI-assisted Software Development" (September 2025) —
+          <a href="https://dora.dev/dora-report-2025/" rel="noopener">dora.dev</a></li>
+        <li id="ref-5"><b>Sierra AI Research (S. Yao et al.)</b>, "τ-bench: Benchmarking AI agents for the real-world" (2024) —
+          <a href="https://sierra.ai/blog/benchmarking-ai-agents" rel="noopener">sierra.ai</a></li>
+        <li id="ref-6"><b>S. Rabanser, S. Kapoor, A. Narayanan et al. — Princeton</b>, "Towards a Science of AI Agent Reliability" (ICML 2026) —
+          <a href="https://arxiv.org/abs/2602.16666" rel="noopener">arxiv.org</a></li>
+        <li id="ref-7"><b>Microsoft</b>, "2026 Work Trend Index: Agents, human agency, and the opportunity for every organization" (May 2026) —
+          <a href="https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization" rel="noopener">microsoft.com</a></li>
+        <li id="ref-8"><b>Anthropic</b>, "Building effective agents" (December 2024) —
+          <a href="https://www.anthropic.com/engineering/building-effective-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-9"><b>OpenAI</b>, "A practical guide to building agents" (2025) —
+          <a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf" rel="noopener">openai.com (PDF)</a></li>
+        <li id="ref-10"><b>Anthropic Engineering</b>, "Demystifying evals for AI agents" (January 2026) —
+          <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents" rel="noopener">anthropic.com</a></li>
+      </ol>
+      <p style="font-size:0.85rem;color:var(--muted);margin-top:18px">The hackathon figures cited
+        (100+ engineers mobilized, under 3 hours per demonstrator, ~250,000 lines of code,
+        /100 scoring against a no-AI baseline) come from the consolidated results
+        of Capgemini Engineering's GenAI hackathons, run with Mistral AI and Anthropic.</p>
+    </section>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      <p class="colophon">© <span id="year">2026</span> Anthony Damotte ·
+        <a href="../">All my writing</a> · <a href="../../">Home</a></p>
+    </div>
+  </footer>
+
+  <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

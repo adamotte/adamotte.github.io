@@ -1,0 +1,164 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>On an equal budget (structured version) — Anthony Damotte</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="Why using agentic AI to cut software budgets is a strategic mistake — and what winners do instead: reinvest the dividend in speed, quality and expert time, at the same cost." />
+  <meta property="og:title" content="On an equal budget" />
+  <meta property="og:description" content="Why using agentic AI to cut software budgets is a strategic mistake — and what winners do with the dividend instead." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://adamotte.github.io/en/writing/a-budget-egal/" />
+  <meta property="og:image" content="https://adamotte.github.io/images/og-image.png?v=2" />
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F6F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1217" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <style>
+    .paper-body { max-width: 720px; margin: 0 auto; padding: 24px 24px 96px; }
+    .paper-body header { padding: 64px 0 40px; border-bottom: 1px solid var(--line); margin-bottom: 48px; }
+    .paper-body h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
+    .paper-body h2 { margin-top: 56px; }
+    .paper-body h3 {
+      font-family: "Newsreader", Georgia, serif; font-size: 1.2rem; font-weight: 600;
+      margin: 32px 0 8px;
+    }
+    .paper-body p, .paper-body li { color: var(--quote); }
+    .paper-body .lede { font-size: 1.15rem; }
+    .paper-actions { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+    .paper-body blockquote { margin: 40px 0; max-width: 32em; }
+    .note {
+      background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+      padding: 20px 24px; margin: 32px 0;
+    }
+    .note .mono { color: var(--accent); display: block; margin-bottom: 10px; }
+    .note p { margin: 0; font-size: 0.95rem; }
+    .table-wrap { overflow-x: auto; margin: 36px 0; border: 1px solid var(--line); border-radius: 12px; }
+    .paper-body table { border-collapse: collapse; width: 100%; background: var(--card); font-size: 0.92rem; }
+    .paper-body th {
+      font-family: "Fragment Mono", monospace; font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.12em; font-weight: 400; color: var(--accent);
+      text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); white-space: nowrap;
+    }
+    .paper-body td { padding: 12px 18px; border-bottom: 1px solid var(--line-soft); vertical-align: top; color: var(--quote); }
+    .paper-body tr:last-child td { border-bottom: none; }
+    .paper-body td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "On an equal budget",
+    "description": "Why using agentic AI to cut software budgets is a strategic mistake — and what winners do instead: reinvest the dividend in speed, quality and expert time, at the same cost.",
+    "datePublished": "2026-08-20",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Person",
+      "name": "Anthony Damotte",
+      "url": "https://adamotte.github.io/"
+    }
+  }
+  </script>
+</head>
+<body data-base="../../../">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo" aria-label="Home">ad<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../">All my writing</a></li>
+        <li><a class="cta" href="../../#contact">Contact me</a></li>
+      </ul>
+      <div class="nav-ctrl">
+        <a class="ctrl-btn" href="../../../ecrits/a-budget-egal/" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a>
+        <button class="ctrl-btn" id="themeBtn" aria-label="Toggle theme">☾</button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="paper-body">
+    <header>
+      <span class="mono" style="color:var(--accent)">White paper · Nº&nbsp;01</span>
+      <h1>On an equal <em>budget</em></h1>
+      <p class="mono" style="color:var(--muted)">August 2026 · 9 min read · Anthony Damotte</p>
+      <p class="lede">Many companies approach agentic AI as a cost-cutting exercise: same scope, smaller budget. In a fiercely competitive, fast-shifting industry, that is optimizing yesterday's spend instead of winning tomorrow's race. My conviction: the agentic gain is a dividend to reinvest — in speed, in quality, in expert time — not a saving to pocket.</p>
+      <div class="paper-actions">
+        <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">Discuss on LinkedIn</a>
+      </div>
+    </header>
+
+    <h2>The wrong reflex: AI as a cost-cutter</h2>
+    <p>You hear the reasoning in most steering committees: AI makes developers more productive, so the same scope should cost 20 to 30% less. Same scope, fewer person-days, lower budget. The reflex is understandable — it is the logic of any productivity gain seen from a finance department, and vendors themselves feed it by selling AI as a deflation machine.</p>
+    <p>Yet this reasoning contains three errors, any one of which would be enough to disqualify it.</p>
+
+    <h3>Everyone's technology saves no one money</h3>
+    <p>A cost advantage only lasts if it is exclusive. But agentic AI is available to all your competitors, at the same price, at the same time. If the entire market gains the same productivity, whoever pockets it as savings stands still while the others accelerate. The saving is real on paper — and paid for in market share.</p>
+
+    <h3>Fixed scope is an illusion</h3>
+    <p>The “same scope, cheaper” reasoning assumes software has a finite, known scope. Thirty years of practice demonstrate the opposite: a living product's backlog is effectively infinite — technical debt, usability, integrations, data, security, documentation. The constraint has never been the stock of ideas: it is the capacity to build. Agentic AI loosens precisely that constraint. Cutting the budget at the moment it loosens is tightening it on purpose.</p>
+
+    <h3>The axe falls first on the invisible</h3>
+    <p>When a budget contracts at constant scope, the first thing to go is always the invisible work: tests, documentation, verification, non-regression. That is exactly the work AI finally makes affordable — and also what separates a reliable deliverable from a merely plausible one. Using AI to build faster while cutting what verifies is industrializing the plausible. The risk does not disappear from the budget: it migrates into production.</p>
+
+    <h2>What a euro of budget now buys</h2>
+    <p>For decades, a euro of software budget essentially bought hours of human implementation. That is the world the budget reflex keeps optimizing. But it is no longer the world in which the euro is spent: it now buys a capacity to read, build, test and verify at a scale no team has ever had.</p>
+    <p>The right question is therefore no longer “how much cheaper for the same result?” but <strong>“how much more result for the same budget?”</strong>. Moving from one question to the other is, in my view, the most structuring strategic decision a leadership team has to make about AI in delivery — well before any choice of tools.</p>
+    <blockquote>In a fast-shifting market, it takes all the running you can do to stay in the same place. A saving pocketed is speed handed back.</blockquote>
+    <p>Because while you deliberate, the bar rises mechanically: when the unit cost of software falls, more software gets built everywhere — more features, more integrations, more personalization. Your customers recalibrate their expectations against what the market shows them, not against what your budget allows. The bar rises, whether you invest or not.</p>
+
+    <h2>The agentic dividend: three reinvestments</h2>
+    <p>At equivalent budget, the agentic gain can be reinvested in three directions — and all three reinforce one another.</p>
+
+    <h3>Holding the pace — time-to-market</h3>
+    <p>In an industry where windows of opportunity close within months, coming in second often costs more than the entire development budget. Agentics compresses cycles: parallel exploration of options, prototyping measured in days, accelerated production releases. The first use of the dividend is defensive as much as offensive — at minimum, do not fall off the market's pace; at best, set it.</p>
+
+    <h3>Raising quality — the historically sacrificed variable</h3>
+    <p>Quality has always been the adjustment variable of projects under constraint: tests get cut, documentation gets deferred, debt gets a “we'll see later”. Agentics inverts the economics of that work: test safety nets, documentation anchored in the code, systematic verification become affordable at full scope. And quality is itself a form of speed — less rework, fewer incidents, fewer regressions: this quarter's quality investment shows up in next quarter's time-to-market.</p>
+
+    <h3>Refocusing the experts — the most profitable reinvestment</h3>
+    <p>An organization's scarcest resource is not the ability to write code: it is judgment — knowledge of the business, the stakes, the customers. Yet we have our best experts spend most of their time on implementation, where their judgment is least differentiating. Agentics takes over a growing share of the building, and moves expert time toward requirements, trade-offs, architecture, product strategy. It is the reinvestment with the highest leverage: machines build, experts decide.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>On an equal budget</th><th>Cost-cutting logic</th><th>Dividend logic</th></tr></thead>
+        <tbody>
+          <tr><td>Budget</td><td>Reduced, constant scope</td><td>Constant, expanded scope and ambition</td></tr>
+          <tr><td>Time-to-market</td><td>Unchanged — while the market accelerates</td><td>Compressed: shorter exploration and cycles</td></tr>
+          <tr><td>Quality</td><td>First variable sacrificed</td><td>Tests, docs, verification at full scope</td></tr>
+          <tr><td>Experts</td><td>Fewer of them, still on implementation</td><td>Refocused on requirements, stakes, strategy</td></tr>
+          <tr><td>Risk</td><td>Migrates into production (unverified plausible)</td><td>Reduced by industrialized verification</td></tr>
+          <tr><td>Competitive position</td><td>Standing still while the market accelerates</td><td>Aligned with the market's pace, or ahead of it</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>The dividend cannot be decreed: it is industrialized</h2>
+    <p>Let's be clear: the agentic dividend is not automatic. Handing out licenses and hoping is the surest way to pay for the technology without touching the gain. Three conditions make it real and lasting.</p>
+    <ul>
+      <li><strong>Industrialize — the agentic factory.</strong> Versioned, replayable workflows, systematic verification gates, automatic activity tracking, and tooling capitalization so that every project accelerates the next. Without this foundation, the gains remain individual, invisible and volatile; with it, they become an organizational asset.</li>
+      <li><strong>Measure honestly.</strong> The dividend is steered with value indicators — time-to-market, test coverage, debt paid down, value delivered per euro — not with theoretical savings. And it is measured with its limits stated explicitly: output volume is not a demonstrated speed gain, human review remains required. The credibility of the whole approach depends on it.</li>
+      <li><strong>Protect the redeployed expert time.</strong> Refocusing experts does not survive without governance: if the time freed by agentics is immediately reabsorbed by implementation or handed back to the budget, the highest-leverage reinvestment never happens. That time must be ring-fenced, like any investment.</li>
+    </ul>
+    <div class="note">
+      <span class="mono">So what about cost reduction?</span>
+      <p>It has its place — in the right spot. On commoditized run and systems that do not differentiate the company, cutting cost is legitimate. The strategic mistake is not seeking efficiency: it is applying across-the-board cost logic to the software that carries your differentiation. The right answer to a finance department is not “never cut” — it is “cut where software does not set you apart, reinvest where it does”.</p>
+    </div>
+
+    <h2>Conclusion: the question that separates winners</h2>
+    <p>Within a few years, almost every organization will be using agentic AI in delivery — the technology will set no one apart. What will set them apart is the question asked upstream. Those who ask “how much will AI save us?” will optimize the past. Those who ask <strong>“what will we do with the capacity it frees up?”</strong> will build tomorrow's lead — more value, better quality, experts in the right place, at the same cost.</p>
+    <p>My conviction, forged in the field: the dividend exists, it is measurable, and it only materializes once industrialized. That is the whole point of the agentic factory.</p>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      <p class="colophon">© <span id="year">2026</span> Anthony Damotte ·
+        <a href="../">All my writing</a> · <a href="../../">Home</a></p>
+    </div>
+  </footer>
+
+  <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

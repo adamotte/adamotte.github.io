@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!--
+  STRUCTURED VERSION — full content in a "first draft" format (less continuous prose:
+  short sections, callouts, figures, tables). Stored alongside index.html (the editorial
+  prose version); it does not replace it.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The last generation of experts (structured version) — Anthony Damotte</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F6F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1217" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <style>
+    .tsec { margin-top: 56px; }
+    .tsec > .mono { color: var(--accent); display: block; margin-bottom: 6px; }
+    .tsec h2 { margin-top: 0; }
+    .paper-body h3 { font-family: "Newsreader", Georgia, serif; font-size: 1.2rem; font-weight: 600; margin: 32px 0 8px; }
+    .summary { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px 28px; margin-top: 12px; }
+    .summary .mono { color: var(--accent); }
+    .summary ul { margin: 12px 0 0; padding-left: 18px; }
+    .summary li { margin-bottom: 10px; color: var(--quote); }
+    .summary li:last-child { margin-bottom: 0; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0; }
+    @media (max-width: 620px) { .stats { grid-template-columns: 1fr 1fr; } }
+    .stat { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 12px; padding: 16px 18px; }
+    .stat .n { font-family: "Newsreader", Georgia, serif; font-size: 1.9rem; font-weight: 600; color: var(--accent); line-height: 1.1; font-variant-numeric: tabular-nums; }
+    .stat .l { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+    .note { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin: 32px 0; }
+    .note .mono { color: var(--accent); display: block; margin-bottom: 10px; }
+    .note p { margin: 0; font-size: 0.95rem; }
+    .lessons { counter-reset: lesson; display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+    .lesson { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 56px; position: relative; }
+    .lesson::before { counter-increment: lesson; content: counter(lesson, decimal-leading-zero); position: absolute; left: 18px; top: 17px; font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 1.1rem; color: var(--accent); }
+    .lesson b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 2px; }
+    .lesson p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+    .paper-body ul { margin: 0 0 1.2em; padding-left: 20px; }
+    .paper-body li { margin-bottom: 8px; color: var(--quote); }
+    .paper-body blockquote { margin: 40px 0; max-width: 32em; }
+  </style>
+</head>
+<body data-base="../../../">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo" aria-label="Home">ad<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../">All my writing</a></li>
+        <li><a class="cta" href="../../#contact">Contact me</a></li>
+      </ul>
+      <div class="nav-ctrl">
+        <a class="ctrl-btn" href="../../../ecrits/derniere-generation-experts/" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a>
+        <button class="ctrl-btn" id="themeBtn" aria-label="Toggle theme">☾</button>
+        <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="paper-body">
+    <header>
+      <span class="mono" style="color:var(--accent)">White paper</span>
+      <h1>The last generation <em>of experts</em></h1>
+      <p class="mono" style="color:var(--muted)">August 2026 · 10 min read · Anthony Damotte</p>
+      <p class="lede">Today's experts are yesterday's juniors: ten or fifteen years of practice,
+        of mistakes made under supervision and of late-night production releases made them what
+        they are. Yet agentic AI is automating precisely that formative work, and entry-level
+        employment in exposed occupations is already falling away. If tomorrow's graduates become
+        managers of agents without ever having been practitioners, who will still be able to
+        verify — and sign off on — the work the machines produce?</p>
+      <div class="paper-actions">
+        <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">Discuss on LinkedIn</a>
+      </div>
+      <div class="summary">
+        <span class="mono">In brief</span>
+        <ul>
+          <li>The seniority pipeline is breaking, and it is measured: employment of 22-to-25-year-olds
+            in AI-exposed occupations is <strong>19% below its expected trajectory</strong>, a gap
+            widening by half a point per month — with no equivalent among experienced workers.</li>
+          <li>AI absorbs <strong>the formative work</strong> first: boilerplate, debugging,
+            first-level code. A trap theorized as early as 1983 (the “ironies of automation”) and
+            documented in robotic surgery before generative AI.</li>
+          <li>The erosion is <strong>painless</strong>: AI-assisted novices finish with an “illusion
+            of competence,” and experts believe they are 20% faster while being 19% slower.</li>
+          <li>Verification and accountability remain human: someone signs. Training future experts
+            therefore becomes <strong>infrastructure to be budgeted</strong>, no longer a free
+            by-product of work.</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="tsec">
+      <span class="mono">01 · The starting point</span>
+      <h2>Everything I know how to do came from work of no value</h2>
+      <p>Everything valuable I know how to do, I learned by doing things that had, taken in
+        isolation, almost no value. My first years as a mobile developer were filled with glue code,
+        display bugs, crashes to reproduce patiently — the routine work a coding agent now dispatches
+        in minutes. Yet it was in that thankless material that my architect's intuition took shape,
+        along with my nose for regressions and my ability to sense that an elegant solution is hiding
+        a problem. Every expert I know tells the same story. And it is exactly that story that is
+        becoming impossible to live.</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">02 · The evidence</span>
+      <h2>The junior bridge is giving way</h2>
+      <p>The 2026 numbers no longer describe a hypothesis but a fork in the road already being
+        taken — and a specifically junior one: no comparable decline is measured among experienced
+        workers.</p>
+      <div class="stats">
+        <div class="stat"><div class="n">–19%</div><div class="l">employment of 22-to-25-year-olds in occupations highly exposed to AI vs expected trajectory; –15% a year earlier, with the gap widening by half a point per month (Stanford, ADP payrolls of 4.6M workers)<sup><a href="#ref-1">[1]</a></sup></div></div>
+        <div class="stat"><div class="n">–65%</div><div class="l">entry-level hiring at the 12 largest tech employers vs 2019; –76% at startups (SignalFire)<sup><a href="#ref-2">[2]</a></sup></div></div>
+        <div class="stat"><div class="n">–45%</div><div class="l">odds of a top-CS-program graduate landing a job at a Tech Major vs 2022<sup><a href="#ref-2">[2]</a></sup></div></div>
+      </div>
+      <p>The World Economic Forum, which surveyed 9,400 entry-level workers across 48 countries,
+        puts it soberly: entry-level roles “have long been the bridge between education and
+        employment,” and that bridge is shifting<sup><a href="#ref-3">[3]</a></sup>. Shifting is an
+        understatement: it is giving way.</p>
+      <p>The cause is no mystery:</p>
+      <ul>
+        <li>More than a quarter of Google's new code was AI-generated by late 2024, <strong>more than 30%</strong>
+          six months later<sup><a href="#ref-4">[4]</a></sup>; <strong>20 to 30%</strong> at Microsoft<sup><a href="#ref-5">[5]</a></sup>;
+          <strong>more than 90%</strong> at Anthropic according to its CFO<sup><a href="#ref-6">[6]</a></sup>.</li>
+        <li>Dario Amodei was warning as early as May 2025 that AI could eliminate <strong>half of all
+          entry-level white-collar jobs</strong> within a few years<sup><a href="#ref-7">[7]</a></sup>.</li>
+      </ul>
+      <p>One can quibble with these numbers, all self-reported and sometimes self-serving. One can
+        no longer quibble with the direction.</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">03 · The mechanism</span>
+      <h2>AI absorbs the formative work first</h2>
+      <p>“AI absorbs tasks before it absorbs jobs,” as Brynjolfsson sums it up<sup><a href="#ref-1">[1]</a></sup>.
+        But look at <em>which</em> tasks.</p>
+      <h3>What the machine gets right is what used to train juniors</h3>
+      <p>Andrej Karpathy, reflecting on his own sessions with coding agents, observes that they
+        excel at anything resembling the millions of examples seen on the Internet — boilerplate,
+        familiar patterns — and go off the rails on novel, intellectually dense code<sup><a href="#ref-8">[8]</a></sup>.
+        The machine succeeds at precisely the work on which we used to grow our juniors, and stumbles
+        on the work that demands the expertise those juniors will no longer build.</p>
+      <h3>A trap theorized as early as 1983</h3>
+      <p>In a paper that became the founding text of forty years of human-factors research,
+        Lisanne Bainbridge described the “ironies of automation”: by relieving the operator of
+        routine tasks, you deprive him of the very practice that maintains the skills he will need
+        on the day the automation fails<sup><a href="#ref-9">[9]</a></sup>.</p>
+      <h3>And documented in the operating room before generative AI</h3>
+      <p>The sociologist Matt Beane observed the same mechanism in robotic surgery: the resident —
+        once hands-deep in the patient alongside the senior surgeon — becomes “completely optional,”
+        a spectator to an expert more productive than ever. Only one learner in eight manages to
+        train anyway, through workarounds he calls “shadow learning”<sup><a href="#ref-10">[10]</a></sup>.
+        Automation optimizes today's production while silently divesting from tomorrow's
+        competence.</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">04 · The illusion</span>
+      <h2>Skill erosion is painless</h2>
+      <p>The objection writes itself: the young will learn differently, with and through AI.
+        Perhaps — but the first rigorous measurements reveal something more troubling than slowness:
+        illusion.</p>
+      <div class="stats">
+        <div class="stat"><div class="n">–19%</div><div class="l">actual speed of experienced developers equipped with AI on their real tasks (METR randomized trial) — convinced, afterward, that they had saved 20%<sup><a href="#ref-11">[11]</a></sup></div></div>
+        <div class="stat"><div class="n">✕</div><div class="l">“illusion of competence” measured among struggling students coding with AI (award-winning study, ICER 2024)<sup><a href="#ref-12">[12]</a></sup></div></div>
+        <div class="stat"><div class="n">↓</div><div class="l">critical thinking negatively correlated with confidence in AI — 319 knowledge workers, 936 real-world cases (Microsoft Research / CMU, CHI 2025)<sup><a href="#ref-13">[13]</a></sup></div></div>
+      </div>
+      <div class="note">
+        <span class="mono">Counterpoint, treated honestly</span>
+        <p>Anthropic's usage data notes that heavy delegators report learning as much as everyone
+          else<sup><a href="#ref-14">[14]</a></sup>. But that is self-reporting — precisely the
+          measure METR and ICER have just shown to be the least reliable there is. When you feel
+          faster while being slower, and more competent while being less so, the thermometer of felt
+          experience is broken. That is the heart of the problem: the erosion of expertise is
+          painless for the person undergoing it.</p>
+      </div>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">05 · The stakes</span>
+      <h2>Who will sign?</h2>
+      <p>Our entire edifice of trust rests on expert verification. The quarter of Google's code that
+        AI writes is, Sundar Pichai specifies in the same sentence, “then reviewed and accepted by
+        engineers”<sup><a href="#ref-4">[4]</a></sup> — human review remains the mandatory
+        checkpoint. Simon Willison says it plainly: AI tools “amplify existing expertise,”
+        and engineers must remain “proudly accountable for the software they produce”<sup><a href="#ref-15">[15]</a></sup>.
+        But amplifying zero yields zero.</p>
+      <blockquote>“Every time we hand work to a wizard, we lose a chance to develop our own
+        expertise — to build the very judgment we need to evaluate the wizard's work.”
+        — Ethan Mollick, Wharton<sup><a href="#ref-16">[16]</a></sup></blockquote>
+      <p>The psychology of expertise has told us, ever since Ericsson, that expert judgment is born
+        of years of deliberate practice — thousands of hours of confrontation with reality under
+        immediate feedback<sup><a href="#ref-17">[17]</a></sup>. You do not acquire it in a
+        classroom, or by watching, or by approving pull requests you could not have written
+        yourself. A graduate propelled into “agent manager” without years of practice is not an
+        accelerated expert: he is an approver.</p>
+      <p>And in the industries my clients inhabit — energy, transport, healthcare, defense — the
+        question is not rhetorical. Embedded software gets certified; a structural calculation
+        carries a commitment; someone, at the end, signs. The signature of an approver who cannot
+        retrace the reasoning protects no one: it shifts the risk to the first incident.</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">06 · The objection</span>
+      <h2>What if the models become perfect?</h2>
+      <p>Let me raise the objection against myself: models are improving fast, and human
+        verification of code may well become as anecdotal as the manual verification of compilers.
+        Granted. Two things will nonetheless survive that generous hypothesis:</p>
+      <ul>
+        <li><strong>Accountability</strong> — a social and legal construct, not a technical
+          performance. Clients, regulators and courts will long demand that a person answer for what
+          is delivered, and answering for what you do not understand is not a tenable position.</li>
+        <li><strong>Arbitration</strong> — even served by perfect agents, someone will have to decide
+          what to build, to what standard, with which trade-offs. A judgment that is itself formed
+          by practice.</li>
+      </ul>
+      <p>Verification will change altitude; it will not disappear. It will climb from code to
+        architecture, from architecture to intent. But those upper floors still need people capable
+        of occupying them — and there is no elevator.</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">07 · The recommendations</span>
+      <h2>Organizing the succession rather than enduring it</h2>
+      <p>I do not believe in turning back: depriving teams of agents to preserve pedagogy would be
+        as futile as training accountants on the abacus. But we must now treat the formation of
+        future experts as infrastructure, with a budget and requirements, because the market will no
+        longer produce it for free as a by-product of work.</p>
+      <div class="lessons">
+        <div class="lesson"><b>Hire juniors anyway.</b>
+          <p>Accept that their immediate profitability is no longer the point: it is an
+            infrastructure investment, to be budgeted as such.</p></div>
+        <div class="lesson"><b>Deliberately set aside a share of the formative work.</b>
+          <p>A production incident analyzed by hand, a module written without assistance, a paired
+            review with a senior — the way airlines reserve simulator time for pilots who
+            nonetheless fly on autopilot.</p></div>
+        <div class="lesson"><b>Make verification a discipline.</b>
+          <p>Taught, tooled and assessed — not a vague “human in the loop”.</p></div>
+        <div class="lesson"><b>Reinvent apprenticeship around the agent.</b>
+          <p>Senior and junior side by side on what the machine produces, like that one-in-eight of
+            learners who always find a way.</p></div>
+      </div>
+      <p>The title of this paper is an alternative, not a prophecy. My generation may be the last
+        formed by the old world — thankless code, demanding peers, late-night production releases.
+        If we do nothing, it will be the last generation of experts, full stop, and around 2035 we
+        will discover what an industry is worth when no one left can tell whether the work is any
+        good. If we organize the handover, it will merely be the last generation to have been formed
+        <em>this way</em> — and the first to have formed the next one differently, deliberately.
+        The window for choosing is open. It is closing at half a point per month.</p>
+    </div>
+
+    <section class="refs">
+      <h2>References</h2>
+      <ol>
+        <li id="ref-1"><b>E. Brynjolfsson, B. Chandar, R. Chen — Stanford Digital Economy Lab</b>, “Canaries in the Coal Mine”, updated August 2026 —
+          <a href="https://digitaleconomy.stanford.edu/news/canariesaug26/" rel="noopener">digitaleconomy.stanford.edu</a>; see also
+          <a href="https://fortune.com/2026/06/27/what-is-ai-impact-entry-level-jobs-stanford-adp-canaries-brynjolfsson-richardson/" rel="noopener">Fortune (June 2026)</a></li>
+        <li id="ref-2"><b>SignalFire</b>, “State of Tech Talent Report 2026” (June 2026) —
+          <a href="https://www.signalfire.com/blog/signalfire-state-of-talent-report-2026" rel="noopener">signalfire.com</a></li>
+        <li id="ref-3"><b>World Economic Forum / PwC</b>, “How AI is Changing Early Careers” (January 2026) —
+          <a href="https://reports.weforum.org/docs/WEF_Briefing_AI_and_Entry-Level_Jobs_January_2026.pdf" rel="noopener">reports.weforum.org</a></li>
+        <li id="ref-4"><b>Sundar Pichai — Alphabet</b>, Q3 2024 earnings call (October 2024) —
+          <a href="https://abc.xyz/2024-q3-earnings-call/" rel="noopener">abc.xyz</a></li>
+        <li id="ref-5"><b>TechCrunch</b>, “Microsoft CEO says up to 30% of the company's code was written by AI” (April 2025) —
+          <a href="https://techcrunch.com/2025/04/29/microsoft-ceo-says-up-to-30-of-the-companys-code-was-written-by-ai/" rel="noopener">techcrunch.com</a></li>
+        <li id="ref-6"><b>TechSpot</b>, “Anthropic: more than 90% of our code is now written by AI” (May 2026) —
+          <a href="https://www.techspot.com/news/112408-anthropic-more-than-90-code-now-written-ai.html" rel="noopener">techspot.com</a></li>
+        <li id="ref-7"><b>Fortune</b>, on Dario Amodei's warnings (Axios, May 2025) and how they have evolved (May 2026) —
+          <a href="https://fortune.com/2026/05/05/dario-amodei-jevons-paradox-will-ai-wipe-out-white-collar-jobs/" rel="noopener">fortune.com</a></li>
+        <li id="ref-8"><b>Andrej Karpathy</b>, interview with Dwarkesh Patel, as discussed by Simon Willison (October 2025) —
+          <a href="https://simonwillison.net/2025/Oct/18/agi-is-still-a-decade-away/" rel="noopener">simonwillison.net</a></li>
+        <li id="ref-9"><b>Lisanne Bainbridge</b>, “Ironies of Automation”, <em>Automatica</em>, 1983 —
+          <a href="https://en.wikipedia.org/wiki/Ironies_of_Automation" rel="noopener">overview and references</a></li>
+        <li id="ref-10"><b>Matt Beane — UC Santa Barbara</b>, <em>The Skill Code</em> (2024) —
+          <a href="https://news.ucsb.edu/2024/021455/how-build-and-protect-skills-our-modern-workplace-world-filled-ai-and-robots" rel="noopener">news.ucsb.edu</a></li>
+        <li id="ref-11"><b>METR</b>, “Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity” (July 2025) —
+          <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" rel="noopener">metr.org</a></li>
+        <li id="ref-12"><b>Prather et al.</b>, “The Widening Gap: The Benefits and Harms of Generative AI for Novice Programmers”, ICER 2024 —
+          <a href="https://arxiv.org/abs/2405.17739" rel="noopener">arxiv.org</a></li>
+        <li id="ref-13"><b>Lee et al. — Microsoft Research &amp; Carnegie Mellon</b>, “The Impact of Generative AI on Critical Thinking”, CHI 2025 —
+          <a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/" rel="noopener">microsoft.com/research</a></li>
+        <li id="ref-14"><b>Anthropic</b>, “Economic Index report: Cadences” (June 2026) —
+          <a href="https://www.anthropic.com/research/economic-index-june-2026-report" rel="noopener">anthropic.com</a></li>
+        <li id="ref-15"><b>Simon Willison</b>, “Vibe engineering” (October 2025) —
+          <a href="https://simonwillison.net/2025/Oct/7/vibe-engineering/" rel="noopener">simonwillison.net</a></li>
+        <li id="ref-16"><b>Ethan Mollick — Wharton</b>, “On Working with Wizards” (September 2025) —
+          <a href="https://www.oneusefulthing.org/p/on-working-with-wizards" rel="noopener">oneusefulthing.org</a></li>
+        <li id="ref-17"><b>Ericsson, Krampe &amp; Tesch-Römer</b> (1993); effect confirmed, though revised downward, by the replication
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6731745/" rel="noopener">Macnamara &amp; Maitra, <em>Royal Society Open Science</em> (2019)</a></li>
+      </ol>
+    </section>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      <p class="colophon">© <span id="year">2026</span> Anthony Damotte ·
+        <a href="../">All my writing</a> · <a href="../../">Home</a></p>
+    </div>
+  </footer>
+
+  <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

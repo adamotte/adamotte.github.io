@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--
+  STRUCTURED VERSION — full content, "first draft" format (less continuous prose:
+  short sections, callouts, figures, tables). Stored alongside index.html (the editorial
+  prose version), does not replace it.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loop engineering (structured version) — Anthony Damotte</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F6F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1217" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <style>
+    .tsec { margin-top: 56px; }
+    .tsec > .mono { color: var(--accent); display: block; margin-bottom: 6px; }
+    .tsec h2 { margin-top: 0; }
+    .paper-body h3 { font-family: "Newsreader", Georgia, serif; font-size: 1.2rem; font-weight: 600; margin: 32px 0 8px; }
+    .summary { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px 28px; margin-top: 12px; }
+    .summary .mono { color: var(--accent); }
+    .summary ul { margin: 12px 0 0; padding-left: 18px; }
+    .summary li { margin-bottom: 10px; color: var(--quote); }
+    .summary li:last-child { margin-bottom: 0; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0; }
+    @media (max-width: 620px) { .stats { grid-template-columns: 1fr 1fr; } }
+    .stat { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 12px; padding: 16px 18px; }
+    .stat .n { font-family: "Newsreader", Georgia, serif; font-size: 1.9rem; font-weight: 600; color: var(--accent); line-height: 1.1; font-variant-numeric: tabular-nums; }
+    .stat .l { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+    .note { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin: 32px 0; }
+    .note .mono { color: var(--accent); display: block; margin-bottom: 10px; }
+    .note p { margin: 0; font-size: 0.95rem; }
+    .table-wrap { overflow-x: auto; margin: 36px 0; border: 1px solid var(--line); border-radius: 12px; }
+    .paper-body table { border-collapse: collapse; width: 100%; background: var(--card); font-size: 0.92rem; }
+    .paper-body th {
+      font-family: "Fragment Mono", monospace; font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.12em; font-weight: 400; color: var(--accent);
+      text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); white-space: nowrap;
+    }
+    .paper-body td { padding: 12px 18px; border-bottom: 1px solid var(--line-soft); vertical-align: top; color: var(--quote); }
+    .paper-body tr:last-child td { border-bottom: none; }
+    .paper-body td:first-child { font-weight: 600; color: var(--ink); }
+    .lessons { counter-reset: lesson; display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+    .lesson { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 56px; position: relative; }
+    .lesson::before { counter-increment: lesson; content: counter(lesson, decimal-leading-zero); position: absolute; left: 18px; top: 17px; font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 1.1rem; color: var(--accent); }
+    .lesson b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 2px; }
+    .lesson p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+    .paper-body ul { margin: 0 0 1.2em; padding-left: 20px; }
+    .paper-body li { margin-bottom: 8px; color: var(--quote); }
+    .paper-body blockquote { margin: 40px 0; max-width: 32em; }
+  </style>
+</head>
+<body data-base="../../../">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo" aria-label="Home">ad<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../">All my writing</a></li>
+        <li><a class="cta" href="../../#contact">Contact me</a></li>
+      </ul>
+      <div class="nav-ctrl">
+        <a class="ctrl-btn" href="../../../ecrits/loop-engineering/" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a>
+        <button class="ctrl-btn" id="themeBtn" aria-label="Toggle theme">☾</button>
+        <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="paper-body">
+    <header>
+      <span class="mono" style="color:var(--accent)">White paper</span>
+      <h1>Loop engineering: beyond <em>the prompt</em></h1>
+      <p class="mono" style="color:var(--muted)">August 2026 · 9 min read · Anthony Damotte</p>
+      <p class="lede">Same model, same prompt, two teams: results that are not even comparable.
+        What separates them is the loop — the system that surrounds, repeats, checks and corrects
+        every call to the model. A four-organ anatomy, production patterns, classic
+        anti-patterns.</p>
+      <div class="paper-actions">
+        <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">Discuss on LinkedIn</a>
+      </div>
+      <div class="summary">
+        <span class="mono">Key takeaways</span>
+        <ul>
+          <li>Agent capability is exploding (the length of completed tasks <strong>doubles every
+            ~7 months</strong> — METR) while reliability stagnates (<strong>modest gains over 2 years</strong> —
+            Princeton). The gap between the two is the working space of loop engineering.</li>
+          <li>A loop has four organs: the <strong>harness</strong> (tools, layered guardrails),
+            the <strong>context</strong> (a finite resource with diminishing returns), the
+            <strong>memory</strong> (what the system learns), the <strong>evaluation</strong>
+            (20-50 tasks drawn from real failures are enough to start).</li>
+          <li>Four production patterns: <strong>adversarial second pass, routing by cognitive
+            load, bounded loop depth, governed fan-out</strong>. Four symmetrical anti-patterns,
+            including premature multi-agents.</li>
+          <li>Every production agentic system should have its <strong>“loop contract”</strong>
+            written down: max depth, token budget, verification gates, escalation conditions, evals.</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="tsec">
+      <span class="mono">01 · The observation</span>
+      <h2>Why the loop, and not the model</h2>
+      <div class="stats">
+        <div class="stat"><div class="n">×2 / 7 mo</div><div class="l">the length of tasks agents complete at 50% doubles every ~7 months — and has been accelerating since 2024 (METR)<sup><a href="#ref-2">[2]</a></sup></div></div>
+        <div class="stat"><div class="n">~flat</div><div class="l">the reliability curve: 12 metrics, 15 models, 2 years of capability for modest gains (Princeton)<sup><a href="#ref-3">[3]</a></sup>; collapse at pass^8 (τ-bench)<sup><a href="#ref-4">[4]</a></sup></div></div>
+        <div class="stat"><div class="n">90 / 30%</div><div class="l">of devs use AI / don't trust the generated code; throughput ↑ but stability ↓ without a framework (DORA)<sup><a href="#ref-5">[5]</a></sup></div></div>
+      </div>
+      <p>In our hackathons, a POD produces a demonstrator in under 3 hours of delivery, scored /100
+        against a baseline — and it is never the prompt that accounts for that performance: it is
+        the prepared environment, the workflows, the checks. Karpathy named part of the phenomenon
+        “context engineering”<sup><a href="#ref-1">[1]</a></sup>; loop engineering widens it to
+        the entire loop.</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">02 · The anatomy</span>
+      <h2>Four organs</h2>
+      <div class="lessons">
+        <div class="lesson"><b>The harness — what the agent can do.</b>
+          <p>Frugality: a few high-impact tools with carefully crafted descriptions — “small
+            refinements in tool descriptions can yield dramatic improvements”<sup><a href="#ref-6">[6]</a></sup>.
+            Simplicity: composable patterns (chaining, routing, parallelization,
+            orchestrator-workers, evaluator-optimizer), no opaque frameworks<sup><a href="#ref-7">[7]</a></sup>.
+            Layered defense: combined guardrails + two triggers for human escalation — failure
+            threshold, high-risk or irreversible action<sup><a href="#ref-8">[8]</a></sup>.</p></div>
+        <div class="lesson"><b>The context — what the agent knows right now.</b>
+          <p>“A finite resource with diminishing marginal returns”<sup><a href="#ref-9">[9]</a></sup>.
+            An economic constraint as much as a cognitive one: loop cost is dominated by input
+            tokens — the “snowball” of context reread at every iteration, up to 1000× a chat on
+            coding tasks (Stanford)<sup><a href="#ref-10">[10]</a></sup>. Permanently deciding
+            what enters, gets summarized, gets reread on demand — or never enters at all.</p></div>
+        <div class="lesson"><b>The memory — what the system learns.</b>
+          <p>Self-enforcing project rules, conventions, decision registers: every production
+            lesson ends up encoded somewhere, not in the memory of a person — or of an agent.
+            The most neglected organ and the most profitable: the one that makes a loop improve
+            with use.</p></div>
+        <div class="lesson"><b>The evaluation — what says whether it's good.</b>
+          <p>Without it, the loop produces the plausible with confidence — the common root cause
+            of failing AI products<sup><a href="#ref-11">[11]</a></sup>. To start: “20-50 tasks
+            drawn from real failures”; three families of graders — code, model,
+            human<sup><a href="#ref-12">[12]</a></sup>. Criteria emerge from use
+            (“criteria drift”)<sup><a href="#ref-13">[13]</a></sup>: the eval is an asset you
+            forge, not something found off the shelf.</p></div>
+      </div>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">03 · The patterns</span>
+      <h2>What keeps the loop standing in production</h2>
+      <div class="lessons">
+        <div class="lesson"><b>The adversarial second pass.</b>
+          <p>After every high-volume production run, a contradictory review cross-checks the
+            strong claims against their sources. Planned into the workflow, not as an
+            afterthought — it is what intercepts overclaims before they reach the client.</p></div>
+        <div class="lesson"><b>Routing by cognitive load.</b>
+          <p>Budget model for the mechanical, mid-tier for reading/drafting, the most capable for
+            high-stakes judgment calls. Rational: token volume explains 80% of the variance in
+            performance<sup><a href="#ref-14">[14]</a></sup> — you place your tokens where they
+            produce.</p></div>
+        <div class="lesson"><b>Bounded loop depth.</b>
+          <p>METR's horizons provide the rule: beyond the duration the model sustains at 50%,
+            you do not pray — you decompose, you place a verification gate, or you escalate to a
+            human<sup><a href="#ref-2">[2]</a></sup>.</p></div>
+        <div class="lesson"><b>Governed fan-out.</b>
+          <p>Massive parallelization for homogeneous batches with low unit stakes; ordered
+            sequencing for critical or interdependent batches. Never the other way around.</p></div>
+      </div>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">04 · The anti-patterns</span>
+      <h2>What derails it</h2>
+      <ul>
+        <li><strong>The confident infinite loop</strong> — no depth bound, no failure threshold:
+          the agent presses on with assurance into a dead end.</li>
+        <li><strong>The snowball context</strong> — the window swells, cost and quality degrade
+          together.</li>
+        <li><strong>Premature multi-agents</strong> — orchestration complexity before exhausting
+          the single, well-harnessed agent; Anthropic and OpenAI give the same advice:
+          start simple<sup><a href="#ref-7">[7]</a></sup><sup><a href="#ref-8">[8]</a></sup>.</li>
+        <li><strong>Evaluation postponed</strong> — steering by impressions, when impressions
+          lie: seasoned developers believe they are 20% faster when they are in fact 19% slower
+          (METR, randomized trial)<sup><a href="#ref-15">[15]</a></sup>.</li>
+      </ul>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">05 · In production</span>
+      <h2>The loop contract</h2>
+      <div class="note">
+        <span class="mono">To write for every production agentic system</span>
+        <p><strong>Maximum loop depth</strong> · <strong>token budget</strong> ·
+          <strong>verification gates</strong> and their placement · <strong>escalation
+          conditions</strong> to a human · <strong>evaluation suite</strong> and its cadence.
+          A system whose contract you cannot write is not ready for production.</p>
+      </div>
+      <p>For the framework: “strengthen your safety nets” is one of the seven capabilities of the
+        DORA model that make AI amplify the best rather than the worst<sup><a href="#ref-5">[5]</a></sup>;
+        and NIST's GenAI profile provides the full grammar for formalizing (12 risk categories,
+        200+ actions)<sup><a href="#ref-16">[16]</a></sup>.</p>
+      <p><strong>And tomorrow?</strong> More reliable models will lighten the loop — so much the
+        better. But it will not disappear: it encodes what the model will never know on its own —
+        what <em>your</em> organization calls a job well done, what it forbids, what it has
+        learned from its failures. A prompt can be copied in ten seconds; a loop has to be
+        built. That is precisely why it is worth something.</p>
+    </div>
+
+    <section class="refs">
+      <h2>References</h2>
+      <ol>
+        <li id="ref-1"><b>Andrej Karpathy</b>, “context engineering” (June 2025), via Simon Willison —
+          <a href="https://simonwillison.net/2025/Jun/27/context-engineering/" rel="noopener">simonwillison.net</a></li>
+        <li id="ref-2"><b>METR</b>, “Measuring AI Ability to Complete Long Software Tasks” (March 2025); “Time Horizon 1.1” (January 2026) —
+          <a href="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/" rel="noopener">metr.org</a> ·
+          <a href="https://metr.org/blog/2026-1-29-time-horizon-1-1/" rel="noopener">update</a></li>
+        <li id="ref-3"><b>Rabanser, Kapoor, Narayanan et al. — Princeton</b>, “Towards a Science of AI Agent Reliability” (ICML 2026) —
+          <a href="https://arxiv.org/abs/2602.16666" rel="noopener">arxiv.org</a></li>
+        <li id="ref-4"><b>Sierra AI Research</b>, “τ-bench” (2024) —
+          <a href="https://sierra.ai/blog/benchmarking-ai-agents" rel="noopener">sierra.ai</a></li>
+        <li id="ref-5"><b>Google Cloud — DORA</b>, “2025 State of AI-assisted Software Development” (September 2025) —
+          <a href="https://dora.dev/dora-report-2025/" rel="noopener">dora.dev</a></li>
+        <li id="ref-6"><b>Anthropic Engineering</b>, “Writing effective tools for AI agents” (September 2025) —
+          <a href="https://www.anthropic.com/engineering/writing-tools-for-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-7"><b>Anthropic</b>, “Building effective agents” (December 2024) —
+          <a href="https://www.anthropic.com/engineering/building-effective-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-8"><b>OpenAI</b>, “A practical guide to building agents” (2025) —
+          <a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf" rel="noopener">openai.com (PDF)</a></li>
+        <li id="ref-9"><b>Anthropic Engineering</b>, “Effective context engineering for AI agents” (September 2025) —
+          <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-10"><b>Brynjolfsson, Pentland, Pei — Stanford Digital Economy Lab</b>, “How Do AI Agents Spend Your Money?” (May 2026) —
+          <a href="https://digitaleconomy.stanford.edu/news/how-are-ai-agents-spending-your-tokens/" rel="noopener">digitaleconomy.stanford.edu</a></li>
+        <li id="ref-11"><b>Hamel Husain</b>, “Your AI Product Needs Evals” (2024) —
+          <a href="https://hamel.dev/blog/posts/evals/" rel="noopener">hamel.dev</a></li>
+        <li id="ref-12"><b>Anthropic Engineering</b>, “Demystifying evals for AI agents” (January 2026) —
+          <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-13"><b>Shankar et al. — UC Berkeley</b>, “Who Validates the Validators?” (UIST 2024) —
+          <a href="https://arxiv.org/abs/2404.12272" rel="noopener">arxiv.org</a></li>
+        <li id="ref-14"><b>Anthropic Engineering</b>, “How we built our multi-agent research system” (June 2025) —
+          <a href="https://www.anthropic.com/engineering/multi-agent-research-system" rel="noopener">anthropic.com</a></li>
+        <li id="ref-15"><b>METR</b>, experienced-developer RCT (July 2025) —
+          <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" rel="noopener">metr.org</a></li>
+        <li id="ref-16"><b>NIST</b>, “AI RMF: Generative AI Profile” (AI 600-1, 2024) —
+          <a href="https://www.nist.gov/itl/ai-risk-management-framework" rel="noopener">nist.gov</a></li>
+      </ol>
+    </section>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      <p class="colophon">© <span id="year">2026</span> Anthony Damotte ·
+        <a href="../">All my writing</a> · <a href="../../">Home</a></p>
+    </div>
+  </footer>
+
+  <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

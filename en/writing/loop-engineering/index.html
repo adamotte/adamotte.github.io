@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loop engineering: beyond the prompt — Anthony Damotte</title>
+  <meta name="description" content="The prompt is the visible tip. The real agentic engineering happens in the loop: harness, context, memory, evaluation. An anatomy of the loop, with the patterns and anti-patterns of loop engineering, sources included." />
+  <link rel="canonical" href="https://adamotte.github.io/en/writing/loop-engineering/" />
+  <link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/loop-engineering/" />
+  <link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/loop-engineering/" />
+  <link rel="alternate" hreflang="x-default" href="https://adamotte.github.io/ecrits/loop-engineering/" />
+  <meta property="og:title" content="Loop engineering: beyond the prompt" />
+  <meta property="og:description" content="The prompt is the visible tip. The real engineering happens in the loop: harness, context, memory, evaluation." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://adamotte.github.io/en/writing/loop-engineering/" />
+  <meta property="og:image" content="https://adamotte.github.io/images/og-image.png?v=2" />
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
+  <link rel="shortcut icon" href="../../../favicon.ico" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F6F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1217" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Loop engineering: beyond the prompt",
+    "description": "The real agentic engineering happens in the loop: harness, context, memory, evaluation. Anatomy, patterns and anti-patterns.",
+    "datePublished": "2026-08-21",
+    "inLanguage": "en",
+    "author": { "@type": "Person", "name": "Anthony Damotte", "url": "https://adamotte.github.io/" }
+  }
+  </script>
+</head>
+<body data-base="../../../">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo" aria-label="Home">ad<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../">All my writing</a></li>
+        <li><a class="cta" href="../../#contact">Contact me</a></li>
+      </ul>
+      <div class="nav-ctrl">
+        <a class="ctrl-btn" href="../../../ecrits/loop-engineering/" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a>
+        <button class="ctrl-btn" id="themeBtn" aria-label="Toggle theme">☾</button>
+        <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="paper-body">
+    <header>
+      <span class="mono" style="color:var(--accent)">White paper</span>
+      <h1>Loop engineering: beyond <em>the prompt</em></h1>
+      <p class="mono" style="color:var(--muted)">August 2026 · 11 min read · Anthony Damotte</p>
+      <p class="lede">Give the same model and the same prompt to two teams, and the results will not
+        even be comparable. What separates them is neither the model nor the prompt: it is the
+        loop — the system that surrounds, repeats, checks and corrects every call to the model.
+        This paper proposes an anatomy of that loop in four organs — harness, context, memory,
+        evaluation —, the patterns that keep it standing in production, and the anti-patterns
+        that send it off the rails.</p>
+      <div class="paper-actions">
+        <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">Discuss on LinkedIn</a>
+      </div>
+    </header>
+
+    <p>There is something ironic about the fortunes of the phrase “prompt engineering”: just as it
+      was entering the boardroom vocabulary, practitioners were already leaving it behind. In our
+      hackathons, a POD produces a working demonstrator in under three hours of delivery, evaluated
+      against a no-AI baseline — and it is never the prompt that accounts for that performance.
+      It is everything built around it: the prepared environment, the workflows, the tools, the
+      checks, and the discipline of the loop. Andrej Karpathy gave part of this reality a name —
+      “context engineering”, “the delicate art and science of filling the context window with
+      just the right information for the next step”<sup><a href="#ref-1" id="cite-1">[1]</a></sup>.
+      I would widen the claim: what makes an agentic system reliable is the engineering of the
+      entire loop. I call this loop engineering.</p>
+
+    <h2>Why the loop, and not the model</h2>
+
+    <p>The reason comes down to two curves that refuse to track each other. The first is
+      spectacular: according to METR, the length of the tasks agents can complete doubles roughly
+      every seven months — and the pace has been accelerating since 2024. The best models of 2026
+      sustain tasks lasting several hours where those of 2023 ran out of breath in minutes<sup><a href="#ref-2" id="cite-2">[2]</a></sup>.
+      The second curve is nearly flat: across twelve reliability metrics applied to fifteen
+      models, Arvind Narayanan's team at Princeton measures that two years of capability gains
+      have yielded only modest gains in reliability<sup><a href="#ref-3" id="cite-3">[3]</a></sup>;
+      and the τ-bench benchmark shows agents that succeed at a task once but collapse when asked
+      for eight consecutive successes<sup><a href="#ref-4" id="cite-4">[4]</a></sup>.
+      Capability exploding, reliability stagnating: the gap between the two is precisely the
+      working space of loop engineering. The field confirms it — 90% of developers now use AI,
+      yet 30% do not trust the code it generates, and adoption improves delivery throughput
+      while degrading its stability when nothing frames it<sup><a href="#ref-5" id="cite-5">[5]</a></sup>.</p>
+
+    <h2>Anatomy of a loop: four organs</h2>
+
+    <h3>The harness — what the agent can do</h3>
+    <p>The first organ is the harness: the tools the agent can call, the rules that frame it, the
+      guardrails that stop it. Three lessons from the teams building these at scale. First,
+      frugality: “more tools don't always lead to better outcomes” — better a few high-impact
+      tools with carefully crafted descriptions, since “small refinements in tool descriptions
+      can yield dramatic improvements”<sup><a href="#ref-6" id="cite-6">[6]</a></sup>. Second,
+      architectural simplicity: the implementations that succeed rest on “simple, composable
+      patterns” — chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer —
+      rather than on opaque frameworks<sup><a href="#ref-7" id="cite-7">[7]</a></sup>.
+      Third, layered defense: a guardrail in isolation rarely protects; it is the combination —
+      relevance and safety filters, tool safeguards graded by the reversibility of the action,
+      output validation — that makes an agent resilient, with two non-negotiable triggers for
+      human escalation: exceeding a failure threshold, and any high-risk or irreversible
+      action<sup><a href="#ref-8" id="cite-8">[8]</a></sup>.</p>
+
+    <h3>The context — what the agent knows right now</h3>
+    <p>The second organ is the context window, and the discipline that goes with it: treating
+      context “as a finite resource with diminishing marginal returns”<sup><a href="#ref-9" id="cite-9">[9]</a></sup>.
+      It is an economic constraint as much as a cognitive one: in agentic loops, cost is
+      dominated by input tokens, because the agent rereads its context at every iteration — the
+      “snowball” documented by the Stanford Digital Economy Lab, which measures consumption up
+      to a thousand times higher than a simple chat on coding tasks<sup><a href="#ref-10" id="cite-10">[10]</a></sup>.
+      The loop engineer is therefore permanently deciding what enters the window, what gets
+      summarized, what gets reread on demand — and what will never enter it at all.</p>
+
+    <h3>The memory — what the system learns</h3>
+    <p>The third organ outlives the session: it is what the system retains from one run to the
+      next. Self-enforcing project rules, learned conventions, decision registers, lessons
+      converted into guardrails — every lesson encountered in production should end up encoded
+      somewhere, rather than in the memory of a person or an agent. It is the most neglected
+      organ and the most profitable: it is what makes a loop improve with use instead of
+      repeating its mistakes, and it is what turns individual know-how into an organizational
+      asset.</p>
+
+    <h3>The evaluation — what says whether it's good</h3>
+    <p>The fourth organ judges the other three. Without evaluation, a loop produces the plausible
+      with perfect confidence; the AI products that fail almost all share this root
+      cause<sup><a href="#ref-11" id="cite-11">[11]</a></sup>. The good news is that the price of
+      admission is low: “20 to 50 simple tasks drawn from real failures make an excellent
+      starting point”, with three families of graders — programmatic, fast but rigid;
+      model-based, flexible but in need of calibration; human, the reference but
+      costly<sup><a href="#ref-12" id="cite-12">[12]</a></sup>. And because evaluation criteria
+      emerge from use rather than pre-existing it<sup><a href="#ref-13" id="cite-13">[13]</a></sup>,
+      the evaluation suite is an asset every organization forges for itself — one that,
+      incidentally, makes model migrations painless.</p>
+
+    <h2>The patterns that keep the loop standing</h2>
+
+    <p>Four patterns recur in every one of my systems that has held up in production. The
+      <strong>adversarial second pass</strong>: after every high-volume production run, a
+      contradictory review cross-checks the strong claims against their sources — it is what
+      intercepts overclaims before they reach the client, and it is planned as a step in the
+      workflow, not as an afterthought. <strong>Routing by cognitive load</strong>: the budget
+      model for mechanical tasks, the mid-tier for reading and drafting, the most capable
+      reserved for high-stakes judgment calls — all the more rational given that token volume
+      alone explains 80% of the variance in an agentic system's performance: you place your
+      tokens where they produce<sup><a href="#ref-14" id="cite-14">[14]</a></sup>.
+      <strong>Bounded loop depth</strong>: METR's horizons provide the sizing rule — beyond the
+      task duration the model sustains at 50%, you do not pray, you decompose, you place a
+      verification gate, or you escalate to a human<sup><a href="#ref-2" id="cite-2b">[2]</a></sup>.
+      And finally, <strong>governed fan-out</strong>: massive parallelization for homogeneous
+      batches with low unit stakes, ordered sequencing for critical or interdependent batches —
+      never the other way around.</p>
+
+    <h2>The anti-patterns that derail it</h2>
+
+    <p>Failures have their classics too. The <strong>confident infinite loop</strong>: an agent
+      with no depth bound and no failure threshold, pressing on with assurance into a dead end —
+      the modern variant of the “retry storm”. The <strong>snowball context</strong>, which
+      degrades cost and quality simultaneously as the window swells. <strong>Premature
+      multi-agents</strong>: orchestration complexity added before exhausting what a single,
+      well-harnessed agent can do — the two reference labs give the same advice here, start
+      simple<sup><a href="#ref-7" id="cite-7b">[7]</a></sup><sup><a href="#ref-8" id="cite-8b">[8]</a></sup>.
+      And <strong>evaluation postponed</strong>, which condemns you to steering by impressions —
+      when we know, measurements in hand, that impressions lie: seasoned developers believe they
+      are 20% faster when they are in fact 19% slower<sup><a href="#ref-15" id="cite-15">[15]</a></sup>.</p>
+
+    <h2>From the loop to the production system</h2>
+
+    <p>A well-designed loop is still just a component; in production, it slots into a framework.
+      The capability model of the DORA report says it in its own way — “strengthen your safety
+      nets” is one of the seven capabilities that make AI amplify the best rather than the
+      worst<sup><a href="#ref-5" id="cite-5b">[5]</a></sup>; and for organizations that must
+      formalize, the GenAI profile of NIST's risk management framework provides the full
+      grammar — twelve risk categories and two hundred actions spread across govern, map,
+      measure and manage<sup><a href="#ref-16" id="cite-16">[16]</a></sup>.
+      My advice is simpler: every agentic system should have, written down somewhere, its loop
+      contract — maximum depth, token budget, verification gates, escalation conditions,
+      evaluation suite. A system whose contract you cannot write is not ready for production.</p>
+
+    <p>I am sometimes asked whether loop engineering will survive the next generation of models —
+      after all, more reliable models will need fewer guardrails. Probably, and so much the
+      better: the loop will get lighter. But it will not disappear, because it encodes what the
+      model will never know on its own: what <em>your</em> organization calls a job well done,
+      what it forbids, what it tolerates, what it has learned from its failures. A prompt can be
+      copied in ten seconds. A loop has to be built — and that is precisely why it is worth
+      something.</p>
+
+    <section class="refs">
+      <h2>References</h2>
+      <ol>
+        <li id="ref-1"><b>Andrej Karpathy</b>, on “context engineering” (June 2025), reproduced by Simon Willison —
+          <a href="https://simonwillison.net/2025/Jun/27/context-engineering/" rel="noopener">simonwillison.net</a></li>
+        <li id="ref-2"><b>METR</b>, “Measuring AI Ability to Complete Long Software Tasks” (March 2025) and “Time Horizon 1.1” (January 2026) —
+          <a href="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/" rel="noopener">metr.org</a> ·
+          <a href="https://metr.org/blog/2026-1-29-time-horizon-1-1/" rel="noopener">2026 update</a></li>
+        <li id="ref-3"><b>S. Rabanser, S. Kapoor, A. Narayanan et al. — Princeton</b>, “Towards a Science of AI Agent Reliability” (ICML 2026) —
+          <a href="https://arxiv.org/abs/2602.16666" rel="noopener">arxiv.org</a></li>
+        <li id="ref-4"><b>Sierra AI Research (S. Yao et al.)</b>, “τ-bench: Benchmarking AI agents for the real-world” (2024) —
+          <a href="https://sierra.ai/blog/benchmarking-ai-agents" rel="noopener">sierra.ai</a></li>
+        <li id="ref-5"><b>Google Cloud — DORA</b>, “2025 State of AI-assisted Software Development” (September 2025) —
+          <a href="https://dora.dev/dora-report-2025/" rel="noopener">dora.dev</a></li>
+        <li id="ref-6"><b>Anthropic Engineering</b>, “Writing effective tools for AI agents — using AI agents” (September 2025) —
+          <a href="https://www.anthropic.com/engineering/writing-tools-for-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-7"><b>Anthropic</b>, “Building effective agents” (December 2024) —
+          <a href="https://www.anthropic.com/engineering/building-effective-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-8"><b>OpenAI</b>, “A practical guide to building agents” (2025) —
+          <a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf" rel="noopener">openai.com (PDF)</a></li>
+        <li id="ref-9"><b>Anthropic Engineering</b>, “Effective context engineering for AI agents” (September 2025) —
+          <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-10"><b>Brynjolfsson, Pentland, Pei — Stanford Digital Economy Lab</b>, “How Do AI Agents Spend Your Money?” (May 2026) —
+          <a href="https://digitaleconomy.stanford.edu/news/how-are-ai-agents-spending-your-tokens/" rel="noopener">digitaleconomy.stanford.edu</a></li>
+        <li id="ref-11"><b>Hamel Husain</b>, “Your AI Product Needs Evals” (2024) —
+          <a href="https://hamel.dev/blog/posts/evals/" rel="noopener">hamel.dev</a></li>
+        <li id="ref-12"><b>Anthropic Engineering</b>, “Demystifying evals for AI agents” (January 2026) —
+          <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-13"><b>S. Shankar et al. — UC Berkeley</b>, “Who Validates the Validators?” (UIST 2024) —
+          <a href="https://arxiv.org/abs/2404.12272" rel="noopener">arxiv.org</a></li>
+        <li id="ref-14"><b>Anthropic Engineering</b>, “How we built our multi-agent research system” (June 2025) —
+          <a href="https://www.anthropic.com/engineering/multi-agent-research-system" rel="noopener">anthropic.com</a></li>
+        <li id="ref-15"><b>METR</b>, “Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity” (July 2025) —
+          <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" rel="noopener">metr.org</a></li>
+        <li id="ref-16"><b>NIST</b>, “AI RMF: Generative Artificial Intelligence Profile” (NIST AI 600-1, 2024) —
+          <a href="https://www.nist.gov/itl/ai-risk-management-framework" rel="noopener">nist.gov</a></li>
+      </ol>
+    </section>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      <p class="colophon">© <span id="year">2026</span> Anthony Damotte ·
+        <a href="../">All my writing</a> · <a href="../../">Home</a></p>
+    </div>
+  </footer>
+
+  <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

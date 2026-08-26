@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loop engineering — Anthony Damotte</title>
+  <meta name="description" content="Le prompt est la partie émergée. La vraie ingénierie agentique se joue dans la boucle : harness, contexte, mémoire, évaluation. Anatomie, patterns et anti-patterns du loop engineering, sources à l'appui." />
+  <link rel="canonical" href="https://adamotte.github.io/ecrits/loop-engineering/" />
+  <link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/loop-engineering/" />
+  <link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/loop-engineering/" />
+  <link rel="alternate" hreflang="x-default" href="https://adamotte.github.io/ecrits/loop-engineering/" />
+  <meta property="og:title" content="Loop engineering : au-delà du prompt" />
+  <meta property="og:description" content="Le prompt est la partie émergée. La vraie ingénierie se joue dans la boucle : harness, contexte, mémoire, évaluation." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://adamotte.github.io/ecrits/loop-engineering/" />
+  <meta property="og:image" content="https://adamotte.github.io/images/og-image.png?v=2" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="shortcut icon" href="../../favicon.ico" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F6F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1217" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Loop engineering : au-delà du prompt",
+    "description": "La vraie ingénierie agentique se joue dans la boucle : harness, contexte, mémoire, évaluation. Anatomie, patterns et anti-patterns.",
+    "datePublished": "2026-08-21",
+    "inLanguage": "fr",
+    "author": { "@type": "Person", "name": "Anthony Damotte", "url": "https://adamotte.github.io/" }
+  }
+  </script>
+</head>
+<body data-base="../../">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo" aria-label="Accueil">ad<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../">Tous les écrits</a></li>
+        <li><a class="cta" href="../../#contact">Me contacter</a></li>
+      </ul>
+      <div class="nav-ctrl">
+        <a class="ctrl-btn" href="../../en/writing/loop-engineering/" hreflang="en" lang="en" aria-label="Read in English">EN</a>
+        <button class="ctrl-btn" id="themeBtn" aria-label="Changer de thème">☾</button>
+        <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="paper-body">
+    <header>
+      <span class="mono" style="color:var(--accent)">White paper</span>
+      <h1>Loop engineering : au-delà <em>du prompt</em></h1>
+      <p class="mono" style="color:var(--muted)">Août 2026 · 11 min · Anthony Damotte</p>
+      <p class="lede">Donnez le même modèle et le même prompt à deux équipes, et vous obtiendrez
+        des résultats sans commune mesure. Ce qui les sépare n'est ni le modèle ni le prompt :
+        c'est la boucle — le système qui entoure, répète, vérifie et corrige chaque appel au
+        modèle. Ce paper propose une anatomie de cette boucle en quatre organes — harness,
+        contexte, mémoire, évaluation —, les patterns qui la font tenir en production, et les
+        anti-patterns qui la font dérailler.</p>
+      <div class="paper-actions">
+        <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">En discuter sur LinkedIn</a>
+      </div>
+    </header>
+
+    <p>Il y a quelque chose d'ironique dans la fortune du mot « prompt engineering » : au moment
+      où il entrait dans le vocabulaire des directions, les praticiens en sortaient déjà. Dans nos
+      hackathons, un POD produit un démonstrateur fonctionnel en moins de trois heures de delivery,
+      évalué contre une baseline sans IA — et ce n'est jamais le prompt qui fait cette
+      performance. C'est tout ce qui a été construit autour : l'environnement préparé, les
+      workflows, les outils, les vérifications, et la discipline de la boucle. Andrej Karpathy a
+      donné son nom à une partie de cette réalité — le « context engineering », « l'art délicat de
+      remplir la fenêtre de contexte avec exactement la bonne information pour l'étape
+      suivante »<sup><a href="#ref-1" id="cite-1">[1]</a></sup>. J'élargis le propos : ce qui fait
+      un système agentique fiable, c'est l'ingénierie de la boucle entière. J'appelle cela le
+      loop engineering.</p>
+
+    <h2>Pourquoi la boucle, et pas le modèle</h2>
+
+    <p>La raison tient en deux courbes qui ne se suivent pas. La première est spectaculaire :
+      selon METR, la durée des tâches que les agents savent mener à bien double environ tous les
+      sept mois — et le rythme s'accélère depuis 2024. Les meilleurs modèles de 2026 tiennent des
+      tâches de plusieurs heures là où ceux de 2023 s'essoufflaient en minutes<sup><a href="#ref-2" id="cite-2">[2]</a></sup>.
+      La seconde courbe, elle, est presque plate : sur douze métriques de fiabilité appliquées à
+      quinze modèles, l'équipe d'Arvind Narayanan à Princeton mesure que deux ans de gains de
+      capacités n'ont produit que de faibles gains de fiabilité<sup><a href="#ref-3" id="cite-3">[3]</a></sup> ;
+      et le benchmark τ-bench montre des agents qui réussissent une tâche mais s'effondrent
+      quand on exige huit réussites consécutives<sup><a href="#ref-4" id="cite-4">[4]</a></sup>.
+      Capacité qui explose, fiabilité qui stagne : l'écart entre les deux, c'est exactement
+      l'espace de travail du loop engineering. Le terrain le confirme — 90 % des développeurs
+      utilisent désormais l'IA, mais 30 % ne font pas confiance au code qu'elle génère, et
+      l'adoption améliore le débit de livraison tout en dégradant sa stabilité quand rien ne
+      l'encadre<sup><a href="#ref-5" id="cite-5">[5]</a></sup>.</p>
+
+    <h2>Anatomie d'une boucle : quatre organes</h2>
+
+    <h3>Le harness — ce que l'agent peut faire</h3>
+    <p>Le premier organe est le harnais : les outils que l'agent peut appeler, les règles qui
+      l'encadrent, les garde-fous qui l'arrêtent. Trois enseignements des équipes qui en
+      construisent à l'échelle. D'abord la frugalité : « plus d'outils ne produit pas de meilleurs
+      résultats » — mieux vaut peu d'outils à fort impact, aux descriptions travaillées, car
+      « de petits raffinements dans la description d'un outil produisent des améliorations
+      spectaculaires »<sup><a href="#ref-6" id="cite-6">[6]</a></sup>. Ensuite la simplicité
+      architecturale : les implémentations qui réussissent reposent sur « des patterns simples et
+      composables » — enchaînement, routage, parallélisation, orchestrateur-exécutants,
+      évaluateur-optimiseur — plutôt que sur des frameworks opaques<sup><a href="#ref-7" id="cite-7">[7]</a></sup>.
+      Enfin la défense en couches : un garde-fou isolé protège rarement ; c'est leur combinaison —
+      filtres de pertinence et de sécurité, protections d'outils graduées selon la réversibilité de
+      l'action, validation des sorties — qui rend un agent résilient, avec deux déclencheurs
+      d'escalade humaine non négociables : le dépassement d'un seuil d'échecs, et toute action à
+      haut risque ou irréversible<sup><a href="#ref-8" id="cite-8">[8]</a></sup>.</p>
+
+    <h3>Le contexte — ce que l'agent sait maintenant</h3>
+    <p>Le deuxième organe est la fenêtre de contexte, et la discipline qui va avec : traiter le
+      contexte « comme une ressource finie au rendement marginal décroissant »<sup><a href="#ref-9" id="cite-9">[9]</a></sup>.
+      C'est une contrainte économique autant que cognitive : dans les boucles agentiques, le coût
+      est dominé par les tokens d'entrée, parce que l'agent relit son contexte à chaque itération
+      — la « boule de neige » documentée par le Stanford Digital Economy Lab, qui mesure des
+      consommations jusqu'à mille fois supérieures à un simple chat sur les tâches de code<sup><a href="#ref-10" id="cite-10">[10]</a></sup>.
+      Le loop engineer décide donc en permanence ce qui entre dans la fenêtre, ce qui se résume,
+      ce qui se relit à la demande — et ce qui n'y entrera jamais.</p>
+
+    <h3>La mémoire — ce que le système apprend</h3>
+    <p>Le troisième organe déborde la session : c'est ce que le système retient d'une exécution à
+      l'autre. Règles de projet auto-appliquées, conventions apprises, registres de décisions,
+      leçons converties en garde-fous — chaque enseignement rencontré en production doit finir
+      codé quelque part, plutôt que dans la mémoire d'une personne ou d'un agent. C'est l'organe
+      le plus négligé et le plus rentable : c'est lui qui fait qu'une boucle s'améliore avec
+      l'usage au lieu de répéter ses erreurs, et c'est lui qui transforme le savoir-faire
+      individuel en actif d'organisation.</p>
+
+    <h3>L'évaluation — ce qui dit si c'est bon</h3>
+    <p>Le quatrième organe juge les trois autres. Sans évaluation, une boucle produit du plausible
+      avec une assurance parfaite ; les produits d'IA qui échouent partagent presque tous cette
+      cause racine<sup><a href="#ref-11" id="cite-11">[11]</a></sup>. La bonne nouvelle est que le
+      ticket d'entrée est bas : « vingt à cinquante tâches simples tirées de vraies défaillances
+      constituent un excellent départ », avec trois familles de correcteurs — programmatiques,
+      rapides mais rigides ; par modèle, flexibles mais à calibrer ; humains, référence mais
+      coûteux<sup><a href="#ref-12" id="cite-12">[12]</a></sup>. Et parce que les critères
+      d'évaluation émergent de l'usage plutôt qu'ils ne préexistent<sup><a href="#ref-13" id="cite-13">[13]</a></sup>,
+      la suite d'évaluation est un actif que chaque organisation forge elle-même — celui qui,
+      accessoirement, rend les changements de modèle indolores.</p>
+
+    <h2>Les patterns qui font tenir la boucle</h2>
+
+    <p>Quatre patterns reviennent dans tous mes systèmes qui ont tenu en production. La
+      <strong>seconde passe adversariale</strong> : après chaque production en volume, une
+      relecture contradictoire recoupe les affirmations fortes contre leurs sources — c'est elle
+      qui intercepte les sur-affirmations avant le client, et elle se planifie comme une étape du
+      workflow, pas comme un remords. Le <strong>routage par charge cognitive</strong> : le modèle
+      économique pour les tâches mécaniques, l'intermédiaire pour la lecture et la rédaction, le
+      plus capable réservé aux jugements à fort enjeu — d'autant plus rationnel que le volume de
+      tokens explique à lui seul 80 % de la variance de performance d'un système agentique : on
+      place ses tokens là où ils produisent<sup><a href="#ref-14" id="cite-14">[14]</a></sup>.
+      La <strong>profondeur de boucle bornée</strong> : les horizons de METR donnent la règle de
+      dimensionnement — au-delà de la durée de tâche que le modèle tient à 50 %, on ne prie pas,
+      on découpe, on pose une porte de vérification, ou on escalade vers un humain<sup><a href="#ref-2" id="cite-2b">[2]</a></sup>.
+      Le <strong>fan-out gouverné</strong>, enfin : la parallélisation massive pour les lots
+      homogènes à faible enjeu unitaire, le séquentiel ordonné pour les lots critiques ou
+      interdépendants — jamais l'inverse.</p>
+
+    <h2>Les anti-patterns qui la font dérailler</h2>
+
+    <p>Les échecs aussi ont leurs classiques. La <strong>boucle infinie confiante</strong> : un
+      agent sans borne de profondeur ni seuil d'échec, qui insiste avec assurance dans une impasse
+      — variante moderne du « retry storm ». Le <strong>contexte boule de neige</strong>, qui
+      dégrade simultanément le coût et la qualité à mesure que la fenêtre enfle. Le
+      <strong>multi-agents prématuré</strong> : la complexité d'orchestration ajoutée avant
+      d'avoir épuisé ce qu'un agent unique bien harnaché sait faire — les deux laboratoires de
+      référence donnent ici le même conseil, commencer simple<sup><a href="#ref-7" id="cite-7b">[7]</a></sup><sup><a href="#ref-8" id="cite-8b">[8]</a></sup>.
+      Et l'<strong>évaluation remise à plus tard</strong>, qui condamne à piloter aux impressions —
+      or nous savons, mesures à l'appui, que les impressions mentent : des développeurs chevronnés
+      se croient accélérés de 20 % quand ils sont ralentis de 19 %<sup><a href="#ref-15" id="cite-15">[15]</a></sup>.</p>
+
+    <h2>De la boucle au système de production</h2>
+
+    <p>Une boucle bien conçue reste un composant ; en production, elle s'insère dans un cadre.
+      Le modèle de capacités du rapport DORA le dit à sa façon — « renforcez vos filets de
+      sécurité » figure parmi les sept capacités qui font que l'IA amplifie le meilleur plutôt
+      que le pire<sup><a href="#ref-5" id="cite-5b">[5]</a></sup> ; et pour les organisations qui
+      doivent formaliser, le profil GenAI du cadre de gestion des risques du NIST fournit la
+      grammaire complète — douze catégories de risques et deux cents actions réparties entre
+      gouverner, cartographier, mesurer et gérer<sup><a href="#ref-16" id="cite-16">[16]</a></sup>.
+      Mon conseil est plus simple : que chaque système agentique ait, écrit quelque part, son
+      contrat de boucle — profondeur maximale, budget de tokens, portes de vérification,
+      conditions d'escalade, suite d'évaluation. Un système dont on ne sait pas écrire ce
+      contrat n'est pas prêt pour la production.</p>
+
+    <p>On me demande parfois si le loop engineering survivra aux prochains modèles — après tout,
+      des modèles plus fiables auront besoin de moins de garde-fous. C'est probable, et tant
+      mieux : la boucle s'allégera. Mais elle ne disparaîtra pas, car elle encode ce que le
+      modèle ne saura jamais de lui-même : ce que <em>votre</em> organisation appelle un travail
+      bien fait, ce qu'elle interdit, ce qu'elle tolère, ce qu'elle a appris de ses échecs. Le
+      prompt se copie en dix secondes. La boucle, elle, se construit — et c'est précisément
+      pour cela qu'elle vaut quelque chose.</p>
+
+    <section class="refs">
+      <h2>Références</h2>
+      <ol>
+        <li id="ref-1"><b>Andrej Karpathy</b>, sur le « context engineering » (juin 2025), reproduit par Simon Willison —
+          <a href="https://simonwillison.net/2025/Jun/27/context-engineering/" rel="noopener">simonwillison.net</a></li>
+        <li id="ref-2"><b>METR</b>, « Measuring AI Ability to Complete Long Software Tasks » (mars 2025) et « Time Horizon 1.1 » (janvier 2026) —
+          <a href="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/" rel="noopener">metr.org</a> ·
+          <a href="https://metr.org/blog/2026-1-29-time-horizon-1-1/" rel="noopener">mise à jour 2026</a></li>
+        <li id="ref-3"><b>S. Rabanser, S. Kapoor, A. Narayanan et al. — Princeton</b>, « Towards a Science of AI Agent Reliability » (ICML 2026) —
+          <a href="https://arxiv.org/abs/2602.16666" rel="noopener">arxiv.org</a></li>
+        <li id="ref-4"><b>Sierra AI Research (S. Yao et al.)</b>, « τ-bench: Benchmarking AI agents for the real-world » (2024) —
+          <a href="https://sierra.ai/blog/benchmarking-ai-agents" rel="noopener">sierra.ai</a></li>
+        <li id="ref-5"><b>Google Cloud — DORA</b>, « 2025 State of AI-assisted Software Development » (septembre 2025) —
+          <a href="https://dora.dev/dora-report-2025/" rel="noopener">dora.dev</a></li>
+        <li id="ref-6"><b>Anthropic Engineering</b>, « Writing effective tools for AI agents — using AI agents » (septembre 2025) —
+          <a href="https://www.anthropic.com/engineering/writing-tools-for-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-7"><b>Anthropic</b>, « Building effective agents » (décembre 2024) —
+          <a href="https://www.anthropic.com/engineering/building-effective-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-8"><b>OpenAI</b>, « A practical guide to building agents » (2025) —
+          <a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf" rel="noopener">openai.com (PDF)</a></li>
+        <li id="ref-9"><b>Anthropic Engineering</b>, « Effective context engineering for AI agents » (septembre 2025) —
+          <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-10"><b>Brynjolfsson, Pentland, Pei — Stanford Digital Economy Lab</b>, « How Do AI Agents Spend Your Money? » (mai 2026) —
+          <a href="https://digitaleconomy.stanford.edu/news/how-are-ai-agents-spending-your-tokens/" rel="noopener">digitaleconomy.stanford.edu</a></li>
+        <li id="ref-11"><b>Hamel Husain</b>, « Your AI Product Needs Evals » (2024) —
+          <a href="https://hamel.dev/blog/posts/evals/" rel="noopener">hamel.dev</a></li>
+        <li id="ref-12"><b>Anthropic Engineering</b>, « Demystifying evals for AI agents » (janvier 2026) —
+          <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-13"><b>S. Shankar et al. — UC Berkeley</b>, « Who Validates the Validators? » (UIST 2024) —
+          <a href="https://arxiv.org/abs/2404.12272" rel="noopener">arxiv.org</a></li>
+        <li id="ref-14"><b>Anthropic Engineering</b>, « How we built our multi-agent research system » (juin 2025) —
+          <a href="https://www.anthropic.com/engineering/multi-agent-research-system" rel="noopener">anthropic.com</a></li>
+        <li id="ref-15"><b>METR</b>, « Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity » (juillet 2025) —
+          <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" rel="noopener">metr.org</a></li>
+        <li id="ref-16"><b>NIST</b>, « AI RMF: Generative Artificial Intelligence Profile » (NIST AI 600-1, 2024) —
+          <a href="https://www.nist.gov/itl/ai-risk-management-framework" rel="noopener">nist.gov</a></li>
+      </ol>
+    </section>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      <p class="colophon">© <span id="year">2026</span> Anthony Damotte ·
+        <a href="../">Tous les écrits</a> · <a href="../../">Accueil</a></p>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

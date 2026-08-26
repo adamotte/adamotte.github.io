@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le paradoxe du token — Anthony Damotte</title>
+  <meta name="description" content="Le prix du token s'effondre de 10x par an et pourtant les factures d'IA explosent. Pourquoi l'économie de Jevons s'applique à l'IA agentique, et pourquoi le budget tokens devient un paramètre d'architecture." />
+  <link rel="canonical" href="https://adamotte.github.io/ecrits/paradoxe-du-token/" />
+  <link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/paradoxe-du-token/" />
+  <link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/paradoxe-du-token/" />
+  <link rel="alternate" hreflang="x-default" href="https://adamotte.github.io/ecrits/paradoxe-du-token/" />
+  <meta property="og:title" content="Le paradoxe du token" />
+  <meta property="og:description" content="Le prix du token s'effondre et pourtant les factures explosent : l'économie de Jevons de l'IA agentique, où le budget devient un paramètre d'architecture." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://adamotte.github.io/ecrits/paradoxe-du-token/" />
+  <meta property="og:image" content="https://adamotte.github.io/images/og-image.png?v=2" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="shortcut icon" href="../../favicon.ico" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F6F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1217" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Le paradoxe du token",
+    "description": "Le prix du token s'effondre de 10x par an et pourtant les factures d'IA explosent. L'économie de Jevons appliquée à l'IA agentique.",
+    "datePublished": "2026-08-20",
+    "inLanguage": "fr",
+    "author": { "@type": "Person", "name": "Anthony Damotte", "url": "https://adamotte.github.io/" }
+  }
+  </script>
+</head>
+<body data-base="../../">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo" aria-label="Accueil">ad<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../">Tous les écrits</a></li>
+        <li><a class="cta" href="../../#contact">Me contacter</a></li>
+      </ul>
+      <div class="nav-ctrl">
+        <a class="ctrl-btn" href="../../en/writing/paradoxe-du-token/" hreflang="en" lang="en" aria-label="Read in English">EN</a>
+        <button class="ctrl-btn" id="themeBtn" aria-label="Changer de thème">☾</button>
+        <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="paper-body">
+    <header>
+      <span class="mono" style="color:var(--accent)">White paper</span>
+      <h1>Le paradoxe du token</h1>
+      <p class="mono" style="color:var(--muted)">Août 2026 · 11 min · Anthony Damotte</p>
+      <p class="lede">Le prix du token s'effondre d'un facteur dix chaque année, et pourtant les factures
+        d'IA des entreprises n'ont jamais grimpé aussi vite. Ce n'est pas une anomalie comptable :
+        c'est le paradoxe de Jevons à l'œuvre, et il change la nature même du budget IA — qui cesse
+        d'être une ligne de frais généraux pour devenir un paramètre d'architecture.</p>
+      <div class="paper-actions">
+        <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">En discuter sur LinkedIn</a>
+      </div>
+    </header>
+
+    <p>Lors de mon premier hackathon d'IA agentique, j'ai consommé cinq cents euros de tokens en
+      une seule après-midi — la moitié du budget prévu pour quatre-vingts participants. Sur le moment,
+      le chiffre a fait sourire, et il ressort encore parfois dans les conversations. Mais avec le recul,
+      cette anecdote raconte quelque chose de plus intéressant qu'une simple gourmandise d'ingénieur :
+      elle annonçait, à petite échelle, la transformation économique que toutes les directions
+      financières découvrent aujourd'hui. Un agent qui travaille vraiment consomme sans commune mesure
+      avec un humain qui converse. Et c'est précisément pour cela qu'il rapporte.</p>
+
+    <h2>Une déflation sans précédent industriel</h2>
+
+    <p>Commençons par le versant réjouissant du paradoxe. À performance égale, le prix de l'inférence
+      s'effondre à un rythme qu'aucune autre technologie n'a connu, pas même le semi-conducteur des
+      grandes années de la loi de Moore. Guido Appenzeller, associé chez Andreessen Horowitz, l'a
+      documenté le premier sous le nom de « LLMflation » : pour une qualité de modèle équivalente,
+      le coût est divisé par dix chaque année<sup><a href="#ref-1" id="cite-1">[1]</a></sup>. Obtenir la
+      qualité de GPT-3 coûtait soixante dollars par million de tokens fin 2021 ; trois ans plus tard,
+      six centimes suffisaient — mille fois moins.</p>
+
+    <p>Ce chiffre n'est pas une extrapolation de capital-risqueur enthousiaste. L'institut Epoch AI,
+      référence indépendante sur les trajectoires quantitatives de l'IA, mesure selon les tâches une
+      déflation annuelle allant de 9x à 900x — et de 40x par an pour atteindre le niveau de GPT-4 sur
+      des questions scientifiques de niveau doctorat<sup><a href="#ref-2" id="cite-2">[2]</a></sup>.
+      Fin 2025, une équipe du MIT FutureTech menée par Neil Thompson a confirmé académiquement l'ordre
+      de grandeur : environ 10x par an à performance constante sur les modèles frontier, dont une part
+      essentielle provient de l'efficacité algorithmique, pas seulement du matériel<sup><a href="#ref-3" id="cite-3">[3]</a></sup>.
+      La matière première de l'intelligence artificielle est en déflation libre.</p>
+
+    <h2>Et pourtant, les factures explosent</h2>
+
+    <p>Si le prix unitaire est divisé par dix chaque année, les budgets devraient fondre. C'est
+      l'inverse qui se produit, et avec une violence remarquable. Menlo Ventures mesure une dépense
+      d'IA des entreprises multipliée par 3,2 en un an — de 11,5 à 37 milliards de dollars entre 2024
+      et 2025, et par vingt-deux depuis 2023<sup><a href="#ref-4" id="cite-4">[4]</a></sup>. Gartner
+      chiffre la dépense mondiale de GenAI à 644 milliards de dollars pour 2025, en hausse de 76 %,
+      et prévoit encore +117 % sur les modèles en 2026<sup><a href="#ref-5" id="cite-5">[5]</a></sup>.
+      Dans l'enquête d'a16z auprès de cent DSI, l'un d'eux résume la situation d'une phrase que
+      toutes les directions financières devraient méditer : « ce que je dépensais en 2023, je le
+      dépense maintenant en une semaine »<sup><a href="#ref-6" id="cite-6">[6]</a></sup>.</p>
+
+    <p>Un économiste du XIX<sup>e</sup> siècle avait déjà tout compris de ce mécanisme. William Stanley
+      Jevons observait en 1865 que plus la machine à vapeur devenait économe en charbon, plus
+      l'Angleterre brûlait de charbon : l'efficacité ne réduit pas la consommation d'une ressource,
+      elle la démultiplie en ouvrant des usages jusque-là impossibles. Quand DeepSeek a semé la panique
+      sur les marchés en janvier 2025 en prouvant qu'on pouvait entraîner et servir des modèles pour
+      une fraction du coût admis, Satya Nadella a répondu par une seule phrase : « le paradoxe de
+      Jevons frappe encore — à mesure que l'IA devient plus efficace et accessible, son usage va
+      exploser »<sup><a href="#ref-7" id="cite-7">[7]</a></sup>.</p>
+
+    <p>Il aura fallu treize mois pour que la prophétie se vérifie de façon mesurable. Sur OpenRouter,
+      le plus grand agrégateur multi-modèles indépendant, les tokens consommés par des systèmes
+      agentiques ont dépassé ceux consommés par des humains autour du 1<sup>er</sup> février 2026 —
+      un croisement historique établi sur 450 000 milliards de tokens de trafic réel<sup><a href="#ref-8" id="cite-8">[8]</a></sup>.
+      Les machines lisent et écrivent désormais plus que nous. La déflation n'a pas réduit la facture ;
+      elle a rendu l'agent économiquement viable, et l'agent a fait exploser le volume.</p>
+
+    <h2>L'agent est une usine à tokens</h2>
+
+    <p>Pour comprendre pourquoi, il faut regarder ce qu'un agent fait réellement de son contexte.
+      L'équipe d'ingénierie d'Anthropic, décrivant son propre système de recherche multi-agents,
+      donne les ordres de grandeur : un agent consomme environ quatre fois plus de tokens qu'une
+      conversation, et un système multi-agents environ quinze fois plus<sup><a href="#ref-9" id="cite-9">[9]</a></sup>.
+      Sur les tâches de développement logiciel, l'équipe d'Erik Brynjolfsson au Stanford Digital
+      Economy Lab mesure un rapport qui peut atteindre mille pour un par rapport à un simple chat
+      de code, dominé par les tokens d'entrée : à chaque itération de sa boucle, l'agent relit
+      l'intégralité de son contexte, qui enfle comme une boule de neige<sup><a href="#ref-10" id="cite-10">[10]</a></sup>.</p>
+
+    <p>La même étude révèle un fait plus dérangeant : à tâche identique, le coût d'exécution d'un
+      même agent varie d'un facteur trente d'une tentative à l'autre, et les agents sont incapables
+      de prédire leur propre consommation. Voilà qui devrait faire réfléchir quiconque signe un budget :
+      nous avons industrialisé une main-d'œuvre dont le salaire est imprévisible à 3 000 % près.
+      Mais il y a une contrepartie, et elle est décisive : chez Anthropic, le volume de tokens explique
+      à lui seul 80 % de la variance de performance du système<sup><a href="#ref-9" id="cite-9b">[9]</a></sup>.
+      Les tokens ne sont pas un coût qui fuit ; ils sont littéralement la matière dont la qualité
+      du résultat est faite.</p>
+
+    <h2>Le budget devient un paramètre d'architecture</h2>
+
+    <p>C'est ici que le paradoxe cesse d'être une curiosité économique pour devenir une affaire
+      d'ingénieur. Si le volume de tokens détermine la performance, alors décider combien un système
+      agentique a le droit de consommer, et où, revient à en dessiner l'architecture. Combien de
+      vérifications adverses par livrable ? Quelle profondeur de boucle avant l'escalade vers un
+      humain ? Quel modèle pour quel étage — un frontier coûteux pour l'arbitrage final, un modèle
+      compact pour le tri de masse ? Faut-il relire tout le contexte ou investir dans une mémoire
+      qui le résume ? Chacune de ces questions est simultanément une question de qualité et une
+      question de coût. Le prompt caching illustre bien la bascule : correctement architecturée,
+      la relecture du contexte coûte dix fois moins cher<sup><a href="#ref-11" id="cite-11">[11]</a></sup> —
+      mais c'est une décision de conception, pas une négociation d'achat.</p>
+
+    <p>Les organisations l'ont compris à une vitesse spectaculaire. La FinOps Foundation, qui
+      standardise la gestion des coûts cloud pour les grandes DSI, mesurait 31 % d'équipes gérant la
+      dépense IA en 2024, 63 % en 2025 — et 98 % en 2026, avec des indicateurs dédiés comme le coût
+      par inférence<sup><a href="#ref-12" id="cite-12">[12]</a></sup>. Chez Gartner, l'analyse de
+      juillet 2026 note que les budgets IA passent « sous un examen accru, avec un accent sur
+      l'efficacité d'usage, le contrôle des coûts et les résultats mesurables »<sup><a href="#ref-13" id="cite-13">[13]</a></sup>.
+      Et pourtant, dans la plus grande enquête menée auprès des équipes qui font tourner des agents
+      en production, le coût n'arrive qu'après la qualité dans la liste des freins<sup><a href="#ref-14" id="cite-14">[14]</a></sup> —
+      preuve que les praticiens ont déjà intégré la leçon : on ne coupe pas les tokens, on les place.</p>
+
+    <h2>Ce qu'il faut en retenir</h2>
+
+    <p>Trois convictions pour conclure. La première : ne budgétez plus l'IA comme une licence
+      logicielle, mais comme une capacité de production — le bon indicateur n'est pas la facture
+      mensuelle, c'est le coût par résultat vérifié, et il faut accepter qu'à résultat plus ambitieux,
+      la consommation croisse. La deuxième : exigez de vos équipes que le budget tokens figure dans
+      les documents d'architecture, au même titre que la latence ou la disponibilité — un système
+      agentique dont on ne sait pas dire où vont les tokens est un système qu'on ne sait pas piloter.
+      La troisième : méfiez-vous des économies faciles, car la déflation travaille pour vous — ce que
+      vous refusez de consommer aujourd'hui coûtera dix fois moins cher l'an prochain, mais les
+      concurrents qui auront appris un an plus tôt à placer leurs tokens, eux, ne se rattraperont pas
+      à prix cassé.</p>
+
+    <p>Quant à mes cinq cents euros de hackathon : rapportés à ce qu'ils m'ont appris sur la conception
+      des harness — des enseignements que j'applique depuis sur des systèmes en production —, c'est
+      probablement la formation la moins chère que j'aie jamais suivie. Le paradoxe du token, au fond,
+      tient en une phrase : le gaspillage d'hier devient le sous-investissement de demain, et la
+      seule vraie erreur est de traiter en comptable ce qui est devenu une décision d'architecte.</p>
+
+    <section class="refs">
+      <h2>Références</h2>
+      <ol>
+        <li id="ref-1"><b>Guido Appenzeller — Andreessen Horowitz</b>, « Welcome to LLMflation – LLM inference cost is going down fast » (novembre 2024) —
+          <a href="https://a16z.com/llmflation-llm-inference-cost/" rel="noopener">a16z.com</a></li>
+        <li id="ref-2"><b>Epoch AI</b>, « LLM inference prices have fallen rapidly but unequally across tasks » (mars 2025) —
+          <a href="https://epoch.ai/data-insights/llm-inference-price-trends" rel="noopener">epoch.ai</a></li>
+        <li id="ref-3"><b>H. Gundlach, J. Lynch, M. Mertens, N. Thompson — MIT FutureTech</b>, « The Price of Progress: Algorithmic Efficiency and the Falling Cost of AI Inference » (novembre 2025) —
+          <a href="https://arxiv.org/abs/2511.23455" rel="noopener">arxiv.org</a></li>
+        <li id="ref-4"><b>Menlo Ventures</b>, « 2025: The State of Generative AI in the Enterprise » (décembre 2025) —
+          <a href="https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/" rel="noopener">menlovc.com</a></li>
+        <li id="ref-5"><b>Gartner</b>, « Gartner Forecasts Worldwide GenAI Spending to Reach $644 Billion in 2025 » (mars 2025) —
+          <a href="https://www.gartner.com/en/newsroom/press-releases/2025-03-31-gartner-forecasts-worldwide-genai-spending-to-reach-644-billion-in-2025" rel="noopener">gartner.com</a></li>
+        <li id="ref-6"><b>Sarah Wang et al. — Andreessen Horowitz</b>, « How 100 Enterprise CIOs Are Building and Buying Gen AI in 2025 » (juin 2025) —
+          <a href="https://a16z.com/ai-enterprise-2025/" rel="noopener">a16z.com</a></li>
+        <li id="ref-7"><b>Fortune</b>, « What is Jevons paradox? The reason Satya Nadella says DeepSeek's new AI is good news for tech » (janvier 2025) —
+          <a href="https://fortune.com/2025/01/27/microsoft-ceo-satya-nadella-deepseek-optimism-jevons-paradox/" rel="noopener">fortune.com</a></li>
+        <li id="ref-8"><b>OpenRouter</b>, « DeepSeek V4 Is Earning Agentic Token Share » (juin 2026) —
+          <a href="https://openrouter.ai/blog/insights/deepseek-v4-adoption/" rel="noopener">openrouter.ai</a></li>
+        <li id="ref-9"><b>Anthropic Engineering</b>, « How we built our multi-agent research system » (juin 2025) —
+          <a href="https://www.anthropic.com/engineering/multi-agent-research-system" rel="noopener">anthropic.com</a></li>
+        <li id="ref-10"><b>E. Brynjolfsson, S. Pentland, J. Pei — Stanford Digital Economy Lab</b>, « How Do AI Agents Spend Your Money? » (mai 2026) —
+          <a href="https://digitaleconomy.stanford.edu/news/how-are-ai-agents-spending-your-tokens/" rel="noopener">digitaleconomy.stanford.edu</a></li>
+        <li id="ref-11"><b>Anthropic</b>, « Prompt caching with Claude » (2025) —
+          <a href="https://claude.com/blog/prompt-caching" rel="noopener">claude.com</a></li>
+        <li id="ref-12"><b>FinOps Foundation</b>, « State of FinOps 2026 Report » et « FinOps for AI » (2026) —
+          <a href="https://data.finops.org/" rel="noopener">finops.org</a></li>
+        <li id="ref-13"><b>Gartner</b>, « Gartner Forecasts Worldwide AI Platforms and Models Market to Grow 63% in 2026 » (juillet 2026) —
+          <a href="https://www.gartner.com/en/newsroom/press-releases/2026-07-20-gartner-forecasts-worldwide-ai-platforms-and-models-market-to-grow-63-percent-in-2026" rel="noopener">gartner.com</a></li>
+        <li id="ref-14"><b>LangChain</b>, « State of Agent Engineering » (juin 2026) —
+          <a href="https://www.langchain.com/state-of-agent-engineering" rel="noopener">langchain.com</a></li>
+      </ol>
+    </section>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      <p class="colophon">© <span id="year">2026</span> Anthony Damotte ·
+        <a href="../">Tous les écrits</a> · <a href="../../">Accueil</a></p>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--
+  VERSION STRUCTURÉE — contenu intégral, format « premier draft » (moins de prose continue :
+  sections courtes, encadrés, chiffres, tableaux). Stockée à côté de index.html (version prose
+  éditoriale), ne la remplace pas.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentic Factory (version structurée) — Anthony Damotte</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F6F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1217" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <style>
+    .tsec { margin-top: 56px; }
+    .tsec > .mono { color: var(--accent); display: block; margin-bottom: 6px; }
+    .tsec h2 { margin-top: 0; }
+    .paper-body h3 { font-family: "Newsreader", Georgia, serif; font-size: 1.2rem; font-weight: 600; margin: 32px 0 8px; }
+    .summary { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px 28px; margin-top: 12px; }
+    .summary .mono { color: var(--accent); }
+    .summary ul { margin: 12px 0 0; padding-left: 18px; }
+    .summary li { margin-bottom: 10px; color: var(--quote); }
+    .summary li:last-child { margin-bottom: 0; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0; }
+    @media (max-width: 620px) { .stats { grid-template-columns: 1fr 1fr; } }
+    .stat { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 12px; padding: 16px 18px; }
+    .stat .n { font-family: "Newsreader", Georgia, serif; font-size: 1.9rem; font-weight: 600; color: var(--accent); line-height: 1.1; font-variant-numeric: tabular-nums; }
+    .stat .l { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+    .note { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin: 32px 0; }
+    .note .mono { color: var(--accent); display: block; margin-bottom: 10px; }
+    .note p { margin: 0; font-size: 0.95rem; }
+    .table-wrap { overflow-x: auto; margin: 36px 0; border: 1px solid var(--line); border-radius: 12px; }
+    .paper-body table { border-collapse: collapse; width: 100%; background: var(--card); font-size: 0.92rem; }
+    .paper-body th {
+      font-family: "Fragment Mono", monospace; font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.12em; font-weight: 400; color: var(--accent);
+      text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); white-space: nowrap;
+    }
+    .paper-body td { padding: 12px 18px; border-bottom: 1px solid var(--line-soft); vertical-align: top; color: var(--quote); }
+    .paper-body tr:last-child td { border-bottom: none; }
+    .paper-body td:first-child { font-weight: 600; color: var(--ink); }
+    .lessons { counter-reset: lesson; display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+    .lesson { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px 16px 56px; position: relative; }
+    .lesson::before { counter-increment: lesson; content: counter(lesson, decimal-leading-zero); position: absolute; left: 18px; top: 17px; font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 1.1rem; color: var(--accent); }
+    .lesson b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 2px; }
+    .lesson p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+    .paper-body ul { margin: 0 0 1.2em; padding-left: 20px; }
+    .paper-body li { margin-bottom: 8px; color: var(--quote); }
+    .paper-body blockquote { margin: 40px 0; max-width: 32em; }
+  </style>
+</head>
+<body data-base="../../">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo" aria-label="Accueil">ad<em>.</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../">Tous les écrits</a></li>
+        <li><a class="cta" href="../../#contact">Me contacter</a></li>
+      </ul>
+      <div class="nav-ctrl">
+        <button class="ctrl-btn" id="themeBtn" aria-label="Changer de thème">☾</button>
+        <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="paper-body">
+    <header>
+      <span class="mono" style="color:var(--accent)">White paper</span>
+      <h1>Agentic Factory : industrialiser les agents IA <em>en entreprise</em></h1>
+      <p class="mono" style="color:var(--muted)">Août 2026 · 10 min · Anthony Damotte</p>
+      <p class="lede">Tout le monde sait produire une démonstration agentique impressionnante.
+        Presque personne ne sait la faire vivre en production : moins d'un cas d'usage sur dix
+        dépasse le stade du pilote. Ce paper décrit le mur — et le modèle opératoire pour le
+        franchir : workflows rejouables, portes de vérification, mesure honnête, capitalisation.</p>
+      <div class="paper-actions">
+        <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">En discuter sur LinkedIn</a>
+      </div>
+      <div class="summary">
+        <span class="mono">L'essentiel</span>
+        <ul>
+          <li>Le paradoxe 2025-2026 : ~8 entreprises sur 10 utilisent la GenAI, autant ne constatent
+            <strong>aucun impact sur le résultat</strong> ; <strong>moins de 10 %</strong> des cas
+            d'usage dépassent le pilote (McKinsey) ; <strong>&gt; 40 %</strong> des projets agentiques
+            promis à l'annulation d'ici 2027 (Gartner).</li>
+          <li>La cause n'est ni la technologie ni le talent : « l'IA est un amplificateur » (DORA) —
+            elle magnifie l'organisation qui l'entoure. Le démonstrateur prouve une <strong>capacité</strong> ;
+            la production exige une <strong>fiabilité</strong>, et les deux ne progressent pas ensemble.</li>
+          <li>La réponse tient en quatre étages : <strong>workflows versionnés et rejouables, portes de
+            vérification systématiques, mesure contre baseline, capitalisation</strong> qui fait que
+            chaque projet accélère le suivant.</li>
+          <li>Terrain à l'appui : plusieurs centaines de consultants mobilisés, <strong>plus de
+            100 ingénieurs en parallèle, ~250 000 lignes de code, moins de 3 h de delivery chrono</strong>
+            par démonstrateur — le fruit du format POD et de la préparation, pas de l'improvisation.</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="tsec">
+      <span class="mono">01 · Le terrain</span>
+      <h2>Nos hackathons GenAI</h2>
+      <div class="stats">
+        <div class="stat"><div class="n">100+</div><div class="l">ingénieurs mobilisés en parallèle, parmi plusieurs centaines de consultants</div></div>
+        <div class="stat"><div class="n">&lt;3 h</div><div class="l">de delivery chrono par démonstrateur agentique</div></div>
+        <div class="stat"><div class="n">250 000</div><div class="l">lignes de code produites — chaque résultat noté /100 contre une baseline sans IA</div></div>
+      </div>
+      <p>Ce que ces sessions prouvent, c'est une capacité — pas encore une industrie. Entre le
+        démonstrateur qui convainc à 17 h et le système qui tournera chez le client dans un an,
+        il y a un mur. Ce paper parle de ce mur.</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">02 · Le paradoxe</span>
+      <h2>Jamais autant de démos, jamais si peu de production</h2>
+      <div class="stats">
+        <div class="stat"><div class="n">&lt; 10 %</div><div class="l">des cas d'usage déployés dépassent le stade du pilote ; ~8/10 entreprises sans impact résultat (McKinsey)<sup><a href="#ref-1">[1]</a></sup></div></div>
+        <div class="stat"><div class="n">&gt; 40 %</div><div class="l">des projets agentiques annulés d'ici fin 2027 — coûts, valeur floue, risques (Gartner)<sup><a href="#ref-2">[2]</a></sup></div></div>
+        <div class="stat"><div class="n">5/35/60</div><div class="l">% future-built / scalers / entreprises sans valeur matérielle ; agents : 17 % → 29 % de la valeur IA d'ici 2028 (BCG)<sup><a href="#ref-3">[3]</a></sup></div></div>
+      </div>
+      <p>L'écart ne s'explique ni par l'accès aux modèles ni par le talent. McKinsey nomme la ligne
+        de partage : passer « des cas d'usage aux processus métier, des équipes en silo aux escouades
+        transverses, de l'expérimentation au delivery industrialisé »<sup><a href="#ref-1">[1]</a></sup>.
+        DORA le résume : <strong>« l'IA est un amplificateur »</strong> — elle magnifie les forces et
+        les dysfonctionnements existants<sup><a href="#ref-4">[4]</a></sup>.</p>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">03 · Le mur</span>
+      <h2>Pourquoi le démonstrateur meurt en démo</h2>
+      <ul>
+        <li><strong>Capacité ≠ fiabilité.</strong> Les agents réussissent une tâche mais s'effondrent
+          quand on exige huit réussites consécutives (τ-bench)<sup><a href="#ref-5">[5]</a></sup> ;
+          deux ans de gains de capacités n'ont produit que de faibles gains de fiabilité
+          (Princeton)<sup><a href="#ref-6">[6]</a></sup>. Le démonstrateur vit dans « ça a marché » ;
+          la production dans « ça marche à chaque fois, y compris quand tout va mal ».</li>
+        <li><strong>Le savoir-faire reste dans les têtes.</strong> Les agents actifs dans Microsoft 365
+          ont crû de 15× en un an — mais même chez les professionnels les plus avancés, seuls
+          <strong>26 %</strong> disposent de workflows agents documentés et rejouables au niveau
+          équipe<sup><a href="#ref-7">[7]</a></sup>. Les trois quarts du savoir-faire agentique vivent
+          là où vivait le savoir des développeurs référents.</li>
+      </ul>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">04 · La réponse</span>
+      <h2>Les quatre étages de la factory</h2>
+      <div class="lessons">
+        <div class="lesson"><b>Des workflows versionnés et rejouables.</b>
+          <p>Chaque tâche récurrente (documenter, migrer, générer des tests, rétro-documenter) devient
+            un procédé écrit, versionné, rejoué et amélioré. Anthropic : les implémentations qui
+            réussissent utilisent « des patterns simples et composables », pas des frameworks
+            complexes<sup><a href="#ref-8">[8]</a></sup> ; OpenAI : « un agent unique d'abord, le
+            multi-agents seulement si nécessaire »<sup><a href="#ref-9">[9]</a></sup>.</p></div>
+        <div class="lesson"><b>Des portes de vérification systématiques.</b>
+          <p>Definition of Done écrite (3-5 critères) avant de commencer ; relecture contradictoire
+            après chaque production en volume ; garde-fous en couches — « c'est leur combinaison qui
+            crée des agents résilients » — avec deux déclencheurs d'escalade humaine : seuils d'échec
+            dépassés, actions à haut risque ou irréversibles<sup><a href="#ref-9">[9]</a></sup>.</p></div>
+        <div class="lesson"><b>Une mesure honnête.</b>
+          <p>Chaque livrable évalué contre une baseline sans IA (la note /100). En production :
+            une suite d'evals qui grandit — « 20 à 50 tâches simples tirées de vraies défaillances
+            constituent un excellent départ »<sup><a href="#ref-10">[10]</a></sup>. Et l'honnêteté fait
+            partie de la mesure : un volume produit n'est pas un gain de vitesse démontré.</p></div>
+        <div class="lesson"><b>Une capitalisation qui compose.</b>
+          <p>En fin de mission, briques d'outillage, règles de méthode et cas d'évaluation rejoignent
+            le socle commun : chaque projet démarre plus haut que le précédent. La différence entre
+            dix projets agentiques et dix fois l'expérience d'un projet.</p></div>
+      </div>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">05 · Le modèle opératoire</span>
+      <h2>Le POD, et l'art de choisir ses batailles</h2>
+      <p>L'unité de production : <strong>1 client = 1 cas d'usage = 1 POD</strong> — un lead
+        expérimenté, des consultants outillés, et le client dans la boucle (les meilleurs résultats
+        viennent des sessions où il arbitre en direct). Matière réelle récupérée avant de commencer,
+        DoD validée par écrit. Microsoft mesure la même chose à l'échelle du marché : les facteurs
+        organisationnels pèsent 2× plus que l'aptitude individuelle<sup><a href="#ref-7">[7]</a></sup>.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>✅ Cas qui franchissent le mur</th><th>❌ Cas qui meurent en démo</th></tr></thead>
+          <tbody>
+            <tr><td>Migrer un module legacy vers une stack moderne à partir des specs</td><td>« Migrer notre SI » — périmètre non bornable</td></tr>
+            <tr><td>Générer des cas de test à partir d'exigences</td><td>Un besoin flou, sans matière ni critère de succès</td></tr>
+            <tr><td>Rétro-documenter un logiciel historique</td><td>Un cas dépendant d'un environnement client inaccessible</td></tr>
+            <tr><td>Un assistant métier sur un corpus délimité</td><td>Un résultat non démontrable en quelques minutes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <span class="mono">Confidentialité : le déblocage par la donnée synthétique</span>
+        <p>Un jeu de données synthétique reproduisant la structure et la difficulté du cas réel
+          démontre la même chose que les données réelles — et débloque un dossier en une semaine
+          au lieu d'un mois. C'est souvent la meilleure recommandation, pas un pis-aller.</p>
+      </div>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">06 · La conversion</span>
+      <h2>Du démonstrateur à la décision</h2>
+      <ul>
+        <li><strong>Dire d'emblée qu'un démonstrateur n'est pas industrialisable en l'état</strong> —
+          l'industrialisation est un projet à part entière. Cette honnêteté évite les déceptions qui
+          tuent la confiance, et paradoxalement fait vendre.</li>
+        <li><strong>Le démonstrateur ne crée pas le besoin, il accélère une décision en germe.</strong>
+          Les suites se concrétisent là où un projet de modernisation existait déjà.</li>
+        <li><strong>Poser la réunion de décision avant la démonstration.</strong> Un débrief « à
+          recaler plus tard » est une affaire perdue. La factory inclut le compte rendu à chaud
+          et la restitution datée.</li>
+      </ul>
+    </div>
+
+    <div class="tsec">
+      <span class="mono">07 · Par où commencer</span>
+      <h2>Quatre niveaux de maturité</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Niveau</th><th>Ce qui le caractérise</th></tr></thead>
+          <tbody>
+            <tr><td>1. Artisanal</td><td>Des réussites individuelles, non documentées — l'état des trois quarts du marché</td></tr>
+            <tr><td>2. Outillé</td><td>Workflows écrits et rejouables, environnement préparé</td></tr>
+            <tr><td>3. Mesuré</td><td>Portes de vérification systématiques, évaluation contre baseline</td></tr>
+            <tr><td>4. Capitalisé</td><td>Socle commun qui s'enrichit à chaque projet, équipes hybrides humains-agents</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Chaque niveau se franchit en mois, pas en années — mais aucun ne se saute. Premier pas,
+        quasi gratuit : prendre son meilleur succès agentique de l'année et l'écrire sous forme de
+        workflow rejouable par quelqu'un d'autre. Le jour où votre meilleure réussite n'appartient
+        plus à une personne mais à l'organisation, votre factory existe. Le reste est de la
+        croissance.</p>
+    </div>
+
+    <section class="refs">
+      <h2>Références</h2>
+      <ol>
+        <li id="ref-1"><b>McKinsey QuantumBlack</b>, « Seizing the agentic AI advantage » (juin 2025) —
+          <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage" rel="noopener">mckinsey.com</a></li>
+        <li id="ref-2"><b>Gartner</b>, « Over 40% of Agentic AI Projects Will Be Canceled by End of 2027 » (juin 2025) —
+          <a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027" rel="noopener">gartner.com</a></li>
+        <li id="ref-3"><b>BCG</b>, « Are You Generating Value from AI? The Widening Gap » (septembre 2025) —
+          <a href="https://www.bcg.com/publications/2025/are-you-generating-value-from-ai-the-widening-gap" rel="noopener">bcg.com</a></li>
+        <li id="ref-4"><b>Google Cloud — DORA</b>, « 2025 State of AI-assisted Software Development » (septembre 2025) —
+          <a href="https://dora.dev/dora-report-2025/" rel="noopener">dora.dev</a></li>
+        <li id="ref-5"><b>Sierra AI Research</b>, « τ-bench » (2024) —
+          <a href="https://sierra.ai/blog/benchmarking-ai-agents" rel="noopener">sierra.ai</a></li>
+        <li id="ref-6"><b>Rabanser, Kapoor, Narayanan et al. — Princeton</b>, « Towards a Science of AI Agent Reliability » (ICML 2026) —
+          <a href="https://arxiv.org/abs/2602.16666" rel="noopener">arxiv.org</a></li>
+        <li id="ref-7"><b>Microsoft</b>, « 2026 Work Trend Index » (mai 2026) —
+          <a href="https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization" rel="noopener">microsoft.com</a></li>
+        <li id="ref-8"><b>Anthropic</b>, « Building effective agents » (décembre 2024) —
+          <a href="https://www.anthropic.com/engineering/building-effective-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-9"><b>OpenAI</b>, « A practical guide to building agents » (2025) —
+          <a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf" rel="noopener">openai.com (PDF)</a></li>
+        <li id="ref-10"><b>Anthropic Engineering</b>, « Demystifying evals for AI agents » (janvier 2026) —
+          <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents" rel="noopener">anthropic.com</a></li>
+      </ol>
+      <p style="font-size:0.85rem;color:var(--muted);margin-top:18px">Chiffres de hackathon : bilan
+        consolidé des hackathons GenAI de Capgemini Engineering, menés avec
+        Mistral AI et Anthropic.</p>
+    </section>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      <p class="colophon">© <span id="year">2026</span> Anthony Damotte ·
+        <a href="../">Tous les écrits</a> · <a href="../../">Accueil</a></p>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

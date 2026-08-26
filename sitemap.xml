@@ -21,7 +21,129 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/" />
   </url>
-  <!-- Ajouter ici chaque white paper publié :
-  <url><loc>https://adamotte.github.io/ecrits/SLUG/</loc></url>
+  <!-- White papers publiés (FR + EN) — volontairement commentés : décommenter pour lancer l'indexation.
+  <url>
+    <loc>https://adamotte.github.io/ecrits/loop-engineering/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/loop-engineering/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/loop-engineering/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/loop-engineering/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/loop-engineering/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/loop-engineering/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/ecrits/agentic-factory/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/agentic-factory/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/agentic-factory/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/agentic-factory/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/agentic-factory/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/agentic-factory/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/ecrits/a-budget-egal/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/a-budget-egal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/a-budget-egal/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/a-budget-egal/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/a-budget-egal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/a-budget-egal/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/ecrits/le-modele-passe-le-harness-reste/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/le-modele-passe-le-harness-reste/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/le-modele-passe-le-harness-reste/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/le-modele-passe-le-harness-reste/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/le-modele-passe-le-harness-reste/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/le-modele-passe-le-harness-reste/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/ecrits/derniere-generation-experts/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/derniere-generation-experts/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/derniere-generation-experts/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/derniere-generation-experts/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/derniere-generation-experts/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/derniere-generation-experts/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/ecrits/paradoxe-du-token/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/paradoxe-du-token/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/paradoxe-du-token/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/paradoxe-du-token/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/paradoxe-du-token/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/paradoxe-du-token/" />
+  </url>
+  -->
+
+  <!-- À paraître : décommenter (FR + EN) à la publication de chaque paper.
+  <url>
+    <loc>https://adamotte.github.io/ecrits/le-fiable-et-le-plausible/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/le-fiable-et-le-plausible/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/le-fiable-et-le-plausible/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/le-fiable-et-le-plausible/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/le-fiable-et-le-plausible/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/le-fiable-et-le-plausible/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/ecrits/la-revue-est-le-nouveau-clavier/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/la-revue-est-le-nouveau-clavier/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/la-revue-est-le-nouveau-clavier/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/la-revue-est-le-nouveau-clavier/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/la-revue-est-le-nouveau-clavier/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/la-revue-est-le-nouveau-clavier/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/ecrits/eloge-du-workflow/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/eloge-du-workflow/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/eloge-du-workflow/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/eloge-du-workflow/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/eloge-du-workflow/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/eloge-du-workflow/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/ecrits/entreprise-salle-entrainement/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/entreprise-salle-entrainement/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/entreprise-salle-entrainement/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/entreprise-salle-entrainement/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/entreprise-salle-entrainement/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/entreprise-salle-entrainement/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/ecrits/employe-sans-badge/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/employe-sans-badge/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/employe-sans-badge/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/employe-sans-badge/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/employe-sans-badge/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/employe-sans-badge/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/ecrits/des-poids-chez-soi/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/des-poids-chez-soi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/des-poids-chez-soi/" />
+  </url>
+  <url>
+    <loc>https://adamotte.github.io/en/writing/des-poids-chez-soi/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/des-poids-chez-soi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/des-poids-chez-soi/" />
+  </url>
   -->
 </urlset>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+  Gabarit des cartes de série LinkedIn — identité visuelle du site adamotte.github.io.
+  Format 1200×1500 (portrait). Paramètres par query string :
+    ?serie=À budget <em>égal</em>     titre de la série (balise <em> autorisée pour l'italique accent)
+    &ep=Épisode 1/5                   indicateur d'épisode (ou « Hors série », « White paper »…)
+    &sub=La thèse contrariante        sous-titre de l'épisode
+    &kicker=WHITE PAPER · SÉRIE       kicker haut droite (défaut : WHITE PAPER · SÉRIE)
+  Export : capture du viewport 1200×1500.
+-->
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Gabarit de carte — Écrits agentiques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Instrument+Sans:wght@400;500;600&family=Fragment+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0F1217;
+    --text: #E7EAF2;
+    --muted: #8A93A6;
+    --accent: #96A7FF;
+    --line: rgba(231, 234, 242, 0.14);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 1500px; overflow: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Instrument Sans", sans-serif;
+    display: flex;
+  }
+  .card {
+    width: 1200px; height: 1500px;
+    padding: 110px 110px 96px;
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+  /* halo discret en haut à droite, écho du site */
+  .card::before {
+    content: ""; position: absolute; top: -260px; right: -260px;
+    width: 780px; height: 780px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(150,167,255,0.13), transparent 65%);
+  }
+  .top { display: flex; justify-content: space-between; align-items: baseline; }
+  .logo { font-family: "Newsreader", serif; font-weight: 600; font-size: 54px; color: var(--text); }
+  .logo em { font-style: normal; color: var(--accent); }
+  .kicker {
+    font-family: "Fragment Mono", monospace; font-size: 26px;
+    text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent);
+  }
+  .mid { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 56px; }
+  .ep {
+    font-family: "Newsreader", serif; font-style: italic;
+    font-size: 64px; color: var(--muted); font-weight: 400;
+  }
+  h1 {
+    font-family: "Newsreader", serif; font-weight: 600;
+    font-size: 132px; line-height: 1.08; letter-spacing: -0.01em;
+    max-width: 950px;
+  }
+  h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .sub {
+    font-family: "Fragment Mono", monospace; font-size: 30px;
+    text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted);
+    max-width: 900px; line-height: 1.6;
+  }
+  .bottom { border-top: 1px solid var(--line); padding-top: 44px;
+    display: flex; justify-content: space-between; align-items: baseline; }
+  .who { font-size: 30px; color: var(--text); font-weight: 500; }
+  .who span { color: var(--muted); font-weight: 400; }
+  .url { font-family: "Fragment Mono", monospace; font-size: 26px; color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="top">
+      <div class="logo">ad<em>.</em></div>
+      <div class="kicker" id="kicker">White paper · Série</div>
+    </div>
+    <div class="mid">
+      <div class="ep" id="ep">Épisode 1/5</div>
+      <h1 id="serie">À budget <em>égal</em></h1>
+      <div class="sub" id="sub">La thèse contrariante</div>
+    </div>
+    <div class="bottom">
+      <div class="who">Anthony Damotte <span>— Écrits agentiques</span></div>
+      <div class="url">adamotte.github.io/ecrits</div>
+    </div>
+  </div>
+  <script>
+    const q = new URLSearchParams(location.search);
+    const set = (id, val, html) => { if (val) document.getElementById(id)[html ? 'innerHTML' : 'textContent'] = val; };
+    set('serie', q.get('serie'), true);
+    set('ep', q.get('ep'));
+    set('sub', q.get('sub'));
+    set('kicker', q.get('kicker'));
+    // Titres longs : on réduit pour tenir en trois lignes maximum
+    const h1 = document.getElementById('serie');
+    const len = h1.textContent.length;
+    if (len > 34) h1.style.fontSize = '96px';
+    else if (len > 22) h1.style.fontSize = '112px';
+  </script>
+</body>
+</html>

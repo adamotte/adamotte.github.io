@@ -276,4 +276,14 @@
       })
       .catch(function () { /* section laissée telle quelle */ });
   }
+
+  /* ---------- Mesure d'audience (GoatCounter, sans cookies) ----------
+     Chargé uniquement en production : les previews locales ne comptent pas. */
+  if (location.hostname === 'adamotte.github.io') {
+    var gc = document.createElement('script');
+    gc.async = true;
+    gc.src = 'https://gc.zgo.at/count.js';
+    gc.setAttribute('data-goatcounter', 'https://adamotte.goatcounter.com/count');
+    document.head.appendChild(gc);
+  }
 })();

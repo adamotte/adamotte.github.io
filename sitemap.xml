@@ -21,7 +21,6 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/" />
   </url>
-  <!-- White papers publiés (FR + EN) — volontairement commentés : décommenter pour lancer l'indexation.
   <url>
     <loc>https://adamotte.github.io/ecrits/loop-engineering/</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/loop-engineering/" />
@@ -82,8 +81,6 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/paradoxe-du-token/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/paradoxe-du-token/" />
   </url>
-  -->
-
   <!-- À paraître : décommenter (FR + EN) à la publication de chaque paper.
   <url>
     <loc>https://adamotte.github.io/ecrits/le-fiable-et-le-plausible/</loc>

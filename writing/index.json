@@ -75,15 +75,15 @@
       "slug": "le-modele-passe-le-harness-reste",
       "status": "published",
       "date": "2026-05-04",
-      "minutes": 11,
+      "minutes": 12,
       "tags": ["AgenticAI", "Harness", "Evals"],
       "fr": {
         "title": "Le modèle passe, le harness reste",
-        "summary": "Les modèles se déprécient en dix-huit mois ; vos evals, vos harness et votre mémoire d'entreprise prennent de la valeur. Où investir quand tout bouge — le manifeste de l'agentic factory."
+        "summary": "Un modèle frontier reste à peu près un an en API ; vos evals, vos harness et votre mémoire d'entreprise prennent de la valeur. Où investir quand tout bouge : le manifeste de l'agentic factory."
       },
       "en": {
         "title": "Models come and go, the harness remains",
-        "summary": "Models depreciate in eighteen months; your evals, harnesses and enterprise memory appreciate. Where to invest when everything moves — the agentic factory manifesto."
+        "summary": "A frontier model stays about a year in the API; your evals, harnesses and enterprise memory gain value. Where to invest when everything moves: the agentic factory manifesto."
       },
       "links": { "fr": "ecrits/le-modele-passe-le-harness-reste/", "en": "en/writing/le-modele-passe-le-harness-reste/" }
     },

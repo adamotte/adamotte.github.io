@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Models come and go, the harness remains — Anthony Damotte</title>
-  <meta name="description" content="A frontier model now lives twelve to eighteen months in the API that serves it. What accumulates and appreciates are your evals, your harnesses, your enterprise memory. Where to invest when everything moves — the agentic factory manifesto." />
+  <meta name="description" content="A frontier model stays about a year in the API, and five shipped in three weeks. Meanwhile your evals, your harnesses and your enterprise memory gain value. Where to invest when everything moves: the agentic factory manifesto." />
   <link rel="canonical" href="https://adamotte.github.io/en/writing/le-modele-passe-le-harness-reste/" />
   <link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/le-modele-passe-le-harness-reste/" />
   <link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/le-modele-passe-le-harness-reste/" />
   <link rel="alternate" hreflang="x-default" href="https://adamotte.github.io/ecrits/le-modele-passe-le-harness-reste/" />
   <meta property="og:title" content="Models come and go, the harness remains" />
-  <meta property="og:description" content="Models depreciate in eighteen months; your evals, harnesses and enterprise memory appreciate. Where to invest when everything moves — the agentic factory manifesto." />
+  <meta property="og:description" content="Models turn over every year; your evals, harnesses and enterprise memory gain value. The agentic factory manifesto." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://adamotte.github.io/en/writing/le-modele-passe-le-harness-reste/" />
   <meta property="og:image" content="https://adamotte.github.io/images/og-image.png?v=2" />
@@ -27,8 +27,9 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Models come and go, the harness remains",
-    "description": "Models depreciate in twelve to eighteen months; evals, harnesses and enterprise memory appreciate. The agentic factory manifesto.",
+    "description": "Models turn over every year; your evals, harnesses and enterprise memory gain value. The agentic factory manifesto.",
     "datePublished": "2026-08-20",
+    "dateModified": "2026-09-23",
     "inLanguage": "en",
     "author": { "@type": "Person", "name": "Anthony Damotte", "url": "https://adamotte.github.io/" }
   }
@@ -57,186 +58,203 @@
     <header>
       <span class="mono" style="color:var(--accent)">White paper</span>
       <h1>Models come and go, the harness remains</h1>
-      <p class="mono" style="color:var(--muted)">August 2026 · 11 min read · Anthony Damotte</p>
-      <p class="lede">A frontier model now lives twelve to eighteen months before it is retired from
-        the API that serves it. Building your AI strategy on a model is therefore building on sand —
-        and yet that is exactly what most failing projects do. What accumulates and appreciates
-        while models depreciate goes by other names: evals, harnesses, memory, data. That is where
-        the investment belongs, and it is the entire reason an agentic factory exists.</p>
+      <p class="mono" style="color:var(--muted)">August 2026, updated September 2026 · 12 min read · Anthony Damotte</p>
+      <p class="lede">Five frontier models shipped in the first three weeks of September 2026, and
+        each of them will be pulled from the API that serves it within a year or two. Building an
+        AI strategy on a model is building on sand, and yet that is what most failing projects do.
+        While models depreciate, other things gain value: evals, the harness, the company's memory,
+        its data. That is where the investment belongs, and it is why an agentic factory
+        exists.</p>
       <div class="paper-actions">
         <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">Discuss on LinkedIn</a>
       </div>
     </header>
 
-    <p>In every technology leadership conversation there is one question I am invariably asked,
-      often within the first few minutes: “which model should we choose?” I understand the
-      question — it resembles the structuring choices of an earlier era: the database, the language,
-      the cloud. But it rests on a false premise: the idea that a model is chosen the way one
-      chooses a foundation, for the long term. An AI model is not a foundation. It is a
-      high-performance consumable, with a lifespan measured in months. The real question — the one
-      that separates the 5% of projects that create value from the rest — is: what are you building
-      around it that will outlive the model?</p>
+    <p>On September 1, 2026, Anthropic released Claude Fable 5.1. The next day Google shipped
+      Gemini 3.8 Flash, and the day after that OpenAI unveiled Astra. xAI followed on the 21st
+      with Grok 4.7<sup><a href="#ref-1" id="cite-1">[1]</a></sup><sup><a href="#ref-2" id="cite-2">[2]</a></sup>. On the 22nd Anthropic was back with Opus 5.5,
+      which matches Fable 5.1 on most work at 40% less than the cost of
+      Opus 5<sup><a href="#ref-3" id="cite-3">[3]</a></sup>. Five frontier models in three weeks, not counting the smaller
+      releases in between.</p>
 
-    <h2>Twelve to eighteen months</h2>
+    <p>Against that backdrop, the question I hear most often in workshops sounds slightly out of
+      step: “which model should we choose?” I understand where it comes from. For twenty years we
+      picked a database, a language or a cloud for a decade, and it feels natural to do the same
+      here. A model, though, is not chosen like a foundation. It wears out, it gets replaced, and
+      its lifespan is counted in months. The question worth asking is what we build around it,
+      and what will be left once it is gone.</p>
 
-    <p>Model churn is not an impression; it is public data anyone can verify on the providers'
-      deprecation pages. At Anthropic, Claude Sonnet 3.7, launched in February 2025, was retired
-      twelve months later to the day; Opus 4 and Sonnet 4 will have lived thirteen months;
-      Opus 4.1, twelve<sup><a href="#ref-1" id="cite-1">[1]</a></sup>. At OpenAI, GPT-4.5-preview
-      lasted less than five months between launch and retirement<sup><a href="#ref-2" id="cite-2">[2]</a></sup>.
-      The contractual notice periods give the measure of the phenomenon: sixty days of guaranteed
-      minimum at one, six months for stabilized models at the other. In late 2025, Anthropic even
-      published formal commitments on preserving model weights, acknowledging in black and white
-      what every production team already knows: forced migrations are structural, costly, and here
-      to stay<sup><a href="#ref-3" id="cite-3">[3]</a></sup>. This is the actual regime we build in:
-      a central component of our systems gets replaced, willingly or not, on an annual cadence.</p>
+    <h2>A year, give or take</h2>
+
+    <p>There is no need to take commentators at their word: the providers publish their own
+      retirement schedules. At Anthropic, Claude Sonnet 3.7, launched in February 2025, was retired
+      twelve months later to the day. Opus 4 and Sonnet 4 lasted thirteen months, Opus 4.1 exactly
+      one year. For its current models, the company now lists a minimum retirement date set one
+      year after release<sup><a href="#ref-4" id="cite-4">[4]</a></sup>. At OpenAI, GPT-5, released in August 2025, was
+      deprecated ten months later and will be switched off on December 11, 2026; o3 goes the same
+      day, after twenty months in service. The extreme case is still GPT-4.5 preview, retired less
+      than five months after launch<sup><a href="#ref-5" id="cite-5">[5]</a></sup>.</p>
+
+    <p>And the pace is picking up. Anthropic shipped six versions of Opus between November 2025
+      and September 2026<sup><a href="#ref-4" id="cite-4-2">[4]</a></sup><sup><a href="#ref-3" id="cite-3-2">[3]</a></sup>. At Google, Gemini 3.6 Flash, introduced
+      on July 21, had a successor six weeks later<sup><a href="#ref-6" id="cite-6">[6]</a></sup><sup><a href="#ref-1" id="cite-1-2">[1]</a></sup>. Notice periods
+      range from sixty days at Anthropic to roughly six months at OpenAI. In late 2025 Anthropic
+      even made formal commitments to preserve the weights of retired models, which amounts to
+      admitting that forced migrations are part of the job and that they cost
+      money<sup><a href="#ref-7" id="cite-7">[7]</a></sup>: a central component of our systems now changes about once a
+      year, whether we like it or not.</p>
 
     <h2>The 95% misunderstanding</h2>
 
-    <p>It is against this backdrop that the most talked-about statistic of 2025 deserves a second
-      reading: according to MIT's NANDA project, roughly 95% of enterprise generative AI pilots
-      produced no measurable P&amp;L impact<sup><a href="#ref-4" id="cite-4">[4]</a></sup>. The
-      figure made the front page of Fortune and briefly rattled the markets<sup><a href="#ref-5" id="cite-5">[5]</a></sup>.
-      It deserves its caveats — critics rightly pointed out that any pilot not deployed at scale is
-      counted as a failure, and that the report documents less a failure of the technology than an
-      organizational inability to evaluate, buy, and integrate<sup><a href="#ref-6" id="cite-6">[6]</a></sup>.
-      But it is precisely this corrected reading that interests me, because it is corroborated on
-      every side. Gartner predicts that over 40% of agentic AI projects will be canceled by the end
-      of 2027, owing to escalating costs, unclear business value, and inadequate risk controls<sup><a href="#ref-7" id="cite-7">[7]</a></sup>.
-      McKinsey finds that 88% of organizations use AI somewhere, that only 39% derive
-      enterprise-level financial impact from it, and that the factor most correlated with value is
-      neither the model nor the budget but the redesign of workflows — which only 21% of adopters
-      have undertaken<sup><a href="#ref-8" id="cite-8">[8]</a></sup>. One telling detail from the
-      MIT report: solutions built with a specialized partner succeed twice as often as improvised
-      internal builds<sup><a href="#ref-4" id="cite-4b">[4]</a></sup>. Everywhere, the same
-      conclusion in negative space: the model was never the problem. What is missing is the
-      factory around it.</p>
+    <p>That schedule is the right lens for rereading the most quoted statistic of 2025. According
+      to MIT's NANDA project, roughly 95% of enterprise generative AI pilots had no measurable
+      effect on the P&amp;L<sup><a href="#ref-8" id="cite-8">[8]</a></sup>. The figure made the front page of Fortune and
+      briefly rattled the markets<sup><a href="#ref-9" id="cite-9">[9]</a></sup>. It needs some qualifying. Critics rightly
+      noted that any pilot not rolled out at scale counts as a failure, and that the report mostly
+      describes organizations poorly equipped to evaluate, buy and integrate<sup><a href="#ref-10" id="cite-10">[10]</a></sup>.
+      I find that corrected reading more interesting than the raw number, because other studies
+      back it up. Gartner expects more than 40% of agentic AI projects to be canceled by the end of
+      2027, over runaway costs, value that never materializes or poorly controlled
+      risk<sup><a href="#ref-11" id="cite-11">[11]</a></sup>. MIT also found that solutions built with a specialist partner
+      succeed twice as often as improvised in-house builds<sup><a href="#ref-8" id="cite-8-2">[8]</a></sup>.</p>
 
-    <h2>The gap between capability and reliability</h2>
+    <p>McKinsey provides the most telling measure, because it comes back every year. In 2025,
+      88% of organizations used AI somewhere, but only 39% saw its effect on their earnings. Of all
+      the factors studied, the one that best explained value was the redesign of work processes,
+      which only 21% of adopters had undertaken<sup><a href="#ref-12" id="cite-12">[12]</a></sup>. The August 2026 edition has
+      37% of companies attributing some of their earnings to AI, and a share of “high performers”
+      still around 6%. Yet eight respondents in ten say AI makes them more productive
+      personally<sup><a href="#ref-13" id="cite-13">[13]</a></sup>. Between the two surveys, models were replaced several times
+      over and improved considerably; the effect on the bottom line did not move. The difference
+      lies around the model, in the organization and in the tooling.</p>
 
-    <p>Why does the factory matter more than the machine? Because a model's raw capability and a
-      system's reliability are two quantities that do not progress together. Sierra's τ-bench,
-      now a standard for customer-service agents, showed it first: the best agents completed fewer
-      than one task in two, and above all their success rate collapsed when asked to succeed at
-      the same task eight times in a row — only about 25%<sup><a href="#ref-9" id="cite-9">[9]</a></sup>.
-      A Princeton team led by Arvind Narayanan has just formalized this “capability-reliability
-      gap”: across twelve reliability metrics applied to fifteen models, nearly two years of
-      spectacular capability progress produced only modest reliability gains<sup><a href="#ref-10" id="cite-10">[10]</a></sup>.
-      In other words, waiting for the next model will not close the gap. What closes it is
-      everything you build around it: the rules, the checks, the guardrails, the error recovery —
-      the harness, in the original sense of the word: the tack that turns an unpredictable force
-      into useful work.</p>
+    <h2>Capability and reliability</h2>
 
-    <h2>What appreciates while the model depreciates</h2>
+    <p>The surroundings matter more than the model because a model's capability and a system's
+      reliability are two separate quantities, and they do not grow at the same rate. Sierra's
+      τ-bench, now a reference for customer service agents, was the first to show it. The best
+      agents succeeded on fewer than half of the tasks, and that rate dropped to around 25% when
+      they had to get the same task right eight times in a row<sup><a href="#ref-14" id="cite-14">[14]</a></sup>. A Princeton
+      team led by Arvind Narayanan has since given the gap a name, the “capability-reliability
+      gap”. Across twelve reliability metrics applied to fifteen models, nearly two years of
+      spectacular capability gains produced only modest gains in reliability<sup><a href="#ref-15" id="cite-15">[15]</a></sup>.</p>
 
-    <p>So let us take inventory of what remains when the model goes. First, the evaluations.
-      “evals are surprisingly often all you need,” wrote Greg Brockman, OpenAI's president, as
-      early as 2023<sup><a href="#ref-11" id="cite-11">[11]</a></sup>; the practitioner Drew
-      Breunig distilled it into the formula I have made my own: your eval is the most valuable AI
-      asset you own — not your model, not your prompts<sup><a href="#ref-12" id="cite-12">[12]</a></sup>.
-      An evaluation suite that encodes what <em>your</em> business considers a job well done makes
-      you master of your own timeline: every new model becomes a candidate you can audition in a
-      few hours, and a forced migration, a formality. Hamel Husain, whose work is the reference on
-      the subject, observes that failing AI products almost all share the same root cause — the
-      absence of a robust evaluation system<sup><a href="#ref-13" id="cite-13">[13]</a></sup>.
-      And Berkeley's research on “criteria drift” adds the decisive argument: evaluation criteria
-      do not pre-exist, they emerge from use — which makes evals an asset forged by each
-      organization, impossible to buy off the shelf and therefore durably
-      differentiating<sup><a href="#ref-14" id="cite-14">[14]</a></sup>.</p>
+    <p>Waiting for the next model will not be enough. The gap narrows with what gets built around
+      the model: rules, checks, guardrails, error recovery. That is the harness, in the literal
+      sense of the word: the gear that lets you hitch a powerful but unpredictable force and turn
+      it into useful work.</p>
 
-    <p>Next come context and memory. Andrej Karpathy popularized the term “context engineering” —
-      “the delicate art and science of filling the context window with just the right information
-      for the next step”<sup><a href="#ref-15" id="cite-15">[15]</a></sup> — and Anthropic has
-      turned it into an engineering discipline in its own right, in which context is treated as
-      “a finite resource with diminishing marginal returns”<sup><a href="#ref-16" id="cite-16">[16]</a></sup>.
-      And what does that context contain, if not what the enterprise knows: its business rules,
-      its conventions, its living documentation, the history of its decisions? This organizational
-      memory, structured to be served to agents at the right moment, holds its value across every
-      model present and future. Finally, the integration layer itself has standardized: the Model
-      Context Protocol, launched by Anthropic in late 2024, since adopted by OpenAI, Google, and
-      Microsoft, then entrusted to a neutral foundation under the Linux Foundation, with more than
-      ten thousand servers published<sup><a href="#ref-17" id="cite-17">[17]</a></sup> — while the
-      LLMOps tooling market grows at more than 20% a year<sup><a href="#ref-18" id="cite-18">[18]</a></sup>.
-      The pipes, too, outlive the models that flow through them.</p>
+    <h2>What gains value as the model loses it</h2>
 
-    <p>Research has now begun to quantify what practitioners sensed. On SWE-bench Mobile — a
-      benchmark built on a production iOS codebase — twenty-two agent configurations were compared
-      with the model held strictly constant: between the best and the worst harness, the
-      performance gap reaches a factor of six<sup><a href="#ref-19" id="cite-19">[19]</a></sup>.
-      What surrounds the model now weighs more than moving from one model generation to the next.
-      And Stanford has taken the next step: treating the harness as an optimization target in its
-      own right. Their Meta-Harness loop — a coding agent that inspects, diagnoses and rewrites
-      the harness itself — beats the state of the art in context management by nearly eight
-      points while consuming four times fewer tokens<sup><a href="#ref-20" id="cite-20">[20]</a></sup>.
-      The asset does not merely remain: it can be measured, engineered and optimized.</p>
+    <p>The first of these assets is evaluation. Greg Brockman, OpenAI's president, wrote as early
+      as 2023 that “evals are surprisingly often all you need”<sup><a href="#ref-16" id="cite-16">[16]</a></sup>. Drew Breunig
+      went further, in a line I am happy to borrow: your eval is the most valuable AI asset you
+      own, more than your model and more than your prompts<sup><a href="#ref-17" id="cite-17">[17]</a></sup>. An evaluation
+      suite that captures what <em>your</em> business calls good work puts you in charge of the
+      calendar. Every new model becomes a candidate you can audition in a few hours, and a
+      migration forced by a provider becomes routine. Hamel Husain, whose work on the subject is a
+      reference, observes that failing AI products nearly all share the same root cause: the lack
+      of a solid evaluation system<sup><a href="#ref-18" id="cite-18">[18]</a></sup>. The Berkeley researchers who studied
+      “criteria drift” add a further argument. Evaluation criteria do not exist before use; you
+      discover them by reading what the system produces<sup><a href="#ref-19" id="cite-19">[19]</a></sup>. Every organization
+      therefore forges its own, and nobody can sell them off the shelf.</p>
+
+    <p>Those evals still have to be truly yours. On June 3, 2026, OpenAI announced it was closing
+      its hosted evaluation platform, its Agent Builder and its reusable prompts API, all three
+      shutting down on November 30. The company recommends moving evals to Promptfoo, an open-source
+      tool that runs locally or in continuous integration<sup><a href="#ref-20" id="cite-20">[20]</a></sup>. Teams that had
+      entrusted their test sets to the model provider now have to move them at the same time as
+      the model: a vendor's tooling lives on the vendor's schedule, and yours has to be able to do
+      without it.</p>
+
+    <p>The second asset is context, and with it the company's memory. Andrej Karpathy popularized
+      the term “context engineering”, which he describes as “the delicate art and science of
+      filling the context window with just the right information for the next
+      step”<sup><a href="#ref-21" id="cite-21">[21]</a></sup>. Anthropic turned it into an engineering discipline of its own,
+      one that treats context as “a finite resource with diminishing marginal
+      returns”<sup><a href="#ref-22" id="cite-22">[22]</a></sup>. What that context holds is mostly what the company
+      knows: its business rules, its conventions, its living documentation, the history of its
+      decisions. Once structured to reach agents at the right moment, that memory serves today's
+      model and every model that follows.</p>
+
+    <p>The third asset is integration, which standardized in under two years. The Model Context
+      Protocol, launched by Anthropic in late 2024 and adopted since by OpenAI, Google and
+      Microsoft, was handed in December 2025 to a neutral foundation under the Linux Foundation.
+      There were more than ten thousand public servers at the time<sup><a href="#ref-23" id="cite-23">[23]</a></sup>. Meanwhile,
+      the LLMOps tooling market is growing by more than 20% a year<sup><a href="#ref-24" id="cite-24">[24]</a></sup>: connectors,
+      too, outlive the models that pass through them.</p>
+
+    <p>Research is starting to put numbers on what practitioners sensed. On SWE-bench Mobile, a
+      benchmark built on a production iOS codebase, twenty-two agent configurations were compared.
+      With the model held strictly constant, a factor of six separates the best harness from the
+      worst<sup><a href="#ref-25" id="cite-25">[25]</a></sup>. The model's surroundings now weigh more than the move from one
+      model generation to the next. Stanford went a step further by treating the harness as
+      something to optimize. Its Meta-Harness loop has a coding agent inspect, diagnose and rewrite
+      the harness itself. It beats the state of the art in context management by nearly eight
+      points while using four times fewer tokens<sup><a href="#ref-26" id="cite-26">[26]</a></sup>. A harness can be
+      measured, designed and improved, like any other engineering asset.</p>
 
     <h2>The agentic factory manifesto</h2>
 
-    <p>From all this I draw four rules, which I apply in the projects I advise and which serve as
-      the manifesto for what we call an agentic factory. One: never marry a model — demand of every
-      architecture that it pass the “replacement test,” meaning the model can be swapped in days,
-      not quarters, with evaluation evidence to prove it. Two: budget evals as infrastructure, not
-      as project debt — it is the only AI investment whose value grows mechanically over time,
-      since every failure case encountered in production enriches it. Three: treat memory and
-      context as intellectual property — what your agents know about your company is yours,
-      versioned, audited, portable from one model to the next. Four: industrialize the loop, not
-      the prompt — guardrails, cross-checks, and error recovery are what turn an impressive demo
-      into a system you dare to depend on.</p>
+    <p>I draw four rules from all this. I apply them in the projects I support, and they make up
+      the manifesto of what we call an agentic factory.</p>
 
-    <p>The title of this paper is self-evident to anyone who has lived through a forced migration,
-      but it carries a budgetary consequence few organizations have drawn: if the model is a
-      consumable and the harness an asset, then the allocation of investment must invert. Less
-      energy chasing the latest benchmark, more energy building what makes any benchmark
-      exploitable. Models will come and go — that is their job, and so much the better, since each
-      generation is better than the last. Your job is not to guess which one will win. It is to
-      own, the day it arrives, the one thing it cannot bring you: the machine that turns it into
-      value.</p>
+    <p>First, never tie yourself to a model. Every architecture should pass what I call the
+      replacement test. If the provider retires your model on Monday, you should be able to
+      switch within days, with evals to prove nothing has regressed. If the switch takes a month
+      or more, the architecture has a problem.</p>
+
+    <p>Second, budget evals like infrastructure, sheltered from schedule trade-offs. It is the only
+      AI investment whose value rises mechanically over time, since every failure met in production
+      feeds the test suite.</p>
+
+    <p>Third, treat memory and context as intellectual property. What your agents know about your
+      company belongs to you. That knowledge should be versioned, audited and portable from one
+      model to the next and from one provider to another. Evals and prompts fall within that scope,
+      since, as we have just seen, they can disappear along with the platform that hosts them.</p>
+
+    <p>Fourth, industrialize the loop, beyond the prompt alone. The loop is what turns an
+      impressive demo into a system you dare to depend on.</p>
+
+    <p>To anyone who has lived through a forced migration, the title of this paper is stating the
+      obvious. It does carry a budget consequence that few organizations have drawn, though: if the
+      model is a consumable and the harness an asset, the split of investment should flip. Less
+      energy spent chasing this week's leaderboard, more spent building what lets you get the most
+      out of any model. September 2026 made the point better than any argument could: five new
+      models in three weeks, and no reason for any of them to stay on top for long. Models will
+      come and go, that is what they do, and nobody knows which one will win the next round. When
+      it arrives, what will count is already having in hand the one thing it cannot bring you: the
+      machine for turning it into value.</p>
 
     <section class="refs">
       <h2>References</h2>
       <ol>
-        <li id="ref-1"><b>Anthropic</b>, “Model deprecations” (official documentation, dated history) —
-          <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations" rel="noopener">platform.claude.com</a></li>
-        <li id="ref-2"><b>OpenAI</b>, “Deprecations” (official documentation) —
-          <a href="https://developers.openai.com/api/docs/deprecations" rel="noopener">developers.openai.com</a></li>
-        <li id="ref-3"><b>Anthropic</b>, “Commitments on model deprecation and preservation” (November 2025) —
-          <a href="https://www.anthropic.com/research/deprecation-commitments" rel="noopener">anthropic.com</a></li>
-        <li id="ref-4"><b>MIT NANDA (A. Challapally et al.)</b>, “The GenAI Divide: State of AI in Business 2025” (July 2025) —
-          <a href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf" rel="noopener">PDF report</a></li>
-        <li id="ref-5"><b>Fortune</b>, “MIT report: 95% of generative AI pilots at companies are failing” (August 2025) —
-          <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" rel="noopener">fortune.com</a></li>
-        <li id="ref-6"><b>Arnon Shimoni</b>, “MIT's 95% AI failure rate is wrong” (August 2025) —
-          <a href="https://arnon.dk/mits-95-ai-failure-rate-is-wrong/" rel="noopener">arnon.dk</a></li>
-        <li id="ref-7"><b>Gartner</b>, “Gartner Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027” (June 2025) —
-          <a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027" rel="noopener">gartner.com</a></li>
-        <li id="ref-8"><b>McKinsey QuantumBlack</b>, “The state of AI in 2025: Agents, innovation, and transformation” (November 2025) —
-          <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" rel="noopener">mckinsey.com</a></li>
-        <li id="ref-9"><b>Sierra AI Research (S. Yao et al.)</b>, “τ-bench: Benchmarking AI agents for the real-world” (2024) —
-          <a href="https://sierra.ai/blog/benchmarking-ai-agents" rel="noopener">sierra.ai</a></li>
-        <li id="ref-10"><b>S. Rabanser, S. Kapoor, A. Narayanan et al. — Princeton</b>, “Towards a Science of AI Agent Reliability” (ICML 2026) —
-          <a href="https://arxiv.org/abs/2602.16666" rel="noopener">arxiv.org</a></li>
-        <li id="ref-11"><b>Greg Brockman — OpenAI</b>, “evals are surprisingly often all you need” (December 2023) —
-          <a href="https://x.com/gdb/status/1733553161884127435" rel="noopener">x.com</a></li>
-        <li id="ref-12"><b>Drew Breunig</b>, “Your Eval is More Important Than the Model” (January 2025) —
-          <a href="https://www.dbreunig.com/2025/01/08/evaluating-llms-as-knowledge-banks.html" rel="noopener">dbreunig.com</a></li>
-        <li id="ref-13"><b>Hamel Husain</b>, “Your AI Product Needs Evals” (2024) —
-          <a href="https://hamel.dev/blog/posts/evals/" rel="noopener">hamel.dev</a></li>
-        <li id="ref-14"><b>S. Shankar et al. — UC Berkeley</b>, “Who Validates the Validators?”, UIST 2024 —
-          <a href="https://arxiv.org/abs/2404.12272" rel="noopener">arxiv.org</a></li>
-        <li id="ref-15"><b>Andrej Karpathy</b>, on “context engineering” (June 2025), reproduced by Simon Willison —
-          <a href="https://simonwillison.net/2025/Jun/27/context-engineering/" rel="noopener">simonwillison.net</a></li>
-        <li id="ref-16"><b>Anthropic Engineering</b>, “Effective context engineering for AI agents” (September 2025) —
-          <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" rel="noopener">anthropic.com</a></li>
-        <li id="ref-17"><b>Linux Foundation</b>, “Formation of the Agentic AI Foundation” (December 2025) —
-          <a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation" rel="noopener">linuxfoundation.org</a> ;
-          <b>Anthropic</b>, “Introducing the Model Context Protocol” (November 2024) —
-          <a href="https://www.anthropic.com/news/model-context-protocol" rel="noopener">anthropic.com</a></li>
-        <li id="ref-18"><b>The Business Research Company</b>, “LLMOps Software Global Market Report 2026” —
-          <a href="https://natlawreview.com/press-releases/llmops-software-market-reach-1559-billion-2030-growing-216-cagr" rel="noopener">natlawreview.com</a></li>
-        <li id="ref-19"><b>M. Tian et al.</b>, “SWE-bench Mobile: Can Large Language Model Agents Develop Industry-Level Mobile Applications?” (arXiv, February 2026) —
-          <a href="https://arxiv.org/abs/2602.09540" rel="noopener">arxiv.org</a></li>
-        <li id="ref-20"><b>Y. Lee et al. — Stanford</b>, “Meta-Harness: End-to-End Optimization of Model Harnesses” (arXiv, March 2026) —
-          <a href="https://arxiv.org/abs/2603.28052" rel="noopener">arxiv.org</a></li>
+        <li id="ref-1"><b>Digital Applied</b>, “AI Model Releases: September 2026 Tracker and Dated Ledger” (September 2026), <a href="https://www.digitalapplied.com/blog/ai-model-releases-september-2026-tracker" rel="noopener">digitalapplied.com</a></li>
+        <li id="ref-2"><b>TechCrunch</b>, “OpenAI launches Astra, its powerful (and controversial) new model” (September 3, 2026), <a href="https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/" rel="noopener">techcrunch.com</a></li>
+        <li id="ref-3"><b>Anthropic</b>, “Introducing Claude Opus 5.5” (September 22, 2026), <a href="https://www.anthropic.com/claude-opus-5-5" rel="noopener">anthropic.com</a></li>
+        <li id="ref-4"><b>Anthropic</b>, “Model deprecations”, official documentation with dated history, accessed September 23, 2026, <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations" rel="noopener">platform.claude.com</a></li>
+        <li id="ref-5"><b>OpenAI</b>, “Deprecations”, official documentation, accessed September 23, 2026, <a href="https://developers.openai.com/api/docs/deprecations" rel="noopener">developers.openai.com</a></li>
+        <li id="ref-6"><b>TechCrunch</b>, “Google releases three new Gemini models, but no 3.5 Pro” (July 21, 2026), <a href="https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/" rel="noopener">techcrunch.com</a></li>
+        <li id="ref-7"><b>Anthropic</b>, “Commitments on model deprecation and preservation” (November 2025), <a href="https://www.anthropic.com/research/deprecation-commitments" rel="noopener">anthropic.com</a></li>
+        <li id="ref-8"><b>MIT NANDA (A. Challapally et al.)</b>, “The GenAI Divide: State of AI in Business 2025” (July 2025), <a href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf" rel="noopener">PDF report</a></li>
+        <li id="ref-9"><b>Fortune</b>, “MIT report: 95% of generative AI pilots at companies are failing” (August 2025), <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" rel="noopener">fortune.com</a></li>
+        <li id="ref-10"><b>Arnon Shimoni</b>, “MIT's 95% AI failure rate is wrong” (August 2025), <a href="https://arnon.dk/mits-95-ai-failure-rate-is-wrong/" rel="noopener">arnon.dk</a></li>
+        <li id="ref-11"><b>Gartner</b>, “Gartner Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027” (June 2025), <a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027" rel="noopener">gartner.com</a></li>
+        <li id="ref-12"><b>McKinsey QuantumBlack</b>, “The state of AI in 2025: Agents, innovation, and transformation” (November 2025), <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" rel="noopener">mckinsey.com</a></li>
+        <li id="ref-13"><b>McKinsey QuantumBlack</b>, “The state of AI in 2026: On the road to ROI” (August 2026, 1,719 respondents), <a href="https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/the-state-of-ai-in-2026-on-the-road-to-roi.pdf" rel="noopener">PDF report</a>; summary by <b>The Register</b> (August 25, 2026), <a href="https://www.theregister.com/ai-and-ml/2026/08/25/mckinsey-says-enterprise-ai-is-finally-on-the-road-to-roi/5292388" rel="noopener">theregister.com</a></li>
+        <li id="ref-14"><b>Sierra AI Research (S. Yao et al.)</b>, “τ-bench: Benchmarking AI agents for the real-world” (2024), <a href="https://sierra.ai/blog/benchmarking-ai-agents" rel="noopener">sierra.ai</a></li>
+        <li id="ref-15"><b>S. Rabanser, S. Kapoor, A. Narayanan et al. (Princeton)</b>, “Towards a Science of AI Agent Reliability” (ICML 2026), <a href="https://arxiv.org/abs/2602.16666" rel="noopener">arxiv.org</a></li>
+        <li id="ref-16"><b>Greg Brockman (OpenAI)</b>, “evals are surprisingly often all you need” (December 2023), <a href="https://x.com/gdb/status/1733553161884127435" rel="noopener">x.com</a></li>
+        <li id="ref-17"><b>Drew Breunig</b>, “Your Eval is More Important Than the Model” (January 2025), <a href="https://www.dbreunig.com/2025/01/08/evaluating-llms-as-knowledge-banks.html" rel="noopener">dbreunig.com</a></li>
+        <li id="ref-18"><b>Hamel Husain</b>, “Your AI Product Needs Evals” (2024), <a href="https://hamel.dev/blog/posts/evals/" rel="noopener">hamel.dev</a></li>
+        <li id="ref-19"><b>S. Shankar et al. (UC Berkeley)</b>, “Who Validates the Validators?”, UIST 2024, <a href="https://arxiv.org/abs/2404.12272" rel="noopener">arxiv.org</a></li>
+        <li id="ref-20"><b>OpenAI</b>, “Deprecation notice: Evals will be shut down on November 30th, 2026” (June 3, 2026), <a href="https://community.openai.com/t/deprecation-notice-evals-will-be-shut-down-on-november-30th-2026/1385537" rel="noopener">community.openai.com</a>; migration guide “Moving from OpenAI Evals to Promptfoo”, <a href="https://developers.openai.com/cookbook/examples/evaluation/moving-from-openai-evals-to-promptfoo" rel="noopener">developers.openai.com</a></li>
+        <li id="ref-21"><b>Andrej Karpathy</b>, on “context engineering” (June 2025), quoted by Simon Willison, <a href="https://simonwillison.net/2025/Jun/27/context-engineering/" rel="noopener">simonwillison.net</a></li>
+        <li id="ref-22"><b>Anthropic Engineering</b>, “Effective context engineering for AI agents” (September 2025), <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" rel="noopener">anthropic.com</a></li>
+        <li id="ref-23"><b>Linux Foundation</b>, “Formation of the Agentic AI Foundation” (December 2025), <a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation" rel="noopener">linuxfoundation.org</a>; <b>Anthropic</b>, “Introducing the Model Context Protocol” (November 2024), <a href="https://www.anthropic.com/news/model-context-protocol" rel="noopener">anthropic.com</a></li>
+        <li id="ref-24"><b>The Business Research Company</b>, “LLMOps Software Global Market Report 2026”, <a href="https://natlawreview.com/press-releases/llmops-software-market-reach-1559-billion-2030-growing-216-cagr" rel="noopener">natlawreview.com</a></li>
+        <li id="ref-25"><b>M. Tian et al.</b>, “SWE-bench Mobile: Can Large Language Model Agents Develop Industry-Level Mobile Applications?” (arXiv, February 2026), <a href="https://arxiv.org/abs/2602.09540" rel="noopener">arxiv.org</a></li>
+        <li id="ref-26"><b>Y. Lee et al. (Stanford)</b>, “Meta-Harness: End-to-End Optimization of Model Harnesses” (arXiv, March 2026), <a href="https://arxiv.org/abs/2603.28052" rel="noopener">arxiv.org</a></li>
       </ol>
     </section>
   </article>

@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The token paradox — Anthony Damotte</title>
-  <meta name="description" content="Token prices are falling 10x per year, yet AI bills are exploding. Why Jevons economics applies to agentic AI, and why the token budget is becoming an architecture parameter." />
+  <meta name="description" content="At equal performance, the cost of an answer falls roughly thirteenfold each year, and yet AI spending keeps exploding. Jevons paradox applied to agentic AI, where the token budget becomes an architecture parameter." />
   <link rel="canonical" href="https://adamotte.github.io/en/writing/paradoxe-du-token/" />
   <link rel="alternate" hreflang="fr" href="https://adamotte.github.io/ecrits/paradoxe-du-token/" />
   <link rel="alternate" hreflang="en" href="https://adamotte.github.io/en/writing/paradoxe-du-token/" />
   <link rel="alternate" hreflang="x-default" href="https://adamotte.github.io/ecrits/paradoxe-du-token/" />
   <meta property="og:title" content="The token paradox" />
-  <meta property="og:description" content="Token prices are collapsing, yet AI bills keep growing: welcome to the Jevons economics of agentic AI, where budget becomes an architecture parameter." />
+  <meta property="og:description" content="Token prices are collapsing and yet AI bills keep rising: the Jevons economics of agentic AI, where the budget becomes an architecture parameter." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://adamotte.github.io/en/writing/paradoxe-du-token/" />
   <meta property="og:image" content="https://adamotte.github.io/images/og-image.png?v=2" />
@@ -27,8 +27,9 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "The token paradox",
-    "description": "Token prices are falling 10x per year, yet enterprise AI bills are exploding. Jevons economics applied to agentic AI.",
+    "description": "At equal performance, the cost of an answer falls roughly thirteenfold each year, and yet AI spending keeps exploding. Jevons paradox applied to agentic AI, where the token budget becomes an architecture parameter.",
     "datePublished": "2026-08-20",
+    "dateModified": "2026-09-30",
     "inLanguage": "en",
     "author": { "@type": "Person", "name": "Anthony Damotte", "url": "https://adamotte.github.io/" }
   }
@@ -57,163 +58,112 @@
     <header>
       <span class="mono" style="color:var(--accent)">White paper</span>
       <h1>The token paradox</h1>
-      <p class="mono" style="color:var(--muted)">August 2026 · 11 min read · Anthony Damotte</p>
-      <p class="lede">Token prices are falling tenfold every year, and yet enterprise AI bills have
-        never climbed faster. This is no accounting anomaly: it is Jevons paradox at work, and it
-        changes the very nature of the AI budget — which stops being an overhead line item and
-        becomes an architecture parameter.</p>
+      <p class="mono" style="color:var(--muted)">August 2026, updated September 2026 · 14 min · Anthony Damotte</p>
+      <p class="lede">At equal performance, the cost of an answer falls roughly thirteenfold each year, and worldwide AI spending is still jumping by nearly 50% in 2026. Jevons paradox explains the gap: efficiency multiplies uses, and agents have become the hungriest of them. For an IT department, the AI budget then leaves the overhead line and becomes an architecture parameter.</p>
       <div class="paper-actions">
         <a class="btn ghost" href="https://www.linkedin.com/in/anthonydamotte/" rel="noopener">Discuss on LinkedIn</a>
       </div>
     </header>
 
-    <p>During one of my first personal experiments with agentic AI — an entire afternoon spent
-      pushing agents in loops over real code — I burned through five hundred euros' worth of
-      tokens. At the time, the figure made me wince. But with hindsight, that
-      afternoon tells a more interesting story than mere engineering gluttony: it foreshadowed, in
-      miniature, the economic transformation every finance department is discovering today. An agent
-      that actually works consumes on a scale that bears no comparison with a human having a
-      conversation. And that is precisely why it pays off.</p>
+    <p>During one of my first experiments with agentic AI, an afternoon spent running agents in loops over real code, I consumed five hundred euros' worth of tokens. The figure made me wince at first. In hindsight, that afternoon foreshadowed on a small scale what finance departments are now seeing on their bills: an agent at work consumes on a scale that bears no comparison with what a human consumes by conversing, and that work is exactly what is being bought.</p>
 
-    <h2>Deflation without industrial precedent</h2>
+    <h2>At equal performance, the price of inference is collapsing</h2>
 
-    <p>Let us begin with the cheerful side of the paradox. At equal performance, the price of
-      inference is collapsing at a pace no other technology has ever matched — not even the
-      semiconductor in the glory years of Moore's law. Guido Appenzeller, a partner at Andreessen
-      Horowitz, was the first to document it under the name “LLMflation”: for equivalent model
-      quality, the cost drops tenfold every year<sup><a href="#ref-1" id="cite-1">[1]</a></sup>.
-      Getting GPT-3-level quality cost sixty dollars per million tokens in late 2021; three years
-      later, six cents was enough — a thousand times less.</p>
+    <p>The paradox involves two opposing movements. The first is the fall in the price of inference, meaning the cost for a model of producing an answer. That price is counted in tokens, the word fragments into which the model splits the text it reads and writes, and which providers bill per million. At a given performance level, it falls very fast. Epoch AI, an independent institute that measures the quantitative trajectories of AI, put this decline in September 2026 at about 47% per quarter since 2023, a factor of thirteen per year<sup><a href="#ref-1" id="cite-1">[1]</a></sup>.</p>
 
-    <p>That figure is not the extrapolation of an over-enthusiastic venture capitalist. Epoch AI,
-      the independent reference on AI's quantitative trajectories, measures annual deflation ranging
-      from 9x to 900x depending on the task — and 40x per year to reach GPT-4 level on PhD-level
-      science questions<sup><a href="#ref-2" id="cite-2">[2]</a></sup>. In late 2025, an MIT
-      FutureTech team led by Neil Thompson confirmed the order of magnitude academically: roughly
-      10x per year at constant performance on frontier models, with an essential share coming from
-      algorithmic efficiency, not just hardware<sup><a href="#ref-3" id="cite-3">[3]</a></sup>.
-      The raw material of artificial intelligence is in free-fall deflation.</p>
+    <p>The pace varies with how old the targeted performance level is. The decline reaches a factor of seventy-five per year when a performance level first becomes state of the art, then slows to a factor of 4.7 two years later<sup><a href="#ref-1" id="cite-1b">[1]</a></sup>. The price of the most recent capabilities is therefore the one that falls fastest.</p>
 
-    <h2>And yet, the bills keep exploding</h2>
+    <p>The MIT FutureTech team led by Neil Thompson reaches a similar order of magnitude in the revised version of its study, published in March 2026: five to ten times per year for frontier models, of which about a factor of three comes from algorithmic progress alone<sup><a href="#ref-2" id="cite-2">[2]</a></sup>. The phenomenon had been named in late 2024, when Guido Appenzeller, a partner at Andreessen Horowitz, coined “LLMflation”, a portmanteau of LLM (large language model) and “inflation”<sup><a href="#ref-3" id="cite-3">[3]</a></sup>. Summer 2026 even prompted talk of a price war: at the end of July, OpenAI cut the price of GPT-5.6 Luna, the cheapest model in its range, by 80%, and that of GPT-5.6 Terra, its mid-tier model, by 20%; in August, Anthropic dropped the increase it had announced for Sonnet 5, which stayed at $2 per million input tokens<sup><a href="#ref-4" id="cite-4">[4]</a></sup><sup><a href="#ref-5" id="cite-5">[5]</a></sup>.</p>
 
-    <p>If the unit price is divided by ten every year, budgets should be melting away. The opposite
-      is happening, and with remarkable violence. Menlo Ventures measures enterprise AI spending
-      multiplied by 3.2 in a single year — from $11.5 to $37 billion between 2024 and 2025, and by
-      twenty-two since 2023<sup><a href="#ref-4" id="cite-4">[4]</a></sup>. Gartner puts worldwide
-      GenAI spending at $644 billion for 2025, up 76%, and forecasts another +117% on models in
-      2026<sup><a href="#ref-5" id="cite-5">[5]</a></sup>. In a16z's survey of one hundred CIOs,
-      one of them sums up the situation in a sentence every finance department should meditate on:
-      “what I spent in 2023 I now spend in a week”<sup><a href="#ref-6" id="cite-6">[6]</a></sup>.</p>
+    <h2>A deflation with blind spots</h2>
 
-    <p>A nineteenth-century economist had already understood this mechanism completely. William
-      Stanley Jevons observed in 1865 that the more coal-efficient the steam engine became, the more
-      coal England burned: efficiency does not reduce the consumption of a resource, it multiplies
-      it by opening up uses that were previously out of reach. When DeepSeek sent markets into a
-      panic in January 2025 by proving that models could be trained and served for a fraction of the
-      accepted cost, Satya Nadella replied with a single sentence: “Jevons paradox strikes again!
-      As AI gets more efficient and accessible, we will see its use
-      skyrocket”<sup><a href="#ref-7" id="cite-7">[7]</a></sup>.</p>
+    <p>These measurements hold performance fixed. Companies, however, want the best model available, and that tier costs more: according to the MIT team, the price of running frontier models rises by three to eighteen times per year, driven by larger models and longer reasoning<sup><a href="#ref-2" id="cite-2b">[2]</a></sup>. At Anthropic, Fable 5.1 is priced at $10 per million input tokens, against $4 for Opus 5.5<sup><a href="#ref-5" id="cite-5b">[5]</a></sup>. The way tokens are counted has changed as well. Since Claude 4.7, the tokenizer, the tool that splits text into tokens, produces about 30% more of them for the same text<sup><a href="#ref-5" id="cite-5c">[5]</a></sup>, and OpenRouter measured an effective cost increase of 12 to 27% on real requests, excluding very short ones<sup><a href="#ref-6" id="cite-6">[6]</a></sup>. The listed price per million tokens is therefore a poor guide to the price of a task.</p>
 
-    <p>It took thirteen months for the prophecy to be verified in measurable form. On OpenRouter,
-      the largest independent multi-model aggregator, tokens consumed by agentic systems overtook
-      those consumed by humans around February 1, 2026 — a historic crossover established on
-      450 trillion tokens of real traffic<sup><a href="#ref-8" id="cite-8">[8]</a></sup>.
-      Machines now read and write more than we do. Deflation did not shrink the bill; it made the
-      agent economically viable, and the agent blew up the volume.</p>
+    <h2>And yet the bills keep rising</h2>
 
-    <h2>The agent is a token factory</h2>
+    <p>The second movement concerns budgets. If the cost at equal performance falls five to thirteen times per year, budgets should shrink. They do the opposite. In September 2026, Gartner forecast worldwide AI spending of $2.7 trillion for the year, up 49.5%, with growth of 117% for spending on generative AI models alone<sup><a href="#ref-7" id="cite-7">[7]</a></sup>.</p>
 
-    <p>To understand why, you have to look at what an agent actually does with its context.
-      Anthropic's engineering team, describing its own multi-agent research system, gives the orders
-      of magnitude: an agent consumes roughly four times more tokens than a conversation, and a
-      multi-agent system roughly fifteen times more<sup><a href="#ref-9" id="cite-9">[9]</a></sup>.
-      On software development tasks, Erik Brynjolfsson's team at the Stanford Digital Economy Lab
-      measures a ratio that can reach one thousand to one compared with a simple coding chat,
-      dominated by input tokens: at every iteration of its loop, the agent re-reads its entire
-      context, which snowballs<sup><a href="#ref-10" id="cite-10">[10]</a></sup>.</p>
+    <p>Bain quantified the mechanism over twelve months: between December 2024 and December 2025, the cost of tokens was cut in half and their consumption multiplied by 4.5, which more than doubles the bill<sup><a href="#ref-8" id="cite-8">[8]</a></sup>. In its survey of large enterprises published in January 2026, Andreessen Horowitz found that their average spending on language models was expected to grow by a further 65% over the year<sup><a href="#ref-9" id="cite-9">[9]</a></sup>.</p>
 
-    <p>The same study reveals a more unsettling fact: on an identical task, the execution cost of
-      the same agent varies by a factor of thirty from one attempt to the next, and agents are
-      incapable of predicting their own consumption. That should give pause to anyone signing off
-      on a budget: we have industrialized a workforce whose wages are unpredictable to within
-      3,000%. But there is a counterpart, and it is decisive: at Anthropic, token volume alone
-      explains 80% of the variance in system performance<sup><a href="#ref-9" id="cite-9b">[9]</a></sup>.
-      Tokens are not a cost leaking away; they are literally the material the quality of the result
-      is made of.</p>
+    <p>The economist William Stanley Jevons had described this mechanism as early as 1865. As the steam engine became more economical with coal, England burned more of it, because the lower cost of use opened up applications that had been too expensive. In January 2025, when DeepSeek shook the markets by claiming to have trained a high-performing model for a fraction of the accepted cost, Satya Nadella, Microsoft's chief executive, invoked the same paradox to predict a surge in usage<sup><a href="#ref-10" id="cite-10">[10]</a></sup>; twenty months later, the 2026 figures prove him right.</p>
 
-    <h2>Budget becomes an architecture parameter</h2>
+    <h2>On OpenRouter, agents now consume more than humans</h2>
 
-    <p>This is where the paradox stops being an economic curiosity and becomes an engineer's
-      business. If token volume determines performance, then deciding how much an agentic system is
-      allowed to consume, and where, amounts to drawing its architecture. How many adversarial
-      checks per deliverable? How deep should the loop run before escalating to a human? Which model
-      for which tier — an expensive frontier model for the final arbitration, a compact model for
-      bulk triage? Should the whole context be re-read, or is it worth investing in a memory that
-      summarizes it? Each of these questions is simultaneously a question of quality and a question
-      of cost. Prompt caching illustrates the shift well: properly architected, re-reading the
-      context costs ten times less<sup><a href="#ref-11" id="cite-11">[11]</a></sup> —
-      but that is a design decision, not a procurement negotiation.</p>
+    <p>The growth in volumes has an identifiable engine: agents. According to OpenRouter, an aggregator that gives access to the models of many providers, tokens consumed by agentic systems overtook those consumed by humans around February 1, 2026, based on traffic of more than 450 trillion tokens observed between January and mid-June<sup><a href="#ref-11" id="cite-11">[11]</a></sup>. According to Peter Walker of OpenRouter, agentic consumption has grown fourteenfold since that crossover, against a factor of 2.8 for human use, and about 70% of agentic tokens come from cached contexts, that is, contexts kept by the provider so that they can be reread at lower cost<sup><a href="#ref-12" id="cite-12">[12]</a></sup>. Falling prices made agents affordable, and their consumption grows much faster than prices fall, even though caching absorbs a large part of it.</p>
 
-    <p>Organizations have caught on at spectacular speed. The FinOps Foundation, which standardizes
-      cloud cost management for large IT departments, measured 31% of teams managing AI spend in
-      2024, 63% in 2025 — and 98% in 2026, with dedicated indicators such as cost per
-      inference<sup><a href="#ref-12" id="cite-12">[12]</a></sup>. At Gartner, the July 2026
-      analysis notes that AI budgets are coming “under increased scrutiny, with an emphasis on usage
-      efficiency, cost control and measurable outcomes”<sup><a href="#ref-13" id="cite-13">[13]</a></sup>.
-      And yet, in the largest survey of teams running agents in production, cost ranks only behind
-      quality on the list of blockers<sup><a href="#ref-14" id="cite-14">[14]</a></sup> —
-      proof that practitioners have already internalized the lesson: you don't cut tokens, you
-      place them.</p>
+    <h2>The agent rereads everything at every step</h2>
+
+    <p>An agent consumes so much because it rereads its context at every iteration: the open files, its tools' results, the session history. That context grows as the task advances, and each turn rereads all of it. The documentation for Claude Code, Anthropic's agentic coding assistant, states that a team of agents consumes about seven times more tokens than a standard session when the teammates work in plan mode, each maintaining its own context window<sup><a href="#ref-13" id="cite-13">[13]</a></sup>. For development tasks, a study published in April 2026 by researchers from the University of Michigan and Stanford, including Erik Brynjolfsson, measures consumption on the order of a thousand times higher, on average, than a conversational exchange about code<sup><a href="#ref-14" id="cite-14">[14]</a></sup>.</p>
+
+    <p>The same study reports three findings that bear directly on budgets. On an identical task, the total number of tokens consumed by the same agent can vary by up to a factor of thirty from one run to another, the most expensive run typically costing twice the cheapest. Models predict their own consumption poorly and systematically underestimate it. Finally, accuracy often peaks at intermediate cost, beyond which additional tokens no longer improve it. An employee whose cost could double, or even be multiplied by thirty, for the same task, with no way of predicting it, would quickly worry a finance department.</p>
+
+    <p>The study covers only eight models and a single code-repair benchmark (SWE-bench Verified), but it matches what teams observe: some of the tokens improve the result, others add nothing, and it falls to the system's architecture to tell them apart.</p>
+
+    <h2>The budget becomes an architecture parameter</h2>
+
+    <p>If token volume affects both quality and cost, deciding how much an agentic system may consume, and where, amounts to designing its architecture. Several settings have to be fixed: the number of adversarial checks per deliverable (reviews entrusted to a second agent whose job is to challenge the first one's work), the number of iterations after which the agent hands control back to a human, the model assigned to each tier of the system, and the share of the context that is reread in full or summarized in a memory. Each of these choices shifts quality and the bill at the same time.</p>
+
+    <p>The price gap between models gives these choices weight. BCG estimates that a frontier model costs five to twenty-five times more per token than a simpler one, and sorts optimization levers into five families: dropping unnecessary calls, routing each request to the suitable model, caching, capping consumption and training employees to use AI in relevant ways<sup><a href="#ref-15" id="cite-15">[15]</a></sup>. Caching shows how large the possible gains are. At Anthropic, rereading a context that is already cached costs a tenth of the normal price, and up to one-fortieth on some recent models<sup><a href="#ref-16" id="cite-16">[16]</a></sup>. These gains depend on system design, over which the purchasing department has no influence.</p>
+
+    <p>Cost management has taken up the subject within two years. According to the State of FinOps survey published in February 2026 by the FinOps Foundation, which brings together cloud cost management practitioners, 98% of the teams surveyed now manage AI spending, against 63% in 2025 and 31% in 2024<sup><a href="#ref-17" id="cite-17">[17]</a></sup>. In July 2026, Gartner observed that enterprise AI budgets were coming “under greater scrutiny, with increased focus on usage efficiency, cost control and measurable outcomes”<sup><a href="#ref-18" id="cite-18">[18]</a></sup>.</p>
+
+    <h2>What I apply in my own harness</h2>
+
+    <p>For several months I have been designing an agent harness for pre-sales, meaning the set of rules, tools and specialized agents that frame Claude Code's work on commercial proposals, including costings and presentations. The rules that have weighed most on the bill concern what the agent reads. Each deliverable has its own session, so that the context does not carry the exchanges of another topic. Bulky reading, whether a client's reference documents or web monitoring, is handed to a secondary agent, and only its summary comes back to the main session. Any file longer than twenty thousand characters is produced by a script that the model writes once and then runs, which avoids writing the whole file into the session context. The visual check of a presentation covers a sample of pages.</p>
+
+    <p>The choice of model follows the same concern: concentrate spending where an error would cost the most. The review agents work with a high reasoning effort (the setting that determines how many tokens the model spends thinking before it answers), and only the adversarial reviewer, whose role is to challenge every figure by cross-checking it against its source before a deliverable is handed over, uses the maximum setting. To put orders of magnitude on this, Anthropic reports, across its enterprise deployments, an average cost of about $13 per developer per active day of Claude Code use, and under $30 per day for 90% of users<sup><a href="#ref-13" id="cite-13b">[13]</a></sup>. These amounts remain modest: on average, a day of Claude Code use costs less than an hour of a consultant's time, and the bill depends mostly on where the tokens are placed.</p>
 
     <h2>What to take away</h2>
 
-    <p>Three convictions to close. First: stop budgeting AI like a software license and budget it
-      like production capacity — the right indicator is not the monthly bill, it is the cost per
-      verified outcome, and you must accept that more ambitious outcomes mean higher consumption.
-      Second: demand that the token budget appear in your teams' architecture documents, on the same
-      footing as latency or availability — an agentic system that cannot say where its tokens go is
-      a system that cannot be steered. Third: beware of easy savings, because deflation is working
-      for you — what you refuse to consume today will cost ten times less next year, but the
-      competitors who learned a year earlier how to place their tokens will not be caught up at a
-      discount.</p>
+    <p>I draw three convictions for the leaders who budget agentic AI.</p>
 
-    <p>As for my five hundred euros of experimentation: set against what they taught me about harness
-      design — lessons I have been applying to production systems ever since — they are probably
-      the cheapest training I have ever received. The token paradox, in the end, fits in one
-      sentence: yesterday's waste becomes tomorrow's under-investment, and the only real mistake is
-      to treat as an accountant what has become an architect's decision.</p>
+    <p>The AI budget is managed like production capacity. The useful indicator is the cost per verified outcome, which relates consumption to a deliverable whose quality has been checked. When the ambition of the outcome rises, consumption rises with it, and the monthly bill alone does not show whether the increase is justified.</p>
+
+    <p>The token budget belongs in architecture documents, alongside latency or availability. A team that cannot say where its system's tokens go cannot steer it, nor can it rely on the agent, which, as the study cited above shows, predicts its own consumption poorly.</p>
+
+    <p>Postponing a use case to save money is paid for in learning delay. Falling prices make waiting tempting: a capability set aside today will cost about ten times less in a year. Yet the competitors who have learned in the meantime how to place their tokens will keep their lead, because that know-how is acquired through practice.</p>
+
+    <p>As for my five hundred euros of experimentation, set against what they taught me about harness design, they remain the cheapest training I have ever taken. A spending cap set that day by accounting would have cost me that learning in order to save five hundred euros.</p>
 
     <section class="refs">
       <h2>References</h2>
       <ol>
-        <li id="ref-1"><b>Guido Appenzeller — Andreessen Horowitz</b>, “Welcome to LLMflation – LLM inference cost is going down fast” (November 2024) —
-          <a href="https://a16z.com/llmflation-llm-inference-cost/" rel="noopener">a16z.com</a></li>
-        <li id="ref-2"><b>Epoch AI</b>, “LLM inference prices have fallen rapidly but unequally across tasks” (March 2025) —
-          <a href="https://epoch.ai/data-insights/llm-inference-price-trends" rel="noopener">epoch.ai</a></li>
-        <li id="ref-3"><b>H. Gundlach, J. Lynch, M. Mertens, N. Thompson — MIT FutureTech</b>, “The Price of Progress: Algorithmic Efficiency and the Falling Cost of AI Inference” (November 2025) —
+        <li id="ref-1"><b>L. Emberson, D. Roodman, Epoch AI</b>, “The plunging price of thought” (September 2026),
+          <a href="https://epoch.ai/publications/the-plunging-price-of-thought" rel="noopener">epoch.ai</a></li>
+        <li id="ref-2"><b>H. Gundlach, J. Lynch, M. Mertens, N. Thompson, MIT FutureTech</b>, “The Price of Progress: Price Performance and the Future of AI”, version 2 (March 2026),
           <a href="https://arxiv.org/abs/2511.23455" rel="noopener">arxiv.org</a></li>
-        <li id="ref-4"><b>Menlo Ventures</b>, “2025: The State of Generative AI in the Enterprise” (December 2025) —
-          <a href="https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/" rel="noopener">menlovc.com</a></li>
-        <li id="ref-5"><b>Gartner</b>, “Gartner Forecasts Worldwide GenAI Spending to Reach $644 Billion in 2025” (March 2025) —
-          <a href="https://www.gartner.com/en/newsroom/press-releases/2025-03-31-gartner-forecasts-worldwide-genai-spending-to-reach-644-billion-in-2025" rel="noopener">gartner.com</a></li>
-        <li id="ref-6"><b>Sarah Wang et al. — Andreessen Horowitz</b>, “How 100 Enterprise CIOs Are Building and Buying Gen AI in 2025” (June 2025) —
-          <a href="https://a16z.com/ai-enterprise-2025/" rel="noopener">a16z.com</a></li>
-        <li id="ref-7"><b>Fortune</b>, “What is Jevons paradox? The reason Satya Nadella says DeepSeek's new AI is good news for tech” (January 2025) —
+        <li id="ref-3"><b>Guido Appenzeller, Andreessen Horowitz</b>, “Welcome to LLMflation: LLM inference cost is going down fast” (November 2024),
+          <a href="https://a16z.com/llmflation-llm-inference-cost/" rel="noopener">a16z.com</a></li>
+        <li id="ref-4"><b>The Stack</b>, “Anthropic follows OpenAI with frontier model price cuts” (August 2026),
+          <a href="https://www.thestack.technology/anthropic-follows-openai-with-frontier-model-price-cuts/" rel="noopener">thestack.technology</a></li>
+        <li id="ref-5"><b>Anthropic</b>, “Pricing”, Claude Platform documentation (accessed September 2026),
+          <a href="https://platform.claude.com/docs/en/about-claude/pricing" rel="noopener">platform.claude.com</a></li>
+        <li id="ref-6"><b>OpenRouter</b>, “Opus 4.7's New Tokenizer: What It Actually Costs” (April 2026, updated June 2026),
+          <a href="https://openrouter.ai/blog/insights/opus-47-tokenizer-analysis/" rel="noopener">openrouter.ai</a></li>
+        <li id="ref-7"><b>Gartner</b>, “Gartner Forecasts Worldwide AI Spending to Grow 49.5% in 2026” (September 2026),
+          <a href="https://www.gartner.com/en/newsroom/press-releases/2026-09-16-gartner-forecasts-worldwide-ai-spending-to-grow-49-point-5-percent-in-2026" rel="noopener">gartner.com</a></li>
+        <li id="ref-8"><b>Bain &amp; Company</b>, “How Token Economics Will Change Opex” (June 2026),
+          <a href="https://www.bain.com/insights/how-token-economics-will-change-opex/" rel="noopener">bain.com</a></li>
+        <li id="ref-9"><b>S. Wang, J. Kahl, S. Xu, Andreessen Horowitz</b>, “Leaders, gainers and unexpected winners in the Enterprise AI arms race” (January 2026),
+          <a href="https://a16z.com/leaders-gainers-and-unexpected-winners-in-the-enterprise-ai-arms-race/" rel="noopener">a16z.com</a></li>
+        <li id="ref-10"><b>Fortune</b>, article by S. Rogelberg on Satya Nadella, DeepSeek and Jevons paradox (January 2025),
           <a href="https://fortune.com/2025/01/27/microsoft-ceo-satya-nadella-deepseek-optimism-jevons-paradox/" rel="noopener">fortune.com</a></li>
-        <li id="ref-8"><b>OpenRouter</b>, “DeepSeek V4 Is Earning Agentic Token Share” (June 2026) —
+        <li id="ref-11"><b>OpenRouter</b>, “DeepSeek V4 Is Earning Agentic Token Share” (June 2026),
           <a href="https://openrouter.ai/blog/insights/deepseek-v4-adoption/" rel="noopener">openrouter.ai</a></li>
-        <li id="ref-9"><b>Anthropic Engineering</b>, “How we built our multi-agent research system” (June 2025) —
-          <a href="https://www.anthropic.com/engineering/multi-agent-research-system" rel="noopener">anthropic.com</a></li>
-        <li id="ref-10"><b>E. Brynjolfsson, S. Pentland, J. Pei — Stanford Digital Economy Lab</b>, “How Do AI Agents Spend Your Money?” (May 2026) —
-          <a href="https://digitaleconomy.stanford.edu/news/how-are-ai-agents-spending-your-tokens/" rel="noopener">digitaleconomy.stanford.edu</a></li>
-        <li id="ref-11"><b>Anthropic</b>, “Prompt caching with Claude” (2025) —
-          <a href="https://claude.com/blog/prompt-caching" rel="noopener">claude.com</a></li>
-        <li id="ref-12"><b>FinOps Foundation</b>, “State of FinOps 2026 Report” and “FinOps for AI” (2026) —
+        <li id="ref-12"><b>The Decoder</b>, “AI is becoming AI's biggest customer as agentic token usage jumps 14x on OpenRouter” (August 2026),
+          <a href="https://the-decoder.com/ai-is-becoming-ais-biggest-customer-as-agentic-token-usage-jumps-14x-on-openrouter/" rel="noopener">the-decoder.com</a></li>
+        <li id="ref-13"><b>Anthropic</b>, “Manage costs effectively”, Claude Code documentation (accessed September 2026),
+          <a href="https://code.claude.com/docs/en/costs" rel="noopener">code.claude.com</a></li>
+        <li id="ref-14"><b>L. Bai, Z. Huang, X. Wang, J. Sun, R. Mihalcea, E. Brynjolfsson, A. Pentland, J. Pei</b>, “How Do AI Agents Spend Your Money? Analyzing and Predicting Token Consumption in Agentic Coding Tasks” (April 2026),
+          <a href="https://arxiv.org/abs/2604.22750" rel="noopener">arxiv.org</a></li>
+        <li id="ref-15"><b>BCG</b>, “Return on AI: What CEOs Need to Know About the True Cost of Artificial Intelligence” (July 2026),
+          <a href="https://www.bcg.com/publications/2026/how-ceos-can-optimize-ai-token-costs" rel="noopener">bcg.com</a></li>
+        <li id="ref-16"><b>Anthropic</b>, “Prompt caching”, Claude Platform documentation (accessed September 2026),
+          <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching" rel="noopener">platform.claude.com</a></li>
+        <li id="ref-17"><b>FinOps Foundation</b>, “State of FinOps 2026” (February 2026),
           <a href="https://data.finops.org/" rel="noopener">finops.org</a></li>
-        <li id="ref-13"><b>Gartner</b>, “Gartner Forecasts Worldwide AI Platforms and Models Market to Grow 63% in 2026” (July 2026) —
+        <li id="ref-18"><b>Gartner</b>, “Gartner Forecasts Worldwide AI Platforms and Models Market to Grow 63% in 2026” (July 2026),
           <a href="https://www.gartner.com/en/newsroom/press-releases/2026-07-20-gartner-forecasts-worldwide-ai-platforms-and-models-market-to-grow-63-percent-in-2026" rel="noopener">gartner.com</a></li>
-        <li id="ref-14"><b>LangChain</b>, “State of Agent Engineering” (June 2026) —
-          <a href="https://www.langchain.com/state-of-agent-engineering" rel="noopener">langchain.com</a></li>
       </ol>
     </section>
   </article>
